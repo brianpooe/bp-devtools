@@ -1,0 +1,18 @@
+import { Injectable } from '@nestjs/common';
+import {
+    InitializeTransactionRequestModel,
+    InitializeTransactionResponseModel,
+    NsPaystackService,
+} from '@bp-devtools/ns-paystack';
+import { Observable } from 'rxjs';
+
+@Injectable()
+export class TransactionService {
+    constructor(private readonly nsPaystackService: NsPaystackService) {}
+
+    initializeTransaction(
+        payload: InitializeTransactionRequestModel
+    ): Observable<InitializeTransactionResponseModel> {
+        return this.nsPaystackService.initializeTransaction(payload);
+    }
+}

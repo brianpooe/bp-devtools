@@ -10,11 +10,12 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
             imports: [ConfigModule],
             useFactory: async (configService: ConfigService) => ({
                 timeout: configService.get('HTTP_TIMEOUT'),
+                baseURL: configService.get('BASE_URL'),
             }),
             inject: [ConfigService],
         }),
     ],
-    providers: [NsPaystackService],
+    providers: [NsPaystackService, ConfigService],
     exports: [NsPaystackService],
 })
 export class NsPaystackModule extends ConfigurableModuleClass {}

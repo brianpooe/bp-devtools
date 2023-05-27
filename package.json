@@ -2,7 +2,9 @@
   "name": "@bp-devtools/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start:api:demo": "nx serve ns-paystack-demo"
+  },
   "private": true,
   "dependencies": {
     "@nestjs/axios": "^2.0.0",
