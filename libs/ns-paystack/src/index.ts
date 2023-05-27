@@ -1,3 +1,3 @@
 export * from './lib/ns-paystack.module';
-export * from './lib/ns-paystack.service';
-export * from './lib/types/index';
+export * from './lib/services/ns-paystack.service';
+export * from './lib/models/index';

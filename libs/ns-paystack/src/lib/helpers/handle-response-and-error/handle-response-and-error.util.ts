@@ -1,3 +1,4 @@
+import { AxiosError, AxiosResponse } from 'axios';
 import {
     catchError,
     map,
@@ -5,7 +6,6 @@ import {
     OperatorFunction,
     throwError
 } from 'rxjs';
-import { AxiosError, AxiosResponse } from 'axios';
 import { HttpException, HttpStatus } from '@nestjs/common';
 
 export const handleResponseAndError = <
@@ -16,7 +16,7 @@ export const handleResponseAndError = <
         return source.pipe(
             map(({ data }) => data),
             catchError((error: AxiosError<HttpException>) => {
-                console.error(error.response);
+                console.error(error);
                 const errorMessage = error.response?.data || {
                     status: false,
                     message: 'Something went wrong. Please try again later.'

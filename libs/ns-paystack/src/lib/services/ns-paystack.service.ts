@@ -1,6 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { MODULE_OPTIONS_TOKEN } from './config.module-definition';
-import { NsPaystackConfigModel } from './ns-paystack-config.model';
+import { NsPaystackConfigModel } from '../models';
 import { HttpService } from '@nestjs/axios';
 import { Observable } from 'rxjs';
 import { AxiosRequestConfig } from 'axios';
@@ -8,8 +7,8 @@ import {
     InitializeTransactionRequestModel,
     InitializeTransactionResponseModel,
     VerifyTransactionResponseModel
-} from './types';
-import { handleResponseAndError } from './helpers.util';
+} from '../models';
+import { handleResponseAndError, MODULE_OPTIONS_TOKEN } from '../helpers';
 
 @Injectable()
 export class NsPaystackService {
