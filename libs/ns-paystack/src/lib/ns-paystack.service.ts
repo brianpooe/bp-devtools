@@ -3,12 +3,13 @@ import { MODULE_OPTIONS_TOKEN } from './config.module-definition';
 import { NsPaystackConfigModel } from './ns-paystack-config.model';
 import { HttpService } from '@nestjs/axios';
 import { Observable } from 'rxjs';
-import { AxiosHeaders, RawAxiosRequestHeaders } from 'axios';
+import { RawAxiosRequestHeaders } from 'axios';
 import {
     InitializeTransactionRequestModel,
     InitializeTransactionResponseModel,
 } from './types';
 import { handleResponseAndError } from './helpers.util';
+import { VerifyTransactionResponseModel } from './types';
 
 @Injectable()
 export class NsPaystackService {
@@ -36,6 +37,16 @@ export class NsPaystackService {
                     headers: this.headers,
                 }
             )
+            .pipe(handleResponseAndError());
+    }
+
+    verifyTransaction(
+        reference: string
+    ): Observable<VerifyTransactionResponseModel> {
+        return this.httpService
+            .get(`transaction/verify/${reference}`, {
+                headers: this.headers,
+            })
             .pipe(handleResponseAndError());
     }
 }

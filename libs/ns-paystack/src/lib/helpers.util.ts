@@ -16,6 +16,7 @@ export const handleResponseAndError = <
         return source.pipe(
             map(({ data }) => data),
             catchError((error: AxiosError<HttpException>) => {
+                console.error(error.response);
                 return throwError(() => error.response?.data);
             })
         );

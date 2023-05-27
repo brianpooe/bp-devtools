@@ -3,6 +3,7 @@ import {
     InitializeTransactionRequestModel,
     InitializeTransactionResponseModel,
     NsPaystackService,
+    VerifyTransactionResponseModel,
 } from '@bp-devtools/ns-paystack';
 import { Observable } from 'rxjs';
 
@@ -14,5 +15,11 @@ export class TransactionService {
         payload: InitializeTransactionRequestModel
     ): Observable<InitializeTransactionResponseModel> {
         return this.nsPaystackService.initializeTransaction(payload);
+    }
+
+    verifyTransaction(
+        reference: string
+    ): Observable<VerifyTransactionResponseModel> {
+        return this.nsPaystackService.verifyTransaction(reference);
     }
 }
