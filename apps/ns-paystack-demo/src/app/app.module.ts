@@ -10,13 +10,13 @@ import { TransactionController } from './transactions/controllers/transaction.co
         NsPaystackModule.registerAsync({
             useFactory: (configService: ConfigService) => {
                 return {
-                    secretKey: configService.get('PAYSTACK_SECRET_KEY'),
+                    secretKey: configService.get('PAYSTACK_SECRET_KEY')
                 };
             },
-            inject: [ConfigService],
-        }),
+            inject: [ConfigService]
+        })
     ],
     controllers: [TransactionController],
-    providers: [TransactionService, ConfigService],
+    providers: [TransactionService, ConfigService]
 })
 export class AppModule {}

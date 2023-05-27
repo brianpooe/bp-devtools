@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
+import { NsPaystackService } from '@bp-devtools/ns-paystack';
 import {
     InitializeTransactionRequestModel,
     InitializeTransactionResponseModel,
-    NsPaystackService,
     VerifyTransactionResponseModel
-} from '@bp-devtools/ns-paystack';
+} from '@bp-devtools/ns-paystack/types';
 import { Observable } from 'rxjs';
 
 @Injectable()
