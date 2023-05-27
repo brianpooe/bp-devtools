@@ -5,7 +5,7 @@ import {
     NsPaystackService,
     VerifyTransactionResponseModel
 } from '@bp-devtools/ns-paystack';
-import { catchError, Observable, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class TransactionService {
@@ -20,11 +20,6 @@ export class TransactionService {
     verifyTransaction(
         reference: string
     ): Observable<VerifyTransactionResponseModel> {
-        return this.nsPaystackService.verifyTransaction(reference).pipe(
-            catchError((error) => {
-                console.log(error);
-                return throwError(() => error);
-            })
-        );
+        return this.nsPaystackService.verifyTransaction(reference);
     }
 }
