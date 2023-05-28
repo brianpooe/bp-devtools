@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { NsPaystackService } from './services/ns-paystack.service';
+import { PsTransactionsService } from './services';
 import { HttpModule } from '@nestjs/axios';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ConfigurableModuleClass } from './helpers';
@@ -15,7 +15,7 @@ import { ConfigurableModuleClass } from './helpers';
             inject: [ConfigService]
         })
     ],
-    providers: [NsPaystackService, ConfigService],
-    exports: [NsPaystackService]
+    providers: [PsTransactionsService, ConfigService],
+    exports: [PsTransactionsService]
 })
 export class NsPaystackModule extends ConfigurableModuleClass {}

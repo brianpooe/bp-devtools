@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 
 import { NsPaystackModule } from '@bp-devtools/ns-paystack';
 import { ConfigService } from '@nestjs/config';
-import { TransactionService } from './transactions/services/transaction.service';
+import { TransactionsService } from './transactions/services/transactions.service';
 import { TransactionController } from './transactions/controllers/transaction.controller';
 
 @Module({
@@ -17,6 +17,6 @@ import { TransactionController } from './transactions/controllers/transaction.co
         })
     ],
     controllers: [TransactionController],
-    providers: [TransactionService, ConfigService]
+    providers: [TransactionsService, ConfigService]
 })
 export class AppModule {}

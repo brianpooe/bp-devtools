@@ -7,30 +7,30 @@ import {
     PsVerifyTransactionResponseModel
 } from '@bp-devtools/ns-paystack';
 import { Observable } from 'rxjs';
-import { TransactionService } from '../services/transaction.service';
+import { TransactionsService } from '../services/transactions.service';
 
 @Controller('transaction')
 export class TransactionController {
-    constructor(private readonly transactionService: TransactionService) {}
+    constructor(private readonly transactionsService: TransactionsService) {}
 
     @Post('initialize')
     initialize(
         @Body() payload: PsInitializeTransactionRequestModel
     ): Observable<PsInitializeTransactionResponseModel> {
-        return this.transactionService.initializeTransaction(payload);
+        return this.transactionsService.initializeTransaction(payload);
     }
 
     @Get('verify/:reference')
     verifyTransaction(
         @Param('reference') reference: string
     ): Observable<PsVerifyTransactionResponseModel> {
-        return this.transactionService.verifyTransaction(reference);
+        return this.transactionsService.verifyTransaction(reference);
     }
 
     @Get()
     listTransactions(
         @Query() queryParamsPayload: PsListTransactionsQueryParamModel
     ): Observable<PsListTransactionsResponseModel> {
-        return this.transactionService.listTransactions(queryParamsPayload);
+        return this.transactionsService.listTransactions(queryParamsPayload);
     }
 }

@@ -6,14 +6,14 @@ import {
     PsListTransactionsQueryParamModel,
     PsListTransactionsResponseModel,
     PsVerifyTransactionResponseModel
-} from '../models';
+} from '../../models';
 import { HttpService } from '@nestjs/axios';
 import { Observable } from 'rxjs';
 import { AxiosRequestConfig } from 'axios';
-import { handleResponseAndError, MODULE_OPTIONS_TOKEN } from '../helpers';
+import { handleResponseAndError, MODULE_OPTIONS_TOKEN } from '../../helpers';
 
 @Injectable()
-export class NsPaystackService {
+export class PsTransactionsService {
     axiosRequestConfig: AxiosRequestConfig = {
         headers: {
             'Content-Type': 'application/json',

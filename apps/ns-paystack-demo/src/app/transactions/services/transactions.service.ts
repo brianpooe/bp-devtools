@@ -1,34 +1,35 @@
 import { Injectable } from '@nestjs/common';
 import {
-    NsPaystackService,
+    PsTransactionsService,
     PsInitializeTransactionRequestModel,
     PsInitializeTransactionResponseModel,
     PsListTransactionsQueryParamModel,
     PsListTransactionsResponseModel,
     PsVerifyTransactionResponseModel
 } from '@bp-devtools/ns-paystack';
-
 import { Observable } from 'rxjs';
 
 @Injectable()
-export class TransactionService {
-    constructor(private readonly nsPaystackService: NsPaystackService) {}
+export class TransactionsService {
+    constructor(
+        private readonly psTransactionsService: PsTransactionsService
+    ) {}
 
     initializeTransaction(
         payload: PsInitializeTransactionRequestModel
     ): Observable<PsInitializeTransactionResponseModel> {
-        return this.nsPaystackService.initializeTransaction(payload);
+        return this.psTransactionsService.initializeTransaction(payload);
     }
 
     verifyTransaction(
         reference: string
     ): Observable<PsVerifyTransactionResponseModel> {
-        return this.nsPaystackService.verifyTransaction(reference);
+        return this.psTransactionsService.verifyTransaction(reference);
     }
 
     listTransactions(
         queryParamsPayload: PsListTransactionsQueryParamModel
     ): Observable<PsListTransactionsResponseModel> {
-        return this.nsPaystackService.listTransactions(queryParamsPayload);
+        return this.psTransactionsService.listTransactions(queryParamsPayload);
     }
 }
