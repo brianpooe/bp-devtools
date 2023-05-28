@@ -1,3 +1,5 @@
+import { PsChannelsModel } from './ps-channels.model';
+
 export interface PsInitializeTransactionRequestModel {
     amount: string;
     email: string;
@@ -7,14 +9,5 @@ export interface PsInitializeTransactionRequestModel {
     plan?: string;
     invoice_limit?: number;
     metadata?: string;
-    channels?: Array<PsInitializeTransactionChannelsModel>;
+    channels?: Array<PsChannelsModel>;
 }
-
-export type PsInitializeTransactionChannelsModel =
-    | 'card'
-    | 'bank'
-    | 'ussd'
-    | 'qr'
-    | 'mobile_money'
-    | 'bank_transfer'
-    | 'eft';

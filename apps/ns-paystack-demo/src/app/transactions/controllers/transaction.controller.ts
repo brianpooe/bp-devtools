@@ -1,8 +1,9 @@
 import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
 import {
+    PsFetchTransactionResponseModel,
     PsInitializeTransactionRequestModel,
     PsInitializeTransactionResponseModel,
-    PsListTransactionsQueryParamModel,
+    PsListTransactionsQueryParamsModel,
     PsListTransactionsResponseModel,
     PsVerifyTransactionResponseModel
 } from '@bp-devtools/ns-paystack';
@@ -29,8 +30,15 @@ export class TransactionController {
 
     @Get()
     listTransactions(
-        @Query() queryParamsPayload: PsListTransactionsQueryParamModel
+        @Query() queryParamsPayload: PsListTransactionsQueryParamsModel
     ): Observable<PsListTransactionsResponseModel> {
         return this.transactionsService.listTransactions(queryParamsPayload);
+    }
+
+    @Get(':transactionId')
+    fetchTransaction(
+        @Param('transactionId') transactionId: number
+    ): Observable<PsFetchTransactionResponseModel> {
+        return this.transactionsService.fetchTransaction(transactionId);
     }
 }

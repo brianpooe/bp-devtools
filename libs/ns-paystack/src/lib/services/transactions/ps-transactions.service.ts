@@ -1,9 +1,10 @@
 import { Inject, Injectable } from '@nestjs/common';
 import {
     PsConfigModel,
+    PsFetchTransactionResponseModel,
     PsInitializeTransactionRequestModel,
     PsInitializeTransactionResponseModel,
-    PsListTransactionsQueryParamModel,
+    PsListTransactionsQueryParamsModel,
     PsListTransactionsResponseModel,
     PsVerifyTransactionResponseModel
 } from '../../models';
@@ -51,13 +52,24 @@ export class PsTransactionsService {
     }
 
     listTransactions(
-        queryParamsPayload: PsListTransactionsQueryParamModel
+        queryParamsPayload: PsListTransactionsQueryParamsModel
     ): Observable<PsListTransactionsResponseModel> {
         return this.httpService
             .get<PsListTransactionsResponseModel>('transaction', {
                 ...this.axiosRequestConfig,
                 params: queryParamsPayload
             })
+            .pipe(handleResponseAndError());
+    }
+
+    fetchTransaction(
+        transactionId: number
+    ): Observable<PsFetchTransactionResponseModel> {
+        return this.httpService
+            .get<PsFetchTransactionResponseModel>(
+                `transaction/${transactionId}`,
+                this.axiosRequestConfig
+            )
             .pipe(handleResponseAndError());
     }
 }

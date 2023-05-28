@@ -1,12 +1,16 @@
-﻿import { PsBaseModel } from './ps-base.model';
-import { PsCustomerModel } from './ps-customer.model';
-import { PsAuthorizationModel } from './ps-authorization.model';
+﻿import {
+    PsBaseModel,
+    PsCustomerModel,
+    PsAuthorizationModel,
+    PsLogModel,
+    PsMetadataModel
+} from './';
 
 export interface PsListTransactionsResponseModel extends PsBaseModel {
-    data?: PsListTransactionsDataEntity[] | null;
+    data?: PsListTransactionsDataEntityModel[] | null;
 }
 
-export interface PsListTransactionsDataEntity {
+export interface PsListTransactionsDataEntityModel {
     id: number;
     domain: string;
     status: string;
@@ -19,24 +23,14 @@ export interface PsListTransactionsDataEntity {
     channel: string;
     currency: string;
     ip_address?: null;
-    metadata?: PsListTransactionsMetadata | null;
+    metadata?: PsMetadataModel | null;
     timeline?: null;
     customer: PsCustomerModel;
     authorization: PsAuthorizationModel;
     plan?: unknown | null;
     requested_amount: number;
-    log?: null;
+    log?: PsLogModel;
     fees?: null;
     paidAt?: string | null;
     createdAt?: string | null;
-}
-
-export interface PsListTransactionsMetadata {
-    custom_fields?: PsListTransactionsCustomFieldsEntity[] | null;
-}
-
-export interface PsListTransactionsCustomFieldsEntity {
-    display_name: string;
-    variable_name: string;
-    value: string;
 }

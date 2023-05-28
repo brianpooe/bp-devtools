@@ -1,43 +1,38 @@
-import {
-    PsBaseModel,
+﻿import {
     PsAuthorizationModel,
+    PsBaseModel,
     PsCustomerModel,
-    PsLogModel
+    PsLogModel,
+    PsMetadataModel
 } from './';
 
-export interface PsVerifyTransactionResponseModel extends PsBaseModel {
-    data: PsVerifyTransactionDataEntityModel;
+export interface PsFetchTransactionResponseModel extends PsBaseModel {
+    data: PsFetchTransactionResponseDataModel;
 }
 
-export interface PsVerifyTransactionDataEntityModel {
+export interface PsFetchTransactionResponseDataModel {
     id: number;
     domain: string;
     status: string;
     reference: string;
     amount: number;
-    message: unknown;
+    message?: null;
     gateway_response: string;
     paid_at: string;
     created_at: string;
     channel: string;
     currency: string;
     ip_address: string;
-    metadata: string;
+    metadata: PsMetadataModel;
     log: PsLogModel;
     fees: number;
-    fees_split: unknown;
+    fees_split?: null;
     authorization: PsAuthorizationModel;
     customer: PsCustomerModel;
     plan: unknown;
-    split: unknown;
-    order_id: unknown;
+    subaccount: unknown;
+    order_id?: null;
     paidAt: string;
     createdAt: string;
     requested_amount: number;
-    pos_transaction_data: unknown;
-    source: unknown;
-    fees_breakdown: unknown;
-    transaction_date: string;
-    plan_object: unknown;
-    subaccount: unknown;
 }

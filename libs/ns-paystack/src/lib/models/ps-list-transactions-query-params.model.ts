@@ -1,4 +1,4 @@
-export interface PsListTransactionsQueryParamModel {
+export interface PsListTransactionsQueryParamsModel {
     perPage: number;
     page: number;
     customer?: number;
