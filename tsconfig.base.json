@@ -20,9 +20,6 @@
     "paths": {
       "@bp-devtools/ns-paystack": [
         "libs/ns-paystack/src/index.ts"
-      ],
-      "@bp-devtools/ns-paystack/types": [
-        "libs/ns-paystack/src/lib/models/index.ts"
       ]
     }
   },

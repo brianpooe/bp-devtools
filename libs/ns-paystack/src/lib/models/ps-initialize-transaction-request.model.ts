@@ -1,4 +1,4 @@
-export interface InitializeTransactionRequestModel {
+export interface PsInitializeTransactionRequestModel {
     amount: string;
     email: string;
     currency?: string;
@@ -7,10 +7,10 @@ export interface InitializeTransactionRequestModel {
     plan?: string;
     invoice_limit?: number;
     metadata?: string;
-    channels?: Array<Channels>;
+    channels?: Array<PsInitializeTransactionChannelsModel>;
 }
 
-export type Channels =
+export type PsInitializeTransactionChannelsModel =
     | 'card'
     | 'bank'
     | 'ussd'

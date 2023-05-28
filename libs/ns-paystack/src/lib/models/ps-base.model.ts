@@ -1,10 +1,10 @@
-export interface NsPaystackBaseModel {
+export interface PsBaseModel {
     status: boolean;
     message: string;
-    meta?: NsPaystackMeta;
+    meta?: PsBaseModelMeta;
 }
 
-export interface NsPaystackMeta {
+export interface PsBaseModelMeta {
     total: number;
     skipped: number;
     perPage: number;

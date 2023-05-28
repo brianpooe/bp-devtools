@@ -1,12 +1,13 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { NsPaystackConfigModel } from '../models';
+import { PsConfigModel } from '../models';
 import { HttpService } from '@nestjs/axios';
 import { Observable } from 'rxjs';
 import { AxiosRequestConfig } from 'axios';
 import {
-    InitializeTransactionRequestModel,
-    InitializeTransactionResponseModel,
-    VerifyTransactionResponseModel
+    PsInitializeTransactionRequestModel,
+    PsInitializeTransactionResponseModel,
+    PsVerifyTransactionResponseModel,
+    PsListTransactionsResponseModel
 } from '../models';
 import { handleResponseAndError, MODULE_OPTIONS_TOKEN } from '../helpers';
 
@@ -21,15 +22,15 @@ export class NsPaystackService {
 
     constructor(
         @Inject(MODULE_OPTIONS_TOKEN)
-        private readonly options: NsPaystackConfigModel,
+        private readonly options: PsConfigModel,
         private readonly httpService: HttpService
     ) {}
 
     initializeTransaction(
-        payload: InitializeTransactionRequestModel
-    ): Observable<InitializeTransactionResponseModel> {
+        payload: PsInitializeTransactionRequestModel
+    ): Observable<PsInitializeTransactionResponseModel> {
         return this.httpService
-            .post<InitializeTransactionResponseModel>(
+            .post<PsInitializeTransactionResponseModel>(
                 'transaction/initialize',
                 payload,
                 this.requestOptions
@@ -39,9 +40,21 @@ export class NsPaystackService {
 
     verifyTransaction(
         reference: string
-    ): Observable<VerifyTransactionResponseModel> {
+    ): Observable<PsVerifyTransactionResponseModel> {
         return this.httpService
-            .get(`transaction/verify/${reference}`, this.requestOptions)
+            .get<PsVerifyTransactionResponseModel>(
+                `transaction/verify/${reference}`,
+                this.requestOptions
+            )
+            .pipe(handleResponseAndError());
+    }
+
+    listTransactions(): Observable<PsListTransactionsResponseModel> {
+        return this.httpService
+            .get<PsListTransactionsResponseModel>(
+                'transaction',
+                this.requestOptions
+            )
             .pipe(handleResponseAndError());
     }
 }

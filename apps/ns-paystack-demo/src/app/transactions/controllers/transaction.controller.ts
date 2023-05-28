@@ -1,11 +1,11 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
-import { TransactionService } from '../services/transaction.service';
 import {
-    InitializeTransactionRequestModel,
-    InitializeTransactionResponseModel,
-    VerifyTransactionResponseModel,
+    PsInitializeTransactionRequestModel,
+    PsInitializeTransactionResponseModel,
+    PsVerifyTransactionResponseModel
 } from '@bp-devtools/ns-paystack';
 import { Observable } from 'rxjs';
+import { TransactionService } from '../services/transaction.service';
 
 @Controller('transaction')
 export class TransactionController {
@@ -13,15 +13,15 @@ export class TransactionController {
 
     @Post('initialize')
     initialize(
-        @Body() payload: InitializeTransactionRequestModel
-    ): Observable<InitializeTransactionResponseModel> {
+        @Body() payload: PsInitializeTransactionRequestModel
+    ): Observable<PsInitializeTransactionResponseModel> {
         return this.transactionService.initializeTransaction(payload);
     }
 
     @Get('verify/:reference')
     verifyTransaction(
         @Param('reference') reference: string
-    ): Observable<VerifyTransactionResponseModel> {
+    ): Observable<PsVerifyTransactionResponseModel> {
         return this.transactionService.verifyTransaction(reference);
     }
 }
