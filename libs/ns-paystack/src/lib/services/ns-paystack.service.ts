@@ -1,28 +1,29 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { PsConfigModel } from '../models';
+import {
+    PsConfigModel,
+    PsInitializeTransactionRequestModel,
+    PsInitializeTransactionResponseModel,
+    PsListTransactionsQueryParamModel,
+    PsListTransactionsResponseModel,
+    PsVerifyTransactionResponseModel
+} from '../models';
 import { HttpService } from '@nestjs/axios';
 import { Observable } from 'rxjs';
 import { AxiosRequestConfig } from 'axios';
-import {
-    PsInitializeTransactionRequestModel,
-    PsInitializeTransactionResponseModel,
-    PsVerifyTransactionResponseModel,
-    PsListTransactionsResponseModel
-} from '../models';
 import { handleResponseAndError, MODULE_OPTIONS_TOKEN } from '../helpers';
 
 @Injectable()
 export class NsPaystackService {
-    requestOptions: AxiosRequestConfig = {
+    axiosRequestConfig: AxiosRequestConfig = {
         headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${this.options.secretKey}`
+            Authorization: `Bearer ${this.appConfig.secretKey}`
         }
     };
 
     constructor(
         @Inject(MODULE_OPTIONS_TOKEN)
-        private readonly options: PsConfigModel,
+        private readonly appConfig: PsConfigModel,
         private readonly httpService: HttpService
     ) {}
 
@@ -33,7 +34,7 @@ export class NsPaystackService {
             .post<PsInitializeTransactionResponseModel>(
                 'transaction/initialize',
                 payload,
-                this.requestOptions
+                this.axiosRequestConfig
             )
             .pipe(handleResponseAndError());
     }
@@ -44,17 +45,19 @@ export class NsPaystackService {
         return this.httpService
             .get<PsVerifyTransactionResponseModel>(
                 `transaction/verify/${reference}`,
-                this.requestOptions
+                this.axiosRequestConfig
             )
             .pipe(handleResponseAndError());
     }
 
-    listTransactions(): Observable<PsListTransactionsResponseModel> {
+    listTransactions(
+        queryParamsPayload: PsListTransactionsQueryParamModel
+    ): Observable<PsListTransactionsResponseModel> {
         return this.httpService
-            .get<PsListTransactionsResponseModel>(
-                'transaction',
-                this.requestOptions
-            )
+            .get<PsListTransactionsResponseModel>('transaction', {
+                ...this.axiosRequestConfig,
+                params: queryParamsPayload
+            })
             .pipe(handleResponseAndError());
     }
 }

@@ -1,7 +1,9 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
 import {
     PsInitializeTransactionRequestModel,
     PsInitializeTransactionResponseModel,
+    PsListTransactionsQueryParamModel,
+    PsListTransactionsResponseModel,
     PsVerifyTransactionResponseModel
 } from '@bp-devtools/ns-paystack';
 import { Observable } from 'rxjs';
@@ -23,5 +25,12 @@ export class TransactionController {
         @Param('reference') reference: string
     ): Observable<PsVerifyTransactionResponseModel> {
         return this.transactionService.verifyTransaction(reference);
+    }
+
+    @Get()
+    listTransactions(
+        @Query() queryParamsPayload: PsListTransactionsQueryParamModel
+    ): Observable<PsListTransactionsResponseModel> {
+        return this.transactionService.listTransactions(queryParamsPayload);
     }
 }

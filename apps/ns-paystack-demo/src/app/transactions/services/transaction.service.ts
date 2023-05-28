@@ -3,6 +3,8 @@ import {
     NsPaystackService,
     PsInitializeTransactionRequestModel,
     PsInitializeTransactionResponseModel,
+    PsListTransactionsQueryParamModel,
+    PsListTransactionsResponseModel,
     PsVerifyTransactionResponseModel
 } from '@bp-devtools/ns-paystack';
 
@@ -22,5 +24,11 @@ export class TransactionService {
         reference: string
     ): Observable<PsVerifyTransactionResponseModel> {
         return this.nsPaystackService.verifyTransaction(reference);
+    }
+
+    listTransactions(
+        queryParamsPayload: PsListTransactionsQueryParamModel
+    ): Observable<PsListTransactionsResponseModel> {
+        return this.nsPaystackService.listTransactions(queryParamsPayload);
     }
 }
