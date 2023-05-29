@@ -28,6 +28,11 @@ export class PsTransactionsService {
         private readonly httpService: HttpService
     ) {}
 
+    /**
+     * Initialize a transaction
+     * @param payload
+     * @returns PsInitializeTransactionResponseModel
+     */
     initializeTransaction(
         payload: PsInitializeTransactionRequestModel
     ): Observable<PsInitializeTransactionResponseModel> {
@@ -40,6 +45,11 @@ export class PsTransactionsService {
             .pipe(handleResponseAndError());
     }
 
+    /**
+     * Confirm the status of a transaction
+     * @param reference - The transaction reference used to initiate the transaction
+     * @returns PsVerifyTransactionResponseModel
+     */
     verifyTransaction(
         reference: string
     ): Observable<PsVerifyTransactionResponseModel> {
@@ -51,6 +61,11 @@ export class PsTransactionsService {
             .pipe(handleResponseAndError());
     }
 
+    /**
+     * List transactions carried out on your integration
+     * @param queryParamsPayload - query parameters
+     * @returns PsListTransactionsResponseModel
+     */
     listTransactions(
         queryParamsPayload: PsListTransactionsQueryParamsModel
     ): Observable<PsListTransactionsResponseModel> {
@@ -62,6 +77,11 @@ export class PsTransactionsService {
             .pipe(handleResponseAndError());
     }
 
+    /**
+     * Get details of a transaction carried out on your integration
+     * @param transactionId - An ID for the transaction to fetch
+     * @returns PsFetchTransactionResponseModel
+     */
     fetchTransaction(
         transactionId: number
     ): Observable<PsFetchTransactionResponseModel> {
