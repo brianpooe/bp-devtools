@@ -31,9 +31,6 @@ To get started with the bp-devtools monorepo, follow these steps:
 ### Angular Libraries
 
 1. **angular-library1**: Description of library1 for Angular.
-  - Features:
-    - Feature 1
-    - Feature 2
   - Usage:
     - Installation: `npm install @bp-devtools/angular-library1`
     - Documentation: [Link to documentation](https://github.com/bp-devtools/bp-devtools/tree/main/libraries/angular-library1)
