@@ -12,6 +12,8 @@ import { HttpService } from '@nestjs/axios';
 import { Observable } from 'rxjs';
 import { AxiosRequestConfig } from 'axios';
 import { handleResponseAndError, MODULE_OPTIONS_TOKEN } from '../../helpers';
+import { PsChargeTransactionRequestModel } from '../../models/ps-charge-transaction-request.model';
+import { PsChargeTransactionResponseModel } from '../../models/ps-charge-transaction-response.model';
 
 @Injectable()
 export class PsTransactionsService {
@@ -88,6 +90,23 @@ export class PsTransactionsService {
         return this.httpService
             .get<PsFetchTransactionResponseModel>(
                 `transaction/${transactionId}`,
+                this.axiosRequestConfig
+            )
+            .pipe(handleResponseAndError());
+    }
+
+    /**
+     * All authorizations marked as reusable can be charged with this endpoint whenever you need to receive payments
+     * @param payload
+     * @returns PsChargeTransactionResponseModel
+     */
+    chargeTransaction(
+        payload: PsChargeTransactionRequestModel
+    ): Observable<PsChargeTransactionResponseModel> {
+        return this.httpService
+            .post<PsInitializeTransactionResponseModel>(
+                'transaction/charge_authorization',
+                payload,
                 this.axiosRequestConfig
             )
             .pipe(handleResponseAndError());

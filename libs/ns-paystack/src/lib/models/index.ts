@@ -11,3 +11,5 @@ export * from './ps-list-transactions-response.model';
 export * from './ps-log.model';
 export * from './ps-metadata.model';
 export * from './ps-verify-transaction-response.model';
+export * from './ps-charge-transaction-request.model';
+export * from './ps-charge-transaction-response.model';

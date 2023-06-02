@@ -1,5 +1,7 @@
 import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
 import {
+    PsChargeTransactionRequestModel,
+    PsChargeTransactionResponseModel,
     PsFetchTransactionResponseModel,
     PsInitializeTransactionRequestModel,
     PsInitializeTransactionResponseModel,
@@ -40,5 +42,12 @@ export class TransactionController {
         @Param('transactionId') transactionId: number
     ): Observable<PsFetchTransactionResponseModel> {
         return this.transactionsService.fetchTransaction(transactionId);
+    }
+
+    @Post('charge_authorization')
+    chargeTransaction(
+        @Body() payload: PsChargeTransactionRequestModel
+    ): Observable<PsChargeTransactionResponseModel> {
+        return this.transactionsService.chargeTransaction(payload);
     }
 }
