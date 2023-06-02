@@ -116,16 +116,16 @@ export class TransactionController {
 
 ### API ENDPOINTS
 
-- [ ] __Transactions__ &#x23F3; (in progress)
-  - [ ] Initialize Transaction <span style="color:green;">&#x2714;</span> (completed)
-  - [ ] Verify Transaction <span style="color:green;">&#x2714;</span> (completed)
-  - [ ] List Transaction <span style="color:green;">&#x2714;</span> (completed)
-  - [ ] Fetch Transaction <span style="color:green;">&#x2714;</span> (completed)
-  - [ ] Charge Transaction &#x23F3; (in progress)
-  - [ ] View Transaction Timeline &#x23F3; (in progress)
-  - [ ] Transaction Totals &#x23F3; (in progress)
-  - [ ] Export Transaction &#x23F3; (in progress)
-  - [ ] Partial Debit &#x23F3; (in progress)
+- [ ] __Transactions__ &#x23F3;
+  - [X] Initialize Transaction <span style="color:green;">&#x2714;</span>
+  - [X] Verify Transaction <span style="color:green;">&#x2714;</span>
+  - [X] List Transaction <span style="color:green;">&#x2714;</span>
+  - [X] Fetch Transaction <span style="color:green;">&#x2714;</span>
+  - [X] Charge Transaction &#x23F3;
+  - [ ] View Transaction Timeline &#x23F3;
+  - [ ] Transaction Totals &#x23F3;
+  - [ ] Export Transaction &#x23F3;
+  - [ ] Partial Debit &#x23F3;
 - [ ] __Transaction Splits__
 - [ ] __Terminal__
 - [ ] __Customers__
