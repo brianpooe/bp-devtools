@@ -116,7 +116,7 @@ export class TransactionController {
 
 ### API ENDPOINTS
 
-- [ ] Transactions &#x23F3; (in progress)
+- [ ] __Transactions__ &#x23F3; (in progress)
   - [ ] Initialize Transaction <span style="color:green;">&#x2714;</span> (completed)
   - [ ] Verify Transaction <span style="color:green;">&#x2714;</span> (completed)
   - [ ] List Transaction <span style="color:green;">&#x2714;</span> (completed)
@@ -126,30 +126,31 @@ export class TransactionController {
   - [ ] Transaction Totals &#x23F3; (in progress)
   - [ ] Export Transaction &#x23F3; (in progress)
   - [ ] Partial Debit &#x23F3; (in progress)
-- [ ] Transaction Splits
-- [ ] Terminal
-- [ ] Customers
-- [ ] Dedicated Virtual Accounts
-- [ ] Apple Pay
-- [ ] Subaccounts
-- [ ] Plans
-- [ ] Subscriptions
-- [ ] Products
-- [ ] Payment Pages
-- [ ] Payment Requests
-- [ ] Settlements
-- [ ] Transaction Recipients
-- [ ] Transfers
-- [ ] Transfers Control
-- [ ] Bulk Charges
-- [ ] Integration
-- [ ] Charge
-- [ ] Disputes
-- [ ] Refunds
-- [ ] Verification
-- [ ] Miscellaneous
+- [ ] __Transaction Splits__
+- [ ] __Terminal__
+- [ ] __Customers__
+- [ ] __Dedicated Virtual Accounts__
+- [ ] __Apple Pay__
+- [ ] __Subaccounts__
+- [ ] __Plans__
+- [ ] __Subscriptions__
+- [ ] __Products__
+- [ ] __Payment Pages__
+- [ ] __Payment Requests__
+- [ ] __Settlements__
+- [ ] __Transaction Recipients__
+- [ ] __Transfers__
+- [ ] __Transfers Control__
+- [ ] __Bulk Charges__
+- [ ] __Integration__
+- [ ] __Charge__
+- [ ] __Disputes__
+- [ ] __Refunds__
+- [ ] __Verification__
+- [ ] __Miscellaneous__
 
 ## Contributing
+
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a
 pull request on the GitHub repository.
 
