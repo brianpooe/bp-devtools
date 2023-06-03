@@ -29,11 +29,7 @@ To get started with the bp-devtools monorepo, follow these steps:
     - Documentation: [Link to documentation](https://github.com/brianpooe/bp-devtools/blob/main/libs/ns-paystack/README.md)
 
 ### Angular Libraries
-
-1. **angular-library1**: Description of library1 for Angular.
-  - Usage:
-    - Installation: `npm install @bp-devtools/angular-library1`
-    - Documentation: [Link to documentation](https://github.com/bp-devtools/bp-devtools/tree/main/libraries/angular-library1)
+Coming soon...
 
 ## Contributing
 
