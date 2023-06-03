@@ -8,7 +8,8 @@ import {
     PsVerifyTransactionResponseModel,
     PsFetchTransactionResponseModel,
     PsChargeTransactionRequestModel,
-    PsChargeTransactionResponseModel
+    PsChargeTransactionResponseModel,
+    PsViewTransactionTimeLineResponseModel
 } from '@bp-devtools/ns-paystack';
 import { Observable } from 'rxjs';
 
@@ -46,5 +47,13 @@ export class TransactionsService {
         payload: PsChargeTransactionRequestModel
     ): Observable<PsChargeTransactionResponseModel> {
         return this.psTransactionsService.chargeTransaction(payload);
+    }
+
+    viewTransactionTimeline(
+        idOrReference: string
+    ): Observable<PsViewTransactionTimeLineResponseModel> {
+        return this.psTransactionsService.viewTransactionTimeline(
+            idOrReference
+        );
     }
 }

@@ -14,6 +14,7 @@ import { AxiosRequestConfig } from 'axios';
 import { handleResponseAndError, MODULE_OPTIONS_TOKEN } from '../../helpers';
 import { PsChargeTransactionRequestModel } from '../../models/ps-charge-transaction-request.model';
 import { PsChargeTransactionResponseModel } from '../../models/ps-charge-transaction-response.model';
+import { PsViewTransactionTimeLineResponseModel } from '../../models/ps-view-transaction-time-line-response.model';
 
 @Injectable()
 export class PsTransactionsService {
@@ -107,6 +108,22 @@ export class PsTransactionsService {
             .post<PsInitializeTransactionResponseModel>(
                 'transaction/charge_authorization',
                 payload,
+                this.axiosRequestConfig
+            )
+            .pipe(handleResponseAndError());
+    }
+
+    /**
+     * View the timeline of a transaction
+     * @param idOrReference
+     * @returns PsViewTransactionTimeLineResponseModel
+     */
+    viewTransactionTimeline(
+        idOrReference: string
+    ): Observable<PsViewTransactionTimeLineResponseModel> {
+        return this.httpService
+            .get<PsViewTransactionTimeLineResponseModel>(
+                `transaction/timeline/${idOrReference}`,
                 this.axiosRequestConfig
             )
             .pipe(handleResponseAndError());

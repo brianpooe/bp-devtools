@@ -121,8 +121,8 @@ export class TransactionController {
   - [X] Verify Transaction <span style="color:green;">&#x2714;</span>
   - [X] List Transaction <span style="color:green;">&#x2714;</span>
   - [X] Fetch Transaction <span style="color:green;">&#x2714;</span>
-  - [X] Charge Transaction &#x23F3;
-  - [ ] View Transaction Timeline &#x23F3;
+  - [X] Charge Transaction <span style="color:green;">&#x2714;</span>
+  - [X] View Transaction Timeline <span style="color:green;">&#x2714;</span>
   - [ ] Transaction Totals &#x23F3;
   - [ ] Export Transaction &#x23F3;
   - [ ] Partial Debit &#x23F3;

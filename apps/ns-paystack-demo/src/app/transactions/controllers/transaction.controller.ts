@@ -7,7 +7,8 @@ import {
     PsInitializeTransactionResponseModel,
     PsListTransactionsQueryParamsModel,
     PsListTransactionsResponseModel,
-    PsVerifyTransactionResponseModel
+    PsVerifyTransactionResponseModel,
+    PsViewTransactionTimeLineResponseModel
 } from '@bp-devtools/ns-paystack';
 import { Observable } from 'rxjs';
 import { TransactionsService } from '../services/transactions.service';
@@ -49,5 +50,12 @@ export class TransactionController {
         @Body() payload: PsChargeTransactionRequestModel
     ): Observable<PsChargeTransactionResponseModel> {
         return this.transactionsService.chargeTransaction(payload);
+    }
+
+    @Get('timeline/:idOrReference')
+    viewTransactionTimeline(
+        @Param('idOrReference') idOrReference: string
+    ): Observable<PsViewTransactionTimeLineResponseModel> {
+        return this.transactionsService.viewTransactionTimeline(idOrReference);
     }
 }

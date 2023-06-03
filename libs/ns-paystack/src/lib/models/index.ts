@@ -13,3 +13,4 @@ export * from './ps-metadata.model';
 export * from './ps-verify-transaction-response.model';
 export * from './ps-charge-transaction-request.model';
 export * from './ps-charge-transaction-response.model';
+export * from './ps-view-transaction-time-line-response.model';
