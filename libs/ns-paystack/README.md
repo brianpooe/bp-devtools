@@ -126,7 +126,13 @@ export class TransactionController {
   - [X] Transaction Totals <span style="color:green;">&#x2714;</span>
   - [X] Export Transaction <span style="color:green;">&#x2714;</span>
   - [X] Partial Debit <span style="color:green;">&#x2714;</span>
-- [ ] __Transaction Splits__
+- [ ] __Transaction Splits__ &#x23F3;
+  - [ ] Create Split &#x23F3;
+  - [ ] List Split &#x23F3;
+  - [ ] Fetch Split &#x23F3;
+  - [ ] Update Split &#x23F3;
+  - [ ] Add/Update Subaccount Split &#x23F3;
+  - [ ] Remove Subaccount from Split &#x23F3;
 - [ ] __Terminal__
 - [ ] __Customers__
 - [ ] __Dedicated Virtual Accounts__
