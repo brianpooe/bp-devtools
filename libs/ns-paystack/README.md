@@ -116,7 +116,7 @@ export class TransactionController {
 
 ### API ENDPOINTS
 
-- [ ] __Transactions__ <span style="color:green;">&#x2714;</span>
+- [X] __Transactions__ <span style="color:green;">&#x2714;</span>
   - [X] Initialize Transaction <span style="color:green;">&#x2714;</span>
   - [X] Verify Transaction <span style="color:green;">&#x2714;</span>
   - [X] List Transaction <span style="color:green;">&#x2714;</span>
