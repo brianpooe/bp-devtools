@@ -1,5 +1,13 @@
 {
   "name": "@bp-devtools/ns-paystack",
-  "version": "0.0.1",
-  "type": "commonjs"
+  "version": "0.0.0-semantic-release",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brianpooe/bp-devtools",
+    "directory": "packages/ns-paystack"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
 }

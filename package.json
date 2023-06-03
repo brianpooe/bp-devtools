@@ -2,22 +2,30 @@
   "name": "@bp-devtools/source",
   "version": "0.0.0",
   "license": "MIT",
+  "author": {
+    "name": "Brian Pooe",
+    "email": "brian.method@gmail.com"
+  },
   "scripts": {
     "start:api:demo": "nx serve ns-paystack-demo"
   },
   "private": true,
   "dependencies": {
     "@nestjs/axios": "^2.0.0",
-    "@nestjs/common": "^9.1.1",
     "@nestjs/config": "^2.3.2",
-    "@nestjs/core": "^9.1.1",
-    "@nestjs/platform-express": "^9.1.1",
     "axios": "^1.4.0",
-    "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.8.0",
+    "semantic-release-npm-github-publish": "^1.5.4",
+    "semantic-release-plus": "^20.0.0",
     "tslib": "^2.3.0"
   },
+  "peerDependencies": {
+    "@nestjs/common": "^9.1.1",
+    "@nestjs/core": "^9.1.1",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.0"
+  },
   "devDependencies": {
+    "@nestjs/platform-express": "^9.1.1",
     "@nestjs/schematics": "^9.1.0",
     "@nestjs/testing": "^9.1.1",
     "@nx/eslint-plugin": "16.2.1",
@@ -42,5 +50,20 @@
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "typescript": "~5.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brianpooe/bp-devtools"
+  },
+  "keywords": [
+    "nestjs",
+    "paystack",
+    "ns-paystack",
+    "library",
+    "monorepo",
+    "wrapper",
+    "payment",
+    "integration",
+    "API"
+  ]
 }
