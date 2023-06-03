@@ -1,11 +1,13 @@
 import { Inject, Injectable } from '@nestjs/common';
 import {
     PsConfigModel,
+    PsExportTransactionResponseModel,
     PsFetchTransactionResponseModel,
     PsInitializeTransactionRequestModel,
     PsInitializeTransactionResponseModel,
     PsListTransactionsQueryParamsModel,
     PsListTransactionsResponseModel,
+    PsTransactionTotalsResponseModel,
     PsVerifyTransactionResponseModel
 } from '../../models';
 import { HttpService } from '@nestjs/axios';
@@ -15,6 +17,8 @@ import { handleResponseAndError, MODULE_OPTIONS_TOKEN } from '../../helpers';
 import { PsChargeTransactionRequestModel } from '../../models/ps-charge-transaction-request.model';
 import { PsChargeTransactionResponseModel } from '../../models/ps-charge-transaction-response.model';
 import { PsViewTransactionTimeLineResponseModel } from '../../models/ps-view-transaction-time-line-response.model';
+import { PsTransactionTotalsRequestModel } from '../../models/ps-transaction-totals-request.model';
+import { PsExportTransactionRequestModel } from '../../models/ps-export-transaction-request.model';
 
 @Injectable()
 export class PsTransactionsService {
@@ -34,7 +38,6 @@ export class PsTransactionsService {
     /**
      * Initialize a transaction
      * @param payload
-     * @returns PsInitializeTransactionResponseModel
      */
     initializeTransaction(
         payload: PsInitializeTransactionRequestModel
@@ -51,7 +54,6 @@ export class PsTransactionsService {
     /**
      * Confirm the status of a transaction
      * @param reference - The transaction reference used to initiate the transaction
-     * @returns PsVerifyTransactionResponseModel
      */
     verifyTransaction(
         reference: string
@@ -67,7 +69,6 @@ export class PsTransactionsService {
     /**
      * List transactions carried out on your integration
      * @param queryParamsPayload - query parameters
-     * @returns PsListTransactionsResponseModel
      */
     listTransactions(
         queryParamsPayload: PsListTransactionsQueryParamsModel
@@ -83,7 +84,6 @@ export class PsTransactionsService {
     /**
      * Get details of a transaction carried out on your integration
      * @param transactionId - An ID for the transaction to fetch
-     * @returns PsFetchTransactionResponseModel
      */
     fetchTransaction(
         transactionId: number
@@ -99,7 +99,6 @@ export class PsTransactionsService {
     /**
      * All authorizations marked as reusable can be charged with this endpoint whenever you need to receive payments
      * @param payload
-     * @returns PsChargeTransactionResponseModel
      */
     chargeTransaction(
         payload: PsChargeTransactionRequestModel
@@ -115,8 +114,7 @@ export class PsTransactionsService {
 
     /**
      * View the timeline of a transaction
-     * @param idOrReference
-     * @returns PsViewTransactionTimeLineResponseModel
+     * @param idOrReference - The ID or the reference of the transaction
      */
     viewTransactionTimeline(
         idOrReference: string
@@ -126,6 +124,36 @@ export class PsTransactionsService {
                 `transaction/timeline/${idOrReference}`,
                 this.axiosRequestConfig
             )
+            .pipe(handleResponseAndError());
+    }
+
+    /**
+     * Total amount received on your account
+     * @param queryParamsPayload
+     */
+    transactionTotals(
+        queryParamsPayload: PsTransactionTotalsRequestModel
+    ): Observable<PsTransactionTotalsResponseModel> {
+        return this.httpService
+            .get<PsTransactionTotalsResponseModel>(`transaction/totals`, {
+                ...this.axiosRequestConfig,
+                params: queryParamsPayload
+            })
+            .pipe(handleResponseAndError());
+    }
+
+    /**
+     * Export a list of transactions carried out on your integration
+     * @param queryParamsPayload
+     */
+    exportTransaction(
+        queryParamsPayload: PsExportTransactionRequestModel
+    ): Observable<PsExportTransactionResponseModel> {
+        return this.httpService
+            .get<PsTransactionTotalsResponseModel>(`transaction/export`, {
+                ...this.axiosRequestConfig,
+                params: queryParamsPayload
+            })
             .pipe(handleResponseAndError());
     }
 }

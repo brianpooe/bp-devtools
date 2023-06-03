@@ -6,10 +6,10 @@ import {
 } from './';
 
 export interface PsVerifyTransactionResponseModel extends PsBaseModel {
-    data: PsVerifyTransactionDataEntityModel;
+    data: PsVerifyTransactionResponseDataModel;
 }
 
-export interface PsVerifyTransactionDataEntityModel {
+export interface PsVerifyTransactionResponseDataModel {
     id: number;
     domain: string;
     status: string;

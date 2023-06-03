@@ -9,7 +9,11 @@ import {
     PsFetchTransactionResponseModel,
     PsChargeTransactionRequestModel,
     PsChargeTransactionResponseModel,
-    PsViewTransactionTimeLineResponseModel
+    PsViewTransactionTimeLineResponseModel,
+    PsTransactionTotalsResponseModel,
+    PsTransactionTotalsRequestModel,
+    PsExportTransactionRequestModel,
+    PsExportTransactionResponseModel
 } from '@bp-devtools/ns-paystack';
 import { Observable } from 'rxjs';
 
@@ -55,5 +59,17 @@ export class TransactionsService {
         return this.psTransactionsService.viewTransactionTimeline(
             idOrReference
         );
+    }
+
+    transactionTotals(
+        queryParamsPayload: PsTransactionTotalsRequestModel
+    ): Observable<PsTransactionTotalsResponseModel> {
+        return this.psTransactionsService.transactionTotals(queryParamsPayload);
+    }
+
+    exportTransaction(
+        queryParamsPayload: PsExportTransactionRequestModel
+    ): Observable<PsExportTransactionResponseModel> {
+        return this.psTransactionsService.exportTransaction(queryParamsPayload);
     }
 }

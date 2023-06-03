@@ -1,10 +1,10 @@
 import { PsBaseModel, PsHistoryModel } from './';
 
 export interface PsViewTransactionTimeLineResponseModel extends PsBaseModel {
-    data: PsViewTransactionTimeLineDataModel;
+    data: PsViewTransactionTimeLineResponseDataModel;
 }
 
-export interface PsViewTransactionTimeLineDataModel {
+export interface PsViewTransactionTimeLineResponseDataModel {
     time_spent: number;
     attempts: number;
     authentication?: null;

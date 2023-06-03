@@ -7,10 +7,10 @@
 } from './';
 
 export interface PsListTransactionsResponseModel extends PsBaseModel {
-    data?: PsListTransactionsDataEntityModel[] | null;
+    data?: PsListTransactionsResponseDataModel[] | null;
 }
 
-export interface PsListTransactionsDataEntityModel {
+export interface PsListTransactionsResponseDataModel {
     id: number;
     domain: string;
     status: string;

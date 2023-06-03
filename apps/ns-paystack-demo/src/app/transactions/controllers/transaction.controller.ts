@@ -2,11 +2,15 @@ import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
 import {
     PsChargeTransactionRequestModel,
     PsChargeTransactionResponseModel,
+    PsExportTransactionRequestModel,
+    PsExportTransactionResponseModel,
     PsFetchTransactionResponseModel,
     PsInitializeTransactionRequestModel,
     PsInitializeTransactionResponseModel,
     PsListTransactionsQueryParamsModel,
     PsListTransactionsResponseModel,
+    PsTransactionTotalsRequestModel,
+    PsTransactionTotalsResponseModel,
     PsVerifyTransactionResponseModel,
     PsViewTransactionTimeLineResponseModel
 } from '@bp-devtools/ns-paystack';
@@ -57,5 +61,19 @@ export class TransactionController {
         @Param('idOrReference') idOrReference: string
     ): Observable<PsViewTransactionTimeLineResponseModel> {
         return this.transactionsService.viewTransactionTimeline(idOrReference);
+    }
+
+    @Get()
+    transactionTotals(
+        @Query() queryParamsPayload: PsTransactionTotalsRequestModel
+    ): Observable<PsTransactionTotalsResponseModel> {
+        return this.transactionsService.transactionTotals(queryParamsPayload);
+    }
+
+    @Get()
+    exportTransaction(
+        @Query() queryParamsPayload: PsExportTransactionRequestModel
+    ): Observable<PsExportTransactionResponseModel> {
+        return this.transactionsService.exportTransaction(queryParamsPayload);
     }
 }

@@ -14,3 +14,7 @@ export * from './ps-verify-transaction-response.model';
 export * from './ps-charge-transaction-request.model';
 export * from './ps-charge-transaction-response.model';
 export * from './ps-view-transaction-time-line-response.model';
+export * from './ps-transaction-totals-response.model';
+export * from './ps-transaction-totals-request.model';
+export * from './ps-export-transaction-response.model';
+export * from './ps-export-transaction-request.model';

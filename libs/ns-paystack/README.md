@@ -123,8 +123,8 @@ export class TransactionController {
   - [X] Fetch Transaction <span style="color:green;">&#x2714;</span>
   - [X] Charge Transaction <span style="color:green;">&#x2714;</span>
   - [X] View Transaction Timeline <span style="color:green;">&#x2714;</span>
-  - [ ] Transaction Totals &#x23F3;
-  - [ ] Export Transaction &#x23F3;
+  - [X] Transaction Totals <span style="color:green;">&#x2714;</span>
+  - [X] Export Transaction <span style="color:green;">&#x2714;</span>
   - [ ] Partial Debit &#x23F3;
 - [ ] __Transaction Splits__
 - [ ] __Terminal__
