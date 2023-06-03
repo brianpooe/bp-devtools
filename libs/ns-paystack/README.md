@@ -116,7 +116,7 @@ export class TransactionController {
 
 ### API ENDPOINTS
 
-- [ ] __Transactions__ &#x23F3;
+- [ ] __Transactions__ <span style="color:green;">&#x2714;</span>
   - [X] Initialize Transaction <span style="color:green;">&#x2714;</span>
   - [X] Verify Transaction <span style="color:green;">&#x2714;</span>
   - [X] List Transaction <span style="color:green;">&#x2714;</span>
@@ -125,7 +125,7 @@ export class TransactionController {
   - [X] View Transaction Timeline <span style="color:green;">&#x2714;</span>
   - [X] Transaction Totals <span style="color:green;">&#x2714;</span>
   - [X] Export Transaction <span style="color:green;">&#x2714;</span>
-  - [ ] Partial Debit &#x23F3;
+  - [X] Partial Debit <span style="color:green;">&#x2714;</span>
 - [ ] __Transaction Splits__
 - [ ] __Terminal__
 - [ ] __Customers__

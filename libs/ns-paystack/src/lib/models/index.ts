@@ -18,3 +18,5 @@ export * from './ps-transaction-totals-response.model';
 export * from './ps-transaction-totals-request.model';
 export * from './ps-export-transaction-response.model';
 export * from './ps-export-transaction-request.model';
+export * from './ps-partial-debit-request.model';
+export * from './ps-partial-debit-response.model';

@@ -1,24 +1,26 @@
 import { Inject, Injectable } from '@nestjs/common';
 import {
+    PsChargeTransactionRequestModel,
+    PsChargeTransactionResponseModel,
     PsConfigModel,
+    PsExportTransactionRequestModel,
     PsExportTransactionResponseModel,
     PsFetchTransactionResponseModel,
     PsInitializeTransactionRequestModel,
     PsInitializeTransactionResponseModel,
     PsListTransactionsQueryParamsModel,
     PsListTransactionsResponseModel,
+    PsPartialDebitRequestModel,
+    PsPartialDebitResponseModel,
+    PsTransactionTotalsRequestModel,
     PsTransactionTotalsResponseModel,
-    PsVerifyTransactionResponseModel
+    PsVerifyTransactionResponseModel,
+    PsViewTransactionTimeLineResponseModel
 } from '../../models';
 import { HttpService } from '@nestjs/axios';
 import { Observable } from 'rxjs';
 import { AxiosRequestConfig } from 'axios';
 import { handleResponseAndError, MODULE_OPTIONS_TOKEN } from '../../helpers';
-import { PsChargeTransactionRequestModel } from '../../models/ps-charge-transaction-request.model';
-import { PsChargeTransactionResponseModel } from '../../models/ps-charge-transaction-response.model';
-import { PsViewTransactionTimeLineResponseModel } from '../../models/ps-view-transaction-time-line-response.model';
-import { PsTransactionTotalsRequestModel } from '../../models/ps-transaction-totals-request.model';
-import { PsExportTransactionRequestModel } from '../../models/ps-export-transaction-request.model';
 
 @Injectable()
 export class PsTransactionsService {
@@ -154,6 +156,22 @@ export class PsTransactionsService {
                 ...this.axiosRequestConfig,
                 params: queryParamsPayload
             })
+            .pipe(handleResponseAndError());
+    }
+
+    /**
+     * Retrieve part of a payment from a customer
+     * @param payload
+     */
+    partialDebit(
+        payload: PsPartialDebitRequestModel
+    ): Observable<PsPartialDebitResponseModel> {
+        return this.httpService
+            .post<PsInitializeTransactionResponseModel>(
+                'transaction/partial_debit',
+                payload,
+                this.axiosRequestConfig
+            )
             .pipe(handleResponseAndError());
     }
 }

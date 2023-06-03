@@ -13,7 +13,9 @@ import {
     PsTransactionTotalsResponseModel,
     PsTransactionTotalsRequestModel,
     PsExportTransactionRequestModel,
-    PsExportTransactionResponseModel
+    PsExportTransactionResponseModel,
+    PsPartialDebitRequestModel,
+    PsPartialDebitResponseModel
 } from '@bp-devtools/ns-paystack';
 import { Observable } from 'rxjs';
 
@@ -71,5 +73,11 @@ export class TransactionsService {
         queryParamsPayload: PsExportTransactionRequestModel
     ): Observable<PsExportTransactionResponseModel> {
         return this.psTransactionsService.exportTransaction(queryParamsPayload);
+    }
+
+    partialDebit(
+        payload: PsPartialDebitRequestModel
+    ): Observable<PsPartialDebitResponseModel> {
+        return this.psTransactionsService.partialDebit(payload);
     }
 }

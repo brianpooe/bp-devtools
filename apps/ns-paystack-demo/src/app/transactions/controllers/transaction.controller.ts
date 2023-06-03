@@ -9,6 +9,8 @@ import {
     PsInitializeTransactionResponseModel,
     PsListTransactionsQueryParamsModel,
     PsListTransactionsResponseModel,
+    PsPartialDebitRequestModel,
+    PsPartialDebitResponseModel,
     PsTransactionTotalsRequestModel,
     PsTransactionTotalsResponseModel,
     PsVerifyTransactionResponseModel,
@@ -75,5 +77,12 @@ export class TransactionController {
         @Query() queryParamsPayload: PsExportTransactionRequestModel
     ): Observable<PsExportTransactionResponseModel> {
         return this.transactionsService.exportTransaction(queryParamsPayload);
+    }
+
+    @Post('partial_debit')
+    partialDebit(
+        @Body() payload: PsPartialDebitRequestModel
+    ): Observable<PsPartialDebitResponseModel> {
+        return this.transactionsService.partialDebit(payload);
     }
 }
