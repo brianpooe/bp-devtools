@@ -165,3 +165,6 @@ pull request on the GitHub repository.
 The bp-devtools monorepo is released under
 the [MIT License](https://github.com/brianpooe/bp-devtools/blob/main/LICENSE). Please make sure you understand its
 terms and conditions when using the libraries and tools provided in this repository.
+
+## Authors
+- [Brian Pooe](https://github.com/brianpooe)
