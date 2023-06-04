@@ -12,7 +12,7 @@
     "type": "commonjs",
     "repository": {
         "type": "git",
-        "url": "https://github.com/brianpooe/bp-devtools",
+        "url": "https://github.com/brianpooe/bp-devtools.git",
         "directory": "libs/ns-paystack"
     },
     "license": "MIT",
@@ -40,6 +40,7 @@
         "@nestjs/common": "^9.1.1",
         "@nestjs/core": "^9.1.1",
         "reflect-metadata": "^0.1.13",
-        "rxjs": "^7.8.0"
+        "rxjs": "^7.8.0",
+        "@nestjs/config": "^2.3.2"
     }
 }
