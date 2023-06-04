@@ -10,7 +10,6 @@
         "start:api:demo": "nx serve ns-paystack-demo",
         "prepare": "husky install"
     },
-    "private": false,
     "dependencies": {
         "@commitlint/cli": "^17.6.5",
         "@commitlint/config-conventional": "^17.6.5",
