@@ -9,7 +9,6 @@ module.exports = {
     tagFormat: artifactName + '-v${version}',
     commitPaths: ['force-release.md', `${appPath}/*`],
     branches: ['main'],
-    assets: [`${appPath}/README.md`, `${appPath}/CHANGELOG.md`],
     plugins: [
         '@semantic-release/commit-analyzer',
         '@semantic-release/release-notes-generator',
@@ -23,6 +22,7 @@ module.exports = {
         [
             '@semantic-release/git',
             {
+                assets: [`${appPath}/README.md`, `${appPath}/CHANGELOG.md`],
                 message:
                     `chore(release): ${artifactName}` +
                     '-v${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
