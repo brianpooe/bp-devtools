@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/brianpooe/bp-devtools/compare/ns-paystack-v1.0.2...ns-paystack-v1.0.3) (2023-06-04)
+
+
+### Bug Fixes
+
+* **ns-paystack:** update publish config to access public ([3e3ca34](https://github.com/brianpooe/bp-devtools/commit/3e3ca344b024d80ce92c5cf44ce07a49375ff953))
+
 ## [1.0.2](https://github.com/brianpooe/bp-devtools/compare/ns-paystack-v1.0.1...ns-paystack-v1.0.2) (2023-06-04)
 
 
