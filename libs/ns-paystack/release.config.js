@@ -3,6 +3,7 @@ const appPath = `libs/${appName}`;
 const artifactName = appName;
 
 module.exports = {
+    extends: 'release.config.base.js',
     name: appName,
     pkgRoot: `dist/${appPath}`,
     tagFormat: artifactName + '-v${version}',
