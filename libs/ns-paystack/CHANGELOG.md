@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/brianpooe/bp-devtools/compare/ns-paystack-v1.0.1...ns-paystack-v1.0.2) (2023-06-04)
+
+
+### Bug Fixes
+
+* **ns-paystack:** remove private field from package json ([d02bc77](https://github.com/brianpooe/bp-devtools/commit/d02bc77f962ee31f13f385ded6bb89f60995e755))
+
 ## [1.0.1](https://github.com/brianpooe/bp-devtools/compare/ns-paystack-v1.0.0...ns-paystack-v1.0.1) (2023-06-04)
 
 
