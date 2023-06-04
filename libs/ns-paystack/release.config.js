@@ -1,11 +1,13 @@
 const appName = 'ns-paystack';
-const srcRoot = `libs/${appName}`;
+const appPath = `libs/${appName}`;
+const artifactName = appName;
 
 module.exports = {
     extends: 'release.config.base.js',
-    pkgRoot: `dist/${srcRoot}`,
-    tagFormat: appName + '-v${version}',
-    commitPaths: [`${srcRoot}/*`],
+    debug: 'true',
+    name: appName,
+    tagFormat: artifactName + '-v${version}',
+    commitPaths: ['force-release.md', `${appPath}/*`],
     branches: ['main'],
     plugins: [
         '@semantic-release/commit-analyzer',
@@ -13,17 +15,20 @@ module.exports = {
         [
             '@semantic-release/changelog',
             {
-                changelogFile: `${srcRoot}/CHANGELOG.md`
+                changelogFile: `${appPath}/CHANGELOG.md`
             }
         ],
         '@semantic-release/npm',
+        {
+            pkgRoot: `dist/${appPath}`
+        },
         [
             '@semantic-release/git',
             {
-                assets: [`${srcRoot}/package.json`, `${srcRoot}/CHANGELOG.md`],
+                assets: [`${appPath}/README.md`, `${appPath}/CHANGELOG.md`],
                 message:
-                    `release(version): Release ${appName} ` +
-                    '${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
+                    `chore(release): ${artifactName}` +
+                    '-v${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
             }
         ]
     ]
