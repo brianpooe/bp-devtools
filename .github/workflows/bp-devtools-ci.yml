@@ -13,6 +13,12 @@ env:
 jobs:
     main:
         runs-on: ubuntu-latest
+
+        permissions:
+          packages: write
+          contents: write
+
+
         defaults:
             run:
                 working-directory: ${{ github.workspace }}
@@ -22,26 +28,28 @@ jobs:
                 npm-version: [9]
                 yarn-version: ['1.22.x']
                 pnpm-version: [7]
+
         steps:
             - name: Checkout [Pull Request]
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
               if: ${{ github.event_name == 'pull_request' }}
               with:
                   ref: ${{ github.event.pull_request.head.sha }}
-                  token: ${{ secrets.NPM_TOKEN }}
                   fetch-depth: 0
+
 
             - name: Checkout [Default Branch]
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
               if: ${{ github.event_name != 'pull_request' }}
               with:
-                  token: ${{ secrets.NPM_TOKEN }}
                   fetch-depth: 0
 
+
             - name: Derive appropriate SHAs for base and head for `nx affected` commands
-              uses: nrwl/nx-set-shas@v2
+              uses: nrwl/nx-set-shas@v3
               with:
                   main-branch-name: ${{ github.base_ref }}
+
 
             - name: Detect package manager
               id: package_manager
@@ -73,9 +81,10 @@ jobs:
                   if [[ $pnpm_ver != '' ]]; then echo "PNPM: $pnpm_ver"; fi
                   echo "::set-output name=node_version::${node_ver:1}"
 
+
             - name: Use the node_modules cache if available [npm]
               if: steps.package_manager.outputs.name == 'npm'
-              uses: actions/cache@v2
+              uses: actions/cache@v3
               with:
                   path: ~/.npm
                   key: ${{ runner.os }}-node-${{ steps.versions.outputs.node_version }}-${{ hashFiles('**/package-lock.json') }}
@@ -91,6 +100,7 @@ jobs:
                   restore-keys: |
                       ${{ runner.os }}-node-${{ steps.versions.outputs.node_version }}-
 
+
             - name: Get yarn cache directory path
               if: steps.package_manager.outputs.name == 'yarn'
               id: yarn-cache-dir-path
@@ -104,6 +114,8 @@ jobs:
                   key: ${{ runner.os }}-node-${{ steps.versions.outputs.node_version }}-yarn-${{ hashFiles('**/yarn.lock') }}
                   restore-keys: |
                       ${{ runner.os }}-node-${{ steps.versions.outputs.node_version }}-
+
+
 
             - name: Install dependencies
               run: |
