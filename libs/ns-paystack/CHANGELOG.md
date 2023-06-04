@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/brianpooe/bp-devtools/compare/ns-paystack-v1.0.0...ns-paystack-v1.0.1) (2023-06-04)
+
+
+### Bug Fixes
+
+* **ns-paystack:** marked repo to public ([64e525a](https://github.com/brianpooe/bp-devtools/commit/64e525a435be8ac687f1eb5079fff69042b1ea30))
+
 # 1.0.0 (2023-06-04)
 
 
