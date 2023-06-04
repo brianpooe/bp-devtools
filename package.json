@@ -59,10 +59,6 @@
     "ts-node": "10.9.1",
     "typescript": "~5.0.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/brianpooe/bp-devtools"
-  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
