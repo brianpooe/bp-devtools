@@ -1,5 +1,5 @@
 {
-    "name": "@brianpooe/ns-paystack",
+    "name": "@bp-devtools/ns-paystack",
     "description": "Powerful library that provides seamless integration with the Paystack payment gateway for your NestJS applications. You can easily handle payment transactions with minimal effort.",
     "version": "1.0.0",
     "scripts": {
@@ -33,7 +33,7 @@
     ],
     "publishConfig": {
         "access": "public",
-        "registry": "https://registry.npmjs.org/",
+        "registry": "https://npm.pkg.github.com",
         "tag": "latest"
     },
     "peerDependencies": {

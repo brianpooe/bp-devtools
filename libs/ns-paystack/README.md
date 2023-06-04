@@ -5,13 +5,13 @@ The wrapper provides a convenient way to integrate Paystack payment functionalit
 ## Installation
 
 ```shell
-npm install @brianpooe/ns-paystack
+npm install @bp-devtools/ns-paystack
 ```
 
 or
 
 ```shell
-yarn add @brianpooe/ns-paystack
+yarn add @bp-devtools/ns-paystack
 ```
 
 ## Configuration
@@ -22,7 +22,7 @@ dashboard. Once you have the API key, you can configure the wrapper in your Nest
 ```typescript
 import { Module } from '@nestjs/common';
 
-import { NsPaystackModule } from '@brianpooe/ns-paystack';
+import { NsPaystackModule } from '@bp-devtools/ns-paystack';
 import { ConfigService } from '@nestjs/config';
 import { TransactionsService } from './transactions/services/transactions.service';
 import { TransactionController } from './transactions/controllers/transaction.controller';
@@ -42,7 +42,7 @@ export class AppModule {}
 ```typescript
 import { Module } from '@nestjs/common';
 
-import { NsPaystackModule } from '@brianpooe/ns-paystack';
+import { NsPaystackModule } from '@bp-devtools/ns-paystack';
 import { ConfigService } from '@nestjs/config';
 
 @Module({
@@ -70,7 +70,7 @@ import {
     PsTransactionsService,
     PsInitializeTransactionRequestModel,
     PsInitializeTransactionResponseModel
-} from '@brianpooe/ns-paystack';
+} from '@bp-devtools/ns-paystack';
 
 @Injectable()
 export class TransactionsService {
@@ -94,7 +94,7 @@ import {
     PsFetchTransactionResponseModel,
     PsInitializeTransactionRequestModel,
     PsInitializeTransactionResponseModel
-} from '@brianpooe/ns-paystack';
+} from '@bp-devtools/ns-paystack';
 import { TransactionsService } from '../services/transactions.service';
 
 @Controller('transaction')
