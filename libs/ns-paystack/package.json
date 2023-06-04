@@ -1,13 +1,31 @@
 {
   "name": "@bp-devtools/ns-paystack",
-  "version": "0.0.0-semantic-release",
+  "description": "Powerful library that provides seamless integration with the Paystack payment gateway for your NestJS applications. You can easily handle payment transactions with minimal effort.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Brian Pooe",
+    "email": "brian.method@gmail.com"
+  },
   "type": "commonjs",
   "repository": {
     "type": "git",
     "url": "https://github.com/brianpooe/bp-devtools",
     "directory": "libs/ns-paystack"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  }
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brianpooe/bp-devtools/issues",
+    "email": "brian.method@gmail.com"
+  },
+  "homepage": "https://github.com/brianpooe/bp-devtools/tree/main/libs/ns-paystack",
+  "keywords": [
+    "nestjs",
+    "paystack",
+    "ns-paystack",
+    "library",
+    "wrapper",
+    "payment",
+    "integration",
+    "API"
+  ]
 }

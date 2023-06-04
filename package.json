@@ -64,17 +64,6 @@
     "type": "git",
     "url": "https://github.com/brianpooe/bp-devtools"
   },
-  "keywords": [
-    "nestjs",
-    "paystack",
-    "ns-paystack",
-    "library",
-    "monorepo",
-    "wrapper",
-    "payment",
-    "integration",
-    "API"
-  ],
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
