@@ -4,7 +4,7 @@ const srcRoot = `libs/${appName}`;
 module.exports = {
     extends: 'release.config.base.js',
     pkgRoot: `dist/${srcRoot}`,
-    tagFormat: name + '-v${version}',
+    tagFormat: appName + '-v${version}',
     commitPaths: [`${srcRoot}/*`],
     plugins: [
         '@semantic-release/commit-analyzer',
