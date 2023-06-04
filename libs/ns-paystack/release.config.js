@@ -1,5 +1,5 @@
 const name = 'ns-paystack';
-const srcRoot = `packages/${name}`;
+const srcRoot = `libs/${name}`;
 
 module.exports = {
     extends: 'release.config.base.js',
