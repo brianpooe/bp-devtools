@@ -4,8 +4,8 @@ const artifactName = appName;
 
 module.exports = {
     extends: 'release.config.base.js',
+    debug: 'true',
     name: appName,
-    pkgRoot: `dist/${appPath}`,
     tagFormat: artifactName + '-v${version}',
     commitPaths: ['force-release.md', `${appPath}/*`],
     branches: ['main'],
@@ -19,6 +19,9 @@ module.exports = {
             }
         ],
         '@semantic-release/npm',
+        {
+            pkgRoot: `dist/${appPath}`
+        },
         [
             '@semantic-release/git',
             {
