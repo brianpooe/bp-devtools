@@ -5,13 +5,13 @@ The wrapper provides a convenient way to integrate Paystack payment functionalit
 ## Installation
 
 ```shell
-npm install @bp-devtools/ns-paystack
+npm install @brianpooe/ns-paystack
 ```
 
 or
 
 ```shell
-yarn add @bp-devtools/ns-paystack
+yarn add @brianpooe/ns-paystack
 ```
 
 ## Configuration
@@ -22,20 +22,19 @@ dashboard. Once you have the API key, you can configure the wrapper in your Nest
 ```typescript
 import { Module } from '@nestjs/common';
 
-import { NsPaystackModule } from '@bp-devtools/ns-paystack';
+import { NsPaystackModule } from '@brianpooe/ns-paystack';
 import { ConfigService } from '@nestjs/config';
 import { TransactionsService } from './transactions/services/transactions.service';
 import { TransactionController } from './transactions/controllers/transaction.controller';
 
 @Module({
-  imports: [
-    NsPaystackModule.register({
-      secretKey: 'PAYSTACK_SECRET_KEY'
-    })
-  ],
+    imports: [
+        NsPaystackModule.register({
+            secretKey: 'PAYSTACK_SECRET_KEY'
+        })
+    ]
 })
-export class AppModule {
-}
+export class AppModule {}
 ```
 
 ### Using async registration to access environment variables
@@ -43,23 +42,22 @@ export class AppModule {
 ```typescript
 import { Module } from '@nestjs/common';
 
-import { NsPaystackModule } from '@bp-devtools/ns-paystack';
+import { NsPaystackModule } from '@brianpooe/ns-paystack';
 import { ConfigService } from '@nestjs/config';
 
 @Module({
-  imports: [
-    NsPaystackModule.registerAsync({
-      useFactory: (configService: ConfigService) => {
-        return {
-          secretKey: configService.get('PAYSTACK_SECRET_KEY')
-        };
-      },
-      inject: [ConfigService]
-    })
-  ]
+    imports: [
+        NsPaystackModule.registerAsync({
+            useFactory: (configService: ConfigService) => {
+                return {
+                    secretKey: configService.get('PAYSTACK_SECRET_KEY')
+                };
+            },
+            inject: [ConfigService]
+        })
+    ]
 })
-export class AppModule {
-}
+export class AppModule {}
 ```
 
 ### Usage
@@ -69,23 +67,22 @@ export class AppModule {
 ```typescript
 import { Injectable } from '@nestjs/common';
 import {
-  PsTransactionsService,
-  PsInitializeTransactionRequestModel,
-  PsInitializeTransactionResponseModel,
-} from '@bp-devtools/ns-paystack';
+    PsTransactionsService,
+    PsInitializeTransactionRequestModel,
+    PsInitializeTransactionResponseModel
+} from '@brianpooe/ns-paystack';
 
 @Injectable()
 export class TransactionsService {
-  constructor(
-    private readonly psTransactionsService: PsTransactionsService
-  ) {
-  }
+    constructor(
+        private readonly psTransactionsService: PsTransactionsService
+    ) {}
 
-  initializeTransaction(
-    payload: PsInitializeTransactionRequestModel
-  ): Promise<PsInitializeTransactionResponseModel> {
-    return this.psTransactionsService.initializeTransaction(payload);
-  }
+    initializeTransaction(
+        payload: PsInitializeTransactionRequestModel
+    ): Promise<PsInitializeTransactionResponseModel> {
+        return this.psTransactionsService.initializeTransaction(payload);
+    }
 }
 ```
 
@@ -94,66 +91,65 @@ export class TransactionsService {
 ```typescript
 import { Body, Controller, Post } from '@nestjs/common';
 import {
-  PsFetchTransactionResponseModel,
-  PsInitializeTransactionRequestModel,
-  PsInitializeTransactionResponseModel,
-} from '@bp-devtools/ns-paystack';
+    PsFetchTransactionResponseModel,
+    PsInitializeTransactionRequestModel,
+    PsInitializeTransactionResponseModel
+} from '@brianpooe/ns-paystack';
 import { TransactionsService } from '../services/transactions.service';
 
 @Controller('transaction')
 export class TransactionController {
-  constructor(private readonly transactionsService: TransactionsService) {
-  }
+    constructor(private readonly transactionsService: TransactionsService) {}
 
-  @Post('initialize')
-  initialize(
-    @Body() payload: PsInitializeTransactionRequestModel
-  ): Promise<PsInitializeTransactionResponseModel> {
-    return this.transactionsService.initializeTransaction(payload);
-  }
+    @Post('initialize')
+    initialize(
+        @Body() payload: PsInitializeTransactionRequestModel
+    ): Promise<PsInitializeTransactionResponseModel> {
+        return this.transactionsService.initializeTransaction(payload);
+    }
 }
 ```
 
 ### API ENDPOINTS
 
-- [X] __Transactions__ <span style="color:green;">&#x2714;</span>
-  - [X] Initialize Transaction <span style="color:green;">&#x2714;</span>
-  - [X] Verify Transaction <span style="color:green;">&#x2714;</span>
-  - [X] List Transaction <span style="color:green;">&#x2714;</span>
-  - [X] Fetch Transaction <span style="color:green;">&#x2714;</span>
-  - [X] Charge Transaction <span style="color:green;">&#x2714;</span>
-  - [X] View Transaction Timeline <span style="color:green;">&#x2714;</span>
-  - [X] Transaction Totals <span style="color:green;">&#x2714;</span>
-  - [X] Export Transaction <span style="color:green;">&#x2714;</span>
-  - [X] Partial Debit <span style="color:green;">&#x2714;</span>
-- [ ] __Transaction Splits__ &#x23F3;
-  - [ ] Create Split &#x23F3;
-  - [ ] List Split &#x23F3;
-  - [ ] Fetch Split &#x23F3;
-  - [ ] Update Split &#x23F3;
-  - [ ] Add/Update Subaccount Split &#x23F3;
-  - [ ] Remove Subaccount from Split &#x23F3;
-- [ ] __Terminal__
-- [ ] __Customers__
-- [ ] __Dedicated Virtual Accounts__
-- [ ] __Apple Pay__
-- [ ] __Subaccounts__
-- [ ] __Plans__
-- [ ] __Subscriptions__
-- [ ] __Products__
-- [ ] __Payment Pages__
-- [ ] __Payment Requests__
-- [ ] __Settlements__
-- [ ] __Transaction Recipients__
-- [ ] __Transfers__
-- [ ] __Transfers Control__
-- [ ] __Bulk Charges__
-- [ ] __Integration__
-- [ ] __Charge__
-- [ ] __Disputes__
-- [ ] __Refunds__
-- [ ] __Verification__
-- [ ] __Miscellaneous__
+-   [x] **Transactions** <span style="color:green;">&#x2714;</span>
+    -   [x] Initialize Transaction <span style="color:green;">&#x2714;</span>
+    -   [x] Verify Transaction <span style="color:green;">&#x2714;</span>
+    -   [x] List Transaction <span style="color:green;">&#x2714;</span>
+    -   [x] Fetch Transaction <span style="color:green;">&#x2714;</span>
+    -   [x] Charge Transaction <span style="color:green;">&#x2714;</span>
+    -   [x] View Transaction Timeline <span style="color:green;">&#x2714;</span>
+    -   [x] Transaction Totals <span style="color:green;">&#x2714;</span>
+    -   [x] Export Transaction <span style="color:green;">&#x2714;</span>
+    -   [x] Partial Debit <span style="color:green;">&#x2714;</span>
+-   [ ] **Transaction Splits** &#x23F3;
+    -   [ ] Create Split &#x23F3;
+    -   [ ] List Split &#x23F3;
+    -   [ ] Fetch Split &#x23F3;
+    -   [ ] Update Split &#x23F3;
+    -   [ ] Add/Update Subaccount Split &#x23F3;
+    -   [ ] Remove Subaccount from Split &#x23F3;
+-   [ ] **Terminal**
+-   [ ] **Customers**
+-   [ ] **Dedicated Virtual Accounts**
+-   [ ] **Apple Pay**
+-   [ ] **Subaccounts**
+-   [ ] **Plans**
+-   [ ] **Subscriptions**
+-   [ ] **Products**
+-   [ ] **Payment Pages**
+-   [ ] **Payment Requests**
+-   [ ] **Settlements**
+-   [ ] **Transaction Recipients**
+-   [ ] **Transfers**
+-   [ ] **Transfers Control**
+-   [ ] **Bulk Charges**
+-   [ ] **Integration**
+-   [ ] **Charge**
+-   [ ] **Disputes**
+-   [ ] **Refunds**
+-   [ ] **Verification**
+-   [ ] **Miscellaneous**
 
 ## Contributing
 
@@ -167,4 +163,5 @@ the [MIT License](https://github.com/brianpooe/bp-devtools/blob/main/LICENSE). P
 terms and conditions when using the libraries and tools provided in this repository.
 
 ## Authors
-- [Brian Pooe](https://github.com/brianpooe)
+
+-   [Brian Pooe](https://github.com/brianpooe)
