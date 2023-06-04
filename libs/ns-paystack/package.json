@@ -32,7 +32,8 @@
         "API"
     ],
     "publishConfig": {
-        "registry": "https://npm.pkg.github.com"
+        "registry": "https://npm.pkg.github.com",
+        "tag": "latest"
     },
     "peerDependencies": {
         "@nestjs/common": "^9.1.1",
