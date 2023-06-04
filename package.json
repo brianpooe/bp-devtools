@@ -78,5 +78,10 @@
     "payment",
     "integration",
     "API"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com",
+    "tag": "latest"
+  }
 }
