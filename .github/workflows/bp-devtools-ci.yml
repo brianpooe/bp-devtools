@@ -13,11 +13,9 @@ env:
 jobs:
     main:
         runs-on: ubuntu-latest
-
         permissions:
             packages: write
             contents: write
-
         defaults:
             run:
                 working-directory: ${{ github.workspace }}
@@ -27,7 +25,6 @@ jobs:
                 npm-version: [9]
                 yarn-version: ['1.22.x']
                 pnpm-version: [7]
-
         steps:
             - name: Checkout [Pull Request]
               uses: actions/checkout@v3
