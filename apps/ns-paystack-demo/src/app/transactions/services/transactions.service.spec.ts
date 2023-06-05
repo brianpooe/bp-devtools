@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { TransactionsService } from './transactions.service';
-import { NsPaystackModule } from '@bp-devtools/ns-paystack';
+import { NsPaystackModule } from '@devtools-bp/ns-paystack';
 import { ConfigService } from '@nestjs/config';
 
 describe(TransactionsService.name, () => {

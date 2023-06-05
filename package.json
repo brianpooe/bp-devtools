@@ -1,5 +1,5 @@
 {
-  "name": "@bp-devtools/source",
+  "name": "@devtools-bp/source",
   "version": "1.0.0",
   "license": "MIT",
   "author": {
@@ -65,10 +65,10 @@
     }
   },
   "bugs": {
-    "url": "https://github.com/brianpooe/bp-devtools/issues",
+    "url": "https://github.com/brianpooe/devtools-bp/issues",
     "email": "brian.method@gmail.com"
   },
-  "homepage": "https://github.com/brianpooe/bp-devtools#readme",
+  "homepage": "https://github.com/brianpooe/devtools-bp#readme",
   "keywords": [
     "nestjs",
     "paystack",

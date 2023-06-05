@@ -5,13 +5,13 @@ The wrapper provides a convenient way to integrate Paystack payment functionalit
 ## Installation
 
 ```shell
-npm install @bp-devtools/ns-paystack
+npm install @devtools-bp/ns-paystack
 ```
 
 or
 
 ```shell
-yarn add @bp-devtools/ns-paystack
+yarn add @devtools-bp/ns-paystack
 ```
 
 ## Configuration
@@ -22,7 +22,7 @@ dashboard. Once you have the API key, you can configure the wrapper in your Nest
 ```typescript
 import { Module } from '@nestjs/common';
 
-import { NsPaystackModule } from '@bp-devtools/ns-paystack';
+import { NsPaystackModule } from '@devtools-bp/ns-paystack';
 import { ConfigService } from '@nestjs/config';
 import { TransactionsService } from './transactions/services/transactions.service';
 import { TransactionController } from './transactions/controllers/transaction.controller';
@@ -42,7 +42,7 @@ export class AppModule {}
 ```typescript
 import { Module } from '@nestjs/common';
 
-import { NsPaystackModule } from '@bp-devtools/ns-paystack';
+import { NsPaystackModule } from '@devtools-bp/ns-paystack';
 import { ConfigService } from '@nestjs/config';
 
 @Module({
@@ -70,7 +70,7 @@ import {
     PsTransactionsService,
     PsInitializeTransactionRequestModel,
     PsInitializeTransactionResponseModel
-} from '@bp-devtools/ns-paystack';
+} from '@devtools-bp/ns-paystack';
 
 @Injectable()
 export class TransactionsService {
@@ -94,7 +94,7 @@ import {
     PsFetchTransactionResponseModel,
     PsInitializeTransactionRequestModel,
     PsInitializeTransactionResponseModel
-} from '@bp-devtools/ns-paystack';
+} from '@devtools-bp/ns-paystack';
 import { TransactionsService } from '../services/transactions.service';
 
 @Controller('transaction')
@@ -158,8 +158,8 @@ pull request on the GitHub repository.
 
 ## License
 
-The bp-devtools monorepo is released under
-the [MIT License](https://github.com/brianpooe/bp-devtools/blob/main/LICENSE). Please make sure you understand its
+The devtools-bp monorepo is released under
+the [MIT License](https://github.com/brianpooe/devtools-bp/blob/main/LICENSE). Please make sure you understand its
 terms and conditions when using the libraries and tools provided in this repository.
 
 ## Authors

@@ -18,7 +18,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@bp-devtools/ns-paystack": [
+      "@devtools-bp/ns-paystack": [
         "libs/ns-paystack/src/index.ts"
       ]
     }

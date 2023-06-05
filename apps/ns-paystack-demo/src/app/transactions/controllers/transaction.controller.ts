@@ -15,7 +15,7 @@ import {
     PsTransactionTotalsResponseModel,
     PsVerifyTransactionResponseModel,
     PsViewTransactionTimeLineResponseModel
-} from '@bp-devtools/ns-paystack';
+} from '@devtools-bp/ns-paystack';
 import { Observable } from 'rxjs';
 import { TransactionsService } from '../services/transactions.service';
 

@@ -6,7 +6,7 @@ import {
     MODULE_OPTIONS_TOKEN,
     NsPaystackModule,
     PsTransactionsService
-} from '@bp-devtools/ns-paystack';
+} from '@devtools-bp/ns-paystack';
 import { ConfigService } from '@nestjs/config';
 import { HttpModule } from '@nestjs/axios';
 

@@ -16,7 +16,7 @@ import {
     PsExportTransactionResponseModel,
     PsPartialDebitRequestModel,
     PsPartialDebitResponseModel
-} from '@bp-devtools/ns-paystack';
+} from '@devtools-bp/ns-paystack';
 import { Observable } from 'rxjs';
 
 @Injectable()
