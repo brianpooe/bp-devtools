@@ -1,7 +1,6 @@
 name: BP DEVTOOLS CI
 
 on:
-    workflow_dispatch:
     push:
         branches:
             - main
@@ -13,34 +12,35 @@ env:
 jobs:
     main:
         runs-on: ubuntu-latest
-        permissions:
-            packages: write
-            contents: write
         defaults:
             run:
                 working-directory: ${{ github.workspace }}
         strategy:
             matrix:
-                node-version: [18]
-                npm-version: [9]
+                node-version: [16]
+                npm-version: [8]
                 yarn-version: ['1.22.x']
                 pnpm-version: [7]
         steps:
             - name: Checkout [Pull Request]
-              uses: actions/checkout@v3
+              uses: actions/checkout@v2
               if: ${{ github.event_name == 'pull_request' }}
               with:
                   ref: ${{ github.event.pull_request.head.sha }}
+                  token: ${{ secrets.GH_TOKEN }}
                   fetch-depth: 0
 
             - name: Checkout [Default Branch]
-              uses: actions/checkout@v3
+              uses: actions/checkout@v2
               if: ${{ github.event_name != 'pull_request' }}
               with:
+                  token: ${{ secrets.GH_TOKEN }}
                   fetch-depth: 0
 
             - name: Derive appropriate SHAs for base and head for `nx affected` commands
-              uses: nrwl/nx-set-shas@v3
+              uses: nrwl/nx-set-shas@v2
+              with:
+                  main-branch-name: ${{ github.base_ref }}
 
             - name: Detect package manager
               id: package_manager
@@ -48,7 +48,7 @@ jobs:
                   echo "::set-output name=name::$([[ -f ./yarn.lock ]] && echo "yarn" || ([[ -f ./pnpm-lock.yaml ]] && echo "pnpm") || echo "npm")"
 
             - name: Set node/npm/yarn versions using volta
-              uses: volta-cli/action@v4
+              uses: volta-cli/action@fdf4cf319494429a105efaa71d0e5ec67f338c6e
               with:
                   node-version: '${{ matrix.node-version }}'
                   npm-version: '${{ matrix.npm-version }}'
@@ -74,7 +74,7 @@ jobs:
 
             - name: Use the node_modules cache if available [npm]
               if: steps.package_manager.outputs.name == 'npm'
-              uses: actions/cache@v3
+              uses: actions/cache@v2
               with:
                   path: ~/.npm
                   key: ${{ runner.os }}-node-${{ steps.versions.outputs.node_version }}-${{ hashFiles('**/package-lock.json') }}
@@ -127,8 +127,7 @@ jobs:
               if: ${{ success() && (github.event_name != 'pull_request' || github.event.action == 'closed' && github.event.pull_request.merged == true) }}
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  DEBUG: semantic-release semantic-release
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
               run: |
-                  npx nx run-many --target release --all
+                  npx nx affected --target release --all
                   npx semantic-release-plus
