@@ -17,8 +17,8 @@ jobs:
                 working-directory: ${{ github.workspace }}
         strategy:
             matrix:
-                node-version: [16]
-                npm-version: [8]
+                node-version: [18.16.0]
+                npm-version: [9.5.1]
                 yarn-version: ['1.22.x']
                 pnpm-version: [7]
         steps:
