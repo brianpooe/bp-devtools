@@ -4,14 +4,7 @@ const artifactName = appName;
 
 module.exports = {
     name: appName,
-    branches: [
-        '+([0-9])?(.{+([0-9]),x}).x',
-        'main',
-        'next',
-        'next-major',
-        { name: 'beta', prerelease: true },
-        { name: 'alpha', prerelease: true }
-    ],
+    branches: [{ name: 'main' }],
     pkgRoot: `dist/${appPath}`,
     tagFormat: artifactName + '-v${version}',
     commitPaths: ['force-release.md', `${appPath}/*`],
