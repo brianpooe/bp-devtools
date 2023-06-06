@@ -3,12 +3,11 @@ const appPath = `libs/${appName}`;
 const artifactName = appName;
 
 module.exports = {
-    extends: 'release.config.base.js',
-    debug: 'true',
     name: appName,
+    pkgRoot: `dist/${appPath}`, // should come from angular.cli
     tagFormat: artifactName + '-v${version}',
-    commitPaths: ['force-release.md', `${appPath}/*`],
-    branches: ['main', 'release'],
+    commitPaths: ['force-release.md', `${appPath}/*`], // should come from dep-graph and angular.json
+    assets: [`${appPath}/README.md`, `${appPath}/CHANGELOG.md`],
     plugins: [
         '@semantic-release/commit-analyzer',
         '@semantic-release/release-notes-generator',
@@ -19,13 +18,9 @@ module.exports = {
             }
         ],
         '@semantic-release/npm',
-        {
-            pkgRoot: `dist/${appPath}`
-        },
         [
             '@semantic-release/git',
             {
-                assets: [`${appPath}/README.md`, `${appPath}/CHANGELOG.md`],
                 message:
                     `chore(release): ${artifactName}` +
                     '-v${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
