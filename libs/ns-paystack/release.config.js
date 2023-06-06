@@ -4,6 +4,14 @@ const artifactName = appName;
 
 module.exports = {
     name: appName,
+    branches: [
+        '+([0-9])?(.{+([0-9]),x}).x',
+        'main',
+        'next',
+        'next-major',
+        { name: 'beta', prerelease: true },
+        { name: 'alpha', prerelease: true }
+    ],
     pkgRoot: `dist/${appPath}`, // should come from angular.cli
     tagFormat: artifactName + '-v${version}',
     commitPaths: ['force-release.md', `${appPath}/*`], // should come from dep-graph and angular.json
