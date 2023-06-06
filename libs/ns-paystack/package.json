@@ -29,7 +29,8 @@
         "wrapper",
         "payment",
         "integration",
-        "API"
+        "API",
+        "devtools-bp"
     ],
     "publishConfig": {
         "access": "public",
