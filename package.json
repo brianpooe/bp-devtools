@@ -1,11 +1,7 @@
 {
-    "name": "@devtools-bp/source",
-    "version": "1.0.0",
+    "name": "bp-devtools",
+    "version": "0.0.0",
     "license": "MIT",
-    "author": {
-        "name": "Brian Pooe",
-        "email": "brian.method@gmail.com"
-    },
     "scripts": {
         "start:api:demo": "nx serve ns-paystack-demo",
         "prepare": "husky install"
@@ -13,9 +9,7 @@
     "dependencies": {
         "@nestjs/axios": "^2.0.0",
         "axios": "^1.4.0",
-        "tslib": "^2.3.0"
-    },
-    "peerDependencies": {
+        "tslib": "^2.3.0",
         "@nestjs/common": "^9.1.1",
         "@nestjs/core": "^9.1.1",
         "reflect-metadata": "^0.1.13",
@@ -63,20 +57,5 @@
         "commitizen": {
             "path": "./node_modules/cz-conventional-changelog"
         }
-    },
-    "bugs": {
-        "url": "https://github.com/brianpooe/devtools-bp/issues",
-        "email": "brian.method@gmail.com"
-    },
-    "homepage": "https://github.com/brianpooe/devtools-bp#readme",
-    "keywords": [
-        "nestjs",
-        "paystack",
-        "ns-paystack",
-        "library",
-        "wrapper",
-        "payment",
-        "integration",
-        "API"
-    ]
+    }
 }

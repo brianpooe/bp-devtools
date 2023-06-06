@@ -8,7 +8,7 @@ module.exports = {
     name: appName,
     tagFormat: artifactName + '-v${version}',
     commitPaths: ['force-release.md', `${appPath}/*`],
-    branches: ['main'],
+    branches: ['main', 'release'],
     plugins: [
         '@semantic-release/commit-analyzer',
         '@semantic-release/release-notes-generator',
