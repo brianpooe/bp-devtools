@@ -6,10 +6,10 @@ with Angular, you'll find a range of useful libraries and tools here.
 
 ## Table of Contents
 
-- [Getting Started](#getting-started)
-- [Libraries](#libraries)
-- [Contributing](#contributing)
-- [License](#license)
+-   [Getting Started](#getting-started)
+-   [Libraries](#libraries)
+-   [Contributing](#contributing)
+-   [License](#license)
 
 ## Getting Started
 
@@ -28,10 +28,9 @@ To get started with the devtools-bp monorepo, follow these steps:
 1. **ns-paystack**: Powerful library that provides seamless integration with the Paystack payment gateway for your
    NestJS applications. You can easily handle payment transactions with minimal effort.
 
-- Usage:
-  - Installation: `npm install @devtools-bp/ns-paystack`
-  -
-  Documentation: [Link to documentation](https://github.com/brianpooe/devtools-bp/blob/main/libs/ns-paystack/README.md)
+-   Usage:
+    -   Installation: `npm install @devtools-bp/ns-paystack`
+    -   Documentation: [Link to documentation](https://github.com/brianpooe/devtools-bp/blob/main/libs/ns-paystack/README.md)
 
 ### Angular Libraries
 
