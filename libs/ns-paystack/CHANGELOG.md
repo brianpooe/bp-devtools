@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.0.0...ns-paystack-v1.0.1) (2023-06-06)
+
+
+### Bug Fixes
+
+* **ns-paystack:** remove base release ([8291221](https://github.com/brianpooe/devtools-bp/commit/8291221c524571519e6cbcaa3cec36890e9da89a))
+
 # 1.0.0 (2023-06-06)
 
 
