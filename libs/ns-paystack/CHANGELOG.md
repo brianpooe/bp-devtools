@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.0.2...ns-paystack-v1.1.0) (2023-06-07)
+
+
+### Features
+
+* **ns-paystack:** added manual ci trigger ([1a5143b](https://github.com/brianpooe/devtools-bp/commit/1a5143bda225cc720af4c4a16459d7e9e8c94a94))
+* **ns-paystack:** update branches ([27136c1](https://github.com/brianpooe/devtools-bp/commit/27136c1d0b889e2cd448bdf6c54741d46dbc3095))
+
 ## [1.0.2](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.0.1...ns-paystack-v1.0.2) (2023-06-06)
 
 
