@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.1.1...ns-paystack-v1.1.2) (2023-06-07)
+
+
+### Bug Fixes
+
+* **ns-paystack:** use semantic reelase on generator ([c6b2479](https://github.com/brianpooe/devtools-bp/commit/c6b24799f03de2cbcf9167273f5a1be8040e579b))
+
 ## [1.1.1](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.1.0...ns-paystack-v1.1.1) (2023-06-07)
 
 
