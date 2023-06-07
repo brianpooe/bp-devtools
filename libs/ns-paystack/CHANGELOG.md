@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.1.0...ns-paystack-v1.1.1) (2023-06-07)
+
+
+### Bug Fixes
+
+* **ns-paystack:** branches ([360227d](https://github.com/brianpooe/devtools-bp/commit/360227d7a7403015f59bb629236f7d5dc7de1557))
+
 # [1.1.0](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.0.2...ns-paystack-v1.1.0) (2023-06-07)
 
 
