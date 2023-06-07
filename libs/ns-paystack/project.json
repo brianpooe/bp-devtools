@@ -44,8 +44,11 @@
             "executor": "nx:run-commands",
             "outputs": [],
             "options": {
-                "command": "npx semantic-release-plus --debug --extends ./libs/ns-paystack/release.config.js",
-                "parallel": false
+                "commands": [
+                    {
+                        "command": "npx semantic-release --debug --extends=./libs/ns-paystack/release.config.js"
+                    }
+                ]
             }
         }
     },
