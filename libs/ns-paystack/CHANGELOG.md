@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.2.0...ns-paystack-v1.2.1) (2023-06-08)
+
+
+### Bug Fixes
+
+* **ns-paystack:** remove unnecessary check ([90d1f56](https://github.com/brianpooe/devtools-bp/commit/90d1f565f758b0fbb67083ecb998aafe4543f5fa))
+
 # [1.2.0](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.1.5...ns-paystack-v1.2.0) (2023-06-08)
 
 
