@@ -35,21 +35,21 @@ jobs:
             - name: Create Release
               if: startsWith(github.ref, 'refs/tags/')
               env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               run: |
-                tag=$(echo "${{ github.ref }}" | sed -e 's/refs\/tags\///')
-                echo "Creating release for tag $tag"
-                affected_projects=$(npx nx affected:apps --base=${{ github.event.before }} --head=${{ github.event.after }} --plain)
-                for project in $affected_projects; do
-                  changelog_file="$project/changelog.md"
-                  if [ -f "$changelog_file" ]; then
-                    release_notes=$(sed -n "/## \[$tag\]/,/^##/p" "$changelog_file")
-                    if [ -z "$release_notes" ]; then
-                      echo "No changelog entry found for tag $tag in $changelog_file"
+                  tag=$(echo "${{ github.ref }}" | sed -e 's/refs\/tags\///')
+                  echo "Creating release for tag $tag"
+                  affected_projects=$(npx nx affected:apps --base=${{ github.event.before }} --head=${{ github.event.after }} --plain)
+                  for project in $affected_projects; do
+                    changelog_file="$project/changelog.md"
+                    if [ -f "$changelog_file" ]; then
+                      release_notes=$(sed -n "/## \[$tag\]/,/^##/p" "$changelog_file")
+                      if [ -z "$release_notes" ]; then
+                        echo "No changelog entry found for tag $tag in $changelog_file"
+                      else
+                        gh release create "$tag-$project" --title "$tag-$project" --notes "$release_notes" --repo owner/repo
+                      fi
                     else
-                      gh release create "$tag-$project" --title "$tag-$project" --notes "$release_notes" --repo owner/repo
+                      echo "No changelog file found at $changelog_file"
                     fi
-                  else
-                    echo "No changelog file found at $changelog_file"
-                  fi
-                done
+                  done
