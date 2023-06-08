@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.1.4...ns-paystack-v1.1.5) (2023-06-08)
+
+
+### Bug Fixes
+
+* **ns-paystack:** remove run command ([e79fb4e](https://github.com/brianpooe/devtools-bp/commit/e79fb4e57d36bfdc47d1d46f3d8f07678a865fc6))
+
 ## [1.1.4](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.1.3...ns-paystack-v1.1.4) (2023-06-08)
 
 
