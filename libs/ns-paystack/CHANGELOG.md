@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.1.5...ns-paystack-v1.2.0) (2023-06-08)
+
+
+### Bug Fixes
+
+* **ns-paystack:** format ([9390cb4](https://github.com/brianpooe/devtools-bp/commit/9390cb4ea9e34d0f8dbcbcea1ac066858a72b2b7))
+
+
+### Features
+
+* **ns-paystack:** added create release ([0b6eb07](https://github.com/brianpooe/devtools-bp/commit/0b6eb0782d5431e1246ef2e28a276b2bb33ebe58))
+
 ## [1.1.5](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.1.4...ns-paystack-v1.1.5) (2023-06-08)
 
 
