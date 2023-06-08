@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.1.3...ns-paystack-v1.1.4) (2023-06-08)
+
+
+### Bug Fixes
+
+* **ns-paystack:** add run command for release ([63f0b76](https://github.com/brianpooe/devtools-bp/commit/63f0b7660c6ea71366fd1d71da13839046769989))
+
 ## [1.1.3](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.1.2...ns-paystack-v1.1.3) (2023-06-07)
 
 
