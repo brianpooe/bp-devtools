@@ -31,3 +31,16 @@ jobs:
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
               run: |
                   npx nx run-many --target release --all
+
+            - name: Create Release
+              if: startsWith(github.ref, 'refs/tags/')
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
+                tag=$(echo "${{ github.ref }}" | sed -e 's/refs\/tags\///')
+                echo "Creating release for tag $tag"
+                affected_projects=$(npx nx affected:apps --base=${{ github.event.before }} --head=${{ github.event.after }} --plain)
+                for project in $affected_projects; do
+                  release_notes=$(sed -n "/## \[$tag\]/,/^##/p" $project/changelog.md)
+                  gh release create "$tag-$project" --title "$tag-$project" --notes "$release_notes"
+                done
