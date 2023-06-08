@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.2.1...ns-paystack-v1.3.0) (2023-06-08)
+
+
+### Features
+
+* **ns-paystack:** use semantic release plus for the generator ([13dcda0](https://github.com/brianpooe/devtools-bp/commit/13dcda0306632d7b8956041a901552ccc93c28b6))
+
 ## [1.2.1](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.2.0...ns-paystack-v1.2.1) (2023-06-08)
 
 
