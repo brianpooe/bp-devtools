@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.3.0...ns-paystack-v1.3.1) (2023-06-08)
+
+
+### Bug Fixes
+
+* **ns-paystack:** remove workflow dispatch ([09ee312](https://github.com/brianpooe/devtools-bp/commit/09ee31257c18f565fe07563f9b5d1923954ae2ce))
+
 # [1.3.0](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.2.1...ns-paystack-v1.3.0) (2023-06-08)
 
 
