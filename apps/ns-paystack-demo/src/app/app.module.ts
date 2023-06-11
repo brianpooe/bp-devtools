@@ -6,17 +6,17 @@ import { TransactionsService } from './transactions/services/transactions.servic
 import { TransactionController } from './transactions/controllers/transaction.controller';
 
 @Module({
-    imports: [
-        NsPaystackModule.registerAsync({
-            useFactory: (configService: ConfigService) => {
-                return {
-                    secretKey: configService.get('PAYSTACK_SECRET_KEY')
-                };
-            },
-            inject: [ConfigService]
-        })
-    ],
-    controllers: [TransactionController],
-    providers: [TransactionsService, ConfigService]
+  imports: [
+    NsPaystackModule.registerAsync({
+      useFactory: (configService: ConfigService) => {
+        return {
+          secretKey: configService.get('PAYSTACK_SECRET_KEY')
+        };
+      },
+      inject: [ConfigService]
+    })
+  ],
+  controllers: [TransactionController],
+  providers: [TransactionsService, ConfigService]
 })
 export class AppModule {}

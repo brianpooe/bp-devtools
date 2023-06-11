@@ -1,8 +1,8 @@
 export interface PsExportTransactionResponseModel {
-    data: PsExportTransactionResponseDataModel;
+  data: PsExportTransactionResponseDataModel;
 }
 
 export interface PsExportTransactionResponseDataModel {
-    path: string;
-    expiresAt: string;
+  path: string;
+  expiresAt: string;
 }

@@ -1,61 +1,64 @@
 {
-    "name": "@devtools-bp/source",
-    "version": "0.0.0",
-    "license": "MIT",
-    "scripts": {
-        "start:api:demo": "nx serve ns-paystack-demo",
-        "prepare": "husky install"
-    },
-    "dependencies": {
-        "@nestjs/axios": "^2.0.0",
-        "@nestjs/common": "^9.1.1",
-        "@nestjs/config": "^2.3.2",
-        "@nestjs/core": "^9.1.1",
-        "axios": "^1.4.0",
-        "reflect-metadata": "^0.1.13",
-        "rxjs": "^7.8.0",
-        "tslib": "^2.3.0"
-    },
-    "devDependencies": {
-        "@commitlint/cli": "^17.6.5",
-        "@commitlint/config-conventional": "^17.6.5",
-        "@commitlint/config-nx-scopes": "^17.6.4",
-        "@commitlint/cz-commitlint": "^17.5.0",
-        "@nestjs/platform-express": "^9.1.1",
-        "@nestjs/schematics": "^9.1.0",
-        "@nestjs/testing": "^9.1.1",
-        "@nx/eslint-plugin": "16.2.1",
-        "@nx/jest": "16.2.1",
-        "@nx/js": "16.2.1",
-        "@nx/linter": "16.2.1",
-        "@nx/nest": "16.2.1",
-        "@nx/node": "16.2.1",
-        "@nx/webpack": "16.2.1",
-        "@nx/workspace": "16.2.1",
-        "@types/jest": "^29.4.0",
-        "@types/node": "~18.7.1",
-        "@typescript-eslint/eslint-plugin": "^5.58.0",
-        "@typescript-eslint/parser": "^5.58.0",
-        "commitizen": "^4.3.0",
-        "cz-conventional-changelog": "^3.3.0",
-        "eslint": "~8.15.0",
-        "eslint-config-prettier": "8.1.0",
-        "husky": "^8.0.0",
-        "jest": "^29.4.1",
-        "jest-environment-node": "^29.4.1",
-        "lint-staged": "^13.2.2",
-        "nx": "16.2.1",
-        "nx-cloud": "latest",
-        "prettier": "^2.6.2",
-        "semantic-release-npm-github-publish": "^1.5.4",
-        "semantic-release-plus": "^20.0.0",
-        "ts-jest": "^29.1.0",
-        "ts-node": "10.9.1",
-        "typescript": "~5.0.2"
-    },
-    "config": {
-        "commitizen": {
-            "path": "./node_modules/cz-conventional-changelog"
-        }
+  "name": "@devtools-bp/source",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start:api:demo": "nx serve ns-paystack-demo",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@nestjs/axios": "^2.0.0",
+    "@nestjs/common": "^9.1.1",
+    "@nestjs/config": "^2.3.2",
+    "@nestjs/core": "^9.1.1",
+    "axios": "^1.4.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.0",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@automock/jest": "^1.2.0",
+    "@commitlint/cli": "^17.6.5",
+    "@commitlint/config-conventional": "^17.6.5",
+    "@commitlint/config-nx-scopes": "^17.6.4",
+    "@commitlint/cz-commitlint": "^17.5.0",
+    "@golevelup/ts-jest": "^0.3.7",
+    "@nestjs/platform-express": "^9.1.1",
+    "@nestjs/schematics": "^9.1.0",
+    "@nestjs/testing": "^9.1.1",
+    "@nx/eslint-plugin": "16.2.1",
+    "@nx/jest": "16.2.1",
+    "@nx/js": "16.2.1",
+    "@nx/linter": "16.2.1",
+    "@nx/nest": "16.2.1",
+    "@nx/node": "16.2.1",
+    "@nx/webpack": "16.2.1",
+    "@nx/workspace": "16.2.1",
+    "@total-typescript/shoehorn": "^0.1.0",
+    "@types/jest": "^29.4.0",
+    "@types/node": "~18.7.1",
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "~8.15.0",
+    "eslint-config-prettier": "8.1.0",
+    "husky": "^8.0.0",
+    "jest": "^29.4.1",
+    "jest-environment-node": "^29.4.1",
+    "lint-staged": "^13.2.2",
+    "nx": "16.2.1",
+    "nx-cloud": "latest",
+    "prettier": "^2.6.2",
+    "semantic-release-npm-github-publish": "^1.5.4",
+    "semantic-release-plus": "^20.0.0",
+    "ts-jest": "^29.1.0",
+    "ts-node": "10.9.1",
+    "typescript": "~5.0.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
     }
+  }
 }
