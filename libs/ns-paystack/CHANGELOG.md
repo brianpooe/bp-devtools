@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.3.1...ns-paystack-v1.3.2) (2023-06-08)
+
+
+### Bug Fixes
+
+* **ns-paystack:** added nx generator ([b8a315b](https://github.com/brianpooe/devtools-bp/commit/b8a315b825a392b3c2d25ea58b0bd94137b66d2d))
+
 ## [1.3.1](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.3.0...ns-paystack-v1.3.1) (2023-06-08)
 
 
