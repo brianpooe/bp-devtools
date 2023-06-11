@@ -5,11 +5,11 @@ export interface PsChargeTransactionRequestModel {
   email: string;
   authorization_code: string;
   reference?: string;
-  currency: string;
+  currency?: string;
   metadata?: string;
   channels?: Array<PsChannelsModel>;
-  subaccount: string;
-  transaction_charge: number;
-  bearer: string;
-  queue: boolean;
+  subaccount?: string;
+  transaction_charge?: number;
+  bearer?: string;
+  queue?: boolean;
 }

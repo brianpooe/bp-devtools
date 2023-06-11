@@ -1,4 +1,6 @@
-export interface PsTransactionTotalsResponseModel {
+import { PsBaseModel } from './ps-base.model';
+
+export interface PsTransactionTotalsResponseModel extends PsBaseModel {
   data: PsTransactionTotalsResponseDataModel;
 }
 
