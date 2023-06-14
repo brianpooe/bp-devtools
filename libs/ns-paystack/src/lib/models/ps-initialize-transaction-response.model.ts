@@ -1,11 +1,11 @@
 import { PsBaseModel } from './ps-base.model';
 
 export interface PsInitializeTransactionResponseModel extends PsBaseModel {
-    data: PsInitializeTransactionResponseDataModel;
+  data: PsInitializeTransactionResponseDataModel;
 }
 
 export interface PsInitializeTransactionResponseDataModel {
-    authorization_url: string;
-    access_code: string;
-    reference: string;
+  authorization_url: string;
+  access_code: string;
+  reference: string;
 }

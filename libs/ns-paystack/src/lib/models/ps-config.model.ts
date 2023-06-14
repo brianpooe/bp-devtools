@@ -1,6 +1,6 @@
 export interface PsConfigModel {
-    /**
-     * Your Paystack API key - secret key
-     */
-    secretKey: string;
+  /**
+   * Your Paystack API key - secret key
+   */
+  secretKey: string;
 }
