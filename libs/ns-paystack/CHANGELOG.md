@@ -1,3 +1,16 @@
+# [1.3.0](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.2.1...ns-paystack-v1.3.0) (2023-06-14)
+
+
+### Bug Fixes
+
+* **ns-paystack:** added nx generator ([b8a315b](https://github.com/brianpooe/devtools-bp/commit/b8a315b825a392b3c2d25ea58b0bd94137b66d2d))
+* **ns-paystack:** remove workflow dispatch ([09ee312](https://github.com/brianpooe/devtools-bp/commit/09ee31257c18f565fe07563f9b5d1923954ae2ce))
+
+
+### Features
+
+* **ns-paystack:** use semantic release plus for the generator ([13dcda0](https://github.com/brianpooe/devtools-bp/commit/13dcda0306632d7b8956041a901552ccc93c28b6))
+
 ## [1.3.2](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.3.1...ns-paystack-v1.3.2) (2023-06-08)
 
 
