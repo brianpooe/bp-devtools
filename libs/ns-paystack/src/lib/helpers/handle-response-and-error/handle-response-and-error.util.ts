@@ -6,7 +6,14 @@ import {
   OperatorFunction,
   throwError
 } from 'rxjs';
-import { HttpException, HttpStatus } from '@nestjs/common';
+import {
+  BadRequestException,
+  HttpException,
+  HttpStatus,
+  InternalServerErrorException,
+  NotFoundException,
+  UnauthorizedException
+} from '@nestjs/common';
 
 export const handleResponseAndError = <
   T extends AxiosResponse,
@@ -17,30 +24,21 @@ export const handleResponseAndError = <
       map(({ data }) => data),
       catchError((error: AxiosError<HttpException>) => {
         console.error(error);
-        const errorMessage = error.response?.data || {
-          status: false,
-          message: 'Something went wrong. Please try again later.'
-        };
-        switch (error.response?.status) {
+        const errorMessage =
+          error.response?.data?.message ||
+          'Something went wrong. Please try again later.';
+        const httpStatus = error.response?.status;
+
+        switch (httpStatus) {
           case HttpStatus.BAD_REQUEST:
-            return throwError(
-              () => new HttpException(errorMessage, HttpStatus.BAD_REQUEST)
-            );
+            return throwError(() => new BadRequestException(errorMessage));
           case HttpStatus.UNAUTHORIZED:
-            return throwError(
-              () => new HttpException(errorMessage, HttpStatus.UNAUTHORIZED)
-            );
+            return throwError(() => new UnauthorizedException(errorMessage));
           case HttpStatus.NOT_FOUND:
-            return throwError(
-              () => new HttpException(errorMessage, HttpStatus.NOT_FOUND)
-            );
+            return throwError(() => new NotFoundException(errorMessage));
           default:
             return throwError(
-              () =>
-                new HttpException(
-                  errorMessage,
-                  HttpStatus.INTERNAL_SERVER_ERROR
-                )
+              () => new InternalServerErrorException(errorMessage)
             );
         }
       })
