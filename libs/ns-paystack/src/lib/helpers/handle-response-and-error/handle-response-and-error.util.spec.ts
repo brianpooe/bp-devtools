@@ -1,10 +1,11 @@
 import { handleResponseAndError } from './handle-response-and-error.util';
 import { AxiosError, AxiosResponse } from 'axios';
 import { fromPartial } from '@total-typescript/shoehorn';
-import { SubscriberSpy, subscribeSpyTo } from '@hirez_io/observer-spy';
-import { of, throwError } from 'rxjs';
+import { subscribeSpyTo } from '@hirez_io/observer-spy';
+import { of } from 'rxjs';
 import { HttpException, HttpStatus } from '@nestjs/common';
 import { PsFetchTransactionResponseModel } from '../../models';
+import { getThrownError } from '../unit-test/unit-test.util';
 
 describe(handleResponseAndError.name, () => {
   describe('successful response', () => {
@@ -154,14 +155,3 @@ describe(handleResponseAndError.name, () => {
     });
   });
 });
-
-const getThrownError = (
-  response: AxiosError<HttpException>
-): SubscriberSpy<unknown> => {
-  return subscribeSpyTo(
-    throwError(() => response).pipe(handleResponseAndError()),
-    {
-      expectErrors: true
-    }
-  );
-};

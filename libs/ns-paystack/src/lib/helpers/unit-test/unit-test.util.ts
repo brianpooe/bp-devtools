@@ -1,4 +1,16 @@
-import { catchError, EMPTY, finalize, Observable, take, timeout } from 'rxjs';
+import {
+  catchError,
+  EMPTY,
+  finalize,
+  Observable,
+  take,
+  throwError,
+  timeout
+} from 'rxjs';
+import { AxiosError } from 'axios';
+import { HttpException } from '@nestjs/common';
+import { handleResponseAndError } from '../handle-response-and-error/handle-response-and-error.util';
+import { SubscriberSpy, subscribeSpyTo } from '@hirez_io/observer-spy';
 
 interface ObservableTestingModel<T> {
   actualObservable: Observable<T>;
@@ -25,4 +37,15 @@ export const expectObservable = <T>(
       matcher?.(result);
       model.done();
     });
+};
+
+export const getThrownError = (
+  response: AxiosError<HttpException>
+): SubscriberSpy<unknown> => {
+  return subscribeSpyTo(
+    throwError(() => response).pipe(handleResponseAndError()),
+    {
+      expectErrors: true
+    }
+  );
 };

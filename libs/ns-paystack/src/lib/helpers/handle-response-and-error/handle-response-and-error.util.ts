@@ -15,6 +15,9 @@ import {
   UnauthorizedException
 } from '@nestjs/common';
 
+/**
+ * handles the api response and caught errors appropriately`
+ */
 export const handleResponseAndError = <
   T extends AxiosResponse,
   R
