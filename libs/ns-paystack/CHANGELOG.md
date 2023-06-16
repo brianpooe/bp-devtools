@@ -1,3 +1,11 @@
+## [1.4.1](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.4.0...ns-paystack-v1.4.1) (2023-06-16)
+
+
+### Bug Fixes
+
+* release and remove unneccesary required interface ([3bf4017](https://github.com/brianpooe/devtools-bp/commit/3bf40174c2d89b411781b7f356308e8c7b2c5526))
+* resolved conflcits ([2c4fae8](https://github.com/brianpooe/devtools-bp/commit/2c4fae8d8bb0b8e4e54e6aeab57663f56e7a85f9))
+
 # [1.4.0](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.3.0...ns-paystack-v1.4.0) (2023-06-16)
 
 
