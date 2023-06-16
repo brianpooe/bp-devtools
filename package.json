@@ -19,6 +19,7 @@
   "devDependencies": {
     "@automock/jest": "^1.2.0",
     "@golevelup/ts-jest": "^0.3.7",
+    "@hirez_io/observer-spy": "^2.2.0",
     "@nestjs/platform-express": "^9.1.1",
     "@nestjs/schematics": "^9.1.0",
     "@nestjs/testing": "^9.1.1",

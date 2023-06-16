@@ -1,6 +1,6 @@
-import { PsAuthorizationModel, PsCustomerModel } from './';
+import { PsAuthorizationModel, PsBaseModel, PsCustomerModel } from './';
 
-export interface PsPartialDebitResponseModel {
+export interface PsPartialDebitResponseModel extends PsBaseModel {
   data: PsPartialDebitResponseDataModel;
 }
 
