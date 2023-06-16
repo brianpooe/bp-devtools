@@ -21,7 +21,6 @@ import { HttpService } from '@nestjs/axios';
 import { Observable } from 'rxjs';
 import { AxiosRequestConfig } from 'axios';
 import { handleResponseAndError, MODULE_OPTIONS_TOKEN } from '../../helpers';
-import { RequiredProperties } from '../../helpers/type.util.ts/required-properties';
 
 @Injectable()
 export class PsTransactionsService {
@@ -43,10 +42,7 @@ export class PsTransactionsService {
    * @param payload
    */
   initializeTransaction(
-    payload: RequiredProperties<
-      PsInitializeTransactionRequestModel,
-      'amount' | 'email'
-    >
+    payload: PsInitializeTransactionRequestModel
   ): Observable<PsInitializeTransactionResponseModel> {
     if (!payload?.amount && !payload?.email) {
       throw new BadRequestException('amount ');
@@ -80,10 +76,7 @@ export class PsTransactionsService {
    * @param queryParamsPayload - query parameters
    */
   listTransactions(
-    queryParamsPayload: RequiredProperties<
-      PsListTransactionsQueryParamsModel,
-      'perPage' | 'page'
-    >
+    queryParamsPayload: PsListTransactionsQueryParamsModel
   ): Observable<PsListTransactionsResponseModel> {
     return this.httpService
       .get<PsListTransactionsResponseModel>('transaction', {
@@ -113,10 +106,7 @@ export class PsTransactionsService {
    * @param payload
    */
   chargeTransaction(
-    payload: RequiredProperties<
-      PsChargeTransactionRequestModel,
-      'amount' | 'email' | 'authorization_code'
-    >
+    payload: PsChargeTransactionRequestModel
   ): Observable<PsChargeTransactionResponseModel> {
     return this.httpService
       .post<PsInitializeTransactionResponseModel>(
@@ -147,10 +137,7 @@ export class PsTransactionsService {
    * @param queryParamsPayload
    */
   transactionTotals(
-    queryParamsPayload: RequiredProperties<
-      PsTransactionTotalsRequestModel,
-      'perPage' | 'page'
-    >
+    queryParamsPayload: PsTransactionTotalsRequestModel
   ): Observable<PsTransactionTotalsResponseModel> {
     return this.httpService
       .get<PsTransactionTotalsResponseModel>(`transaction/totals`, {
@@ -165,10 +152,7 @@ export class PsTransactionsService {
    * @param queryParamsPayload
    */
   exportTransaction(
-    queryParamsPayload: RequiredProperties<
-      PsExportTransactionRequestModel,
-      'perPage' | 'page'
-    >
+    queryParamsPayload: PsExportTransactionRequestModel
   ): Observable<PsExportTransactionResponseModel> {
     return this.httpService
       .get<PsTransactionTotalsResponseModel>(`transaction/export`, {
@@ -183,10 +167,7 @@ export class PsTransactionsService {
    * @param payload
    */
   partialDebit(
-    payload: RequiredProperties<
-      PsPartialDebitRequestModel,
-      'authorization_code' | 'currency' | 'amount' | 'email'
-    >
+    payload: PsPartialDebitRequestModel
   ): Observable<PsPartialDebitResponseModel> {
     return this.httpService
       .post<PsInitializeTransactionResponseModel>(
