@@ -120,7 +120,7 @@ export class TransactionController {
   - [x] Partial Debit <span style="color:green;">&#x2714;</span>
 - [ ] **Transaction Splits** &#x23F3;
   - [x] Create Split <span style="color:green;">&#x2714;</span>
-  - [ ] List Split &#x23F3;
+  - [x] List Split <span style="color:green;">&#x2714;</span>
   - [ ] Fetch Split &#x23F3;
   - [ ] Update Split &#x23F3;
   - [ ] Add/Update Subaccount Split &#x23F3;

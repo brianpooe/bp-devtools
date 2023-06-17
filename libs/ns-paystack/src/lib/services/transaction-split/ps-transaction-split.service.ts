@@ -3,7 +3,9 @@ import { CustomHttpService } from '../custom-http/custom-http.service';
 import {
   handleResponseAndError,
   PsCreateSplitRequestModel,
-  PsCreateSplitResponseModel
+  PsCreateSplitResponseModel,
+  PsListSplitRequestModel,
+  PsListSplitResponseModel
 } from '../../models';
 import { Observable } from 'rxjs';
 
@@ -20,6 +22,20 @@ export class PsTransactionSplitService {
   ): Observable<PsCreateSplitResponseModel> {
     return this.httpService
       .post<PsCreateSplitResponseModel>('split', payload)
+      .pipe(handleResponseAndError());
+  }
+
+  /**
+   * List the transaction splits available
+   * @param queryParamsPayload
+   */
+  listSplit(
+    queryParamsPayload: PsListSplitRequestModel
+  ): Observable<PsListSplitResponseModel> {
+    return this.httpService
+      .get<PsListSplitResponseModel>('split', {
+        params: queryParamsPayload
+      })
       .pipe(handleResponseAndError());
   }
 }
