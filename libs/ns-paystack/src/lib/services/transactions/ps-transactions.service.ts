@@ -1,8 +1,7 @@
-import { BadRequestException, Inject, Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import {
   PsChargeTransactionRequestModel,
   PsChargeTransactionResponseModel,
-  PsConfigModel,
   PsExportTransactionRequestModel,
   PsExportTransactionResponseModel,
   PsFetchTransactionResponseModel,
@@ -17,25 +16,13 @@ import {
   PsVerifyTransactionResponseModel,
   PsViewTransactionTimeLineResponseModel
 } from '../../models';
-import { HttpService } from '@nestjs/axios';
 import { Observable } from 'rxjs';
-import { AxiosRequestConfig } from 'axios';
-import { handleResponseAndError, MODULE_OPTIONS_TOKEN } from '../../helpers';
+import { handleResponseAndError } from '../../helpers';
+import { CustomHttpService } from '../custom-http/custom-http.service';
 
 @Injectable()
 export class PsTransactionsService {
-  axiosRequestConfig: AxiosRequestConfig = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${this.appConfig.secretKey}`
-    }
-  };
-
-  constructor(
-    @Inject(MODULE_OPTIONS_TOKEN)
-    private readonly appConfig: PsConfigModel,
-    private readonly httpService: HttpService
-  ) {}
+  constructor(private readonly httpService: CustomHttpService) {}
 
   /**
    * Initialize a transaction
@@ -50,8 +37,7 @@ export class PsTransactionsService {
     return this.httpService
       .post<PsInitializeTransactionResponseModel>(
         'transaction/initialize',
-        payload,
-        this.axiosRequestConfig
+        payload
       )
       .pipe(handleResponseAndError());
   }
@@ -64,10 +50,7 @@ export class PsTransactionsService {
     reference: string
   ): Observable<PsVerifyTransactionResponseModel> {
     return this.httpService
-      .get<PsVerifyTransactionResponseModel>(
-        `transaction/verify/${reference}`,
-        this.axiosRequestConfig
-      )
+      .get<PsVerifyTransactionResponseModel>(`transaction/verify/${reference}`)
       .pipe(handleResponseAndError());
   }
 
@@ -80,7 +63,6 @@ export class PsTransactionsService {
   ): Observable<PsListTransactionsResponseModel> {
     return this.httpService
       .get<PsListTransactionsResponseModel>('transaction', {
-        ...this.axiosRequestConfig,
         params: queryParamsPayload
       })
       .pipe(handleResponseAndError());
@@ -94,10 +76,7 @@ export class PsTransactionsService {
     transactionId: number
   ): Observable<PsFetchTransactionResponseModel> {
     return this.httpService
-      .get<PsFetchTransactionResponseModel>(
-        `transaction/${transactionId}`,
-        this.axiosRequestConfig
-      )
+      .get<PsFetchTransactionResponseModel>(`transaction/${transactionId}`)
       .pipe(handleResponseAndError());
   }
 
@@ -111,8 +90,7 @@ export class PsTransactionsService {
     return this.httpService
       .post<PsInitializeTransactionResponseModel>(
         'transaction/charge_authorization',
-        payload,
-        this.axiosRequestConfig
+        payload
       )
       .pipe(handleResponseAndError());
   }
@@ -126,8 +104,7 @@ export class PsTransactionsService {
   ): Observable<PsViewTransactionTimeLineResponseModel> {
     return this.httpService
       .get<PsViewTransactionTimeLineResponseModel>(
-        `transaction/timeline/${idOrReference}`,
-        this.axiosRequestConfig
+        `transaction/timeline/${idOrReference}`
       )
       .pipe(handleResponseAndError());
   }
@@ -141,7 +118,6 @@ export class PsTransactionsService {
   ): Observable<PsTransactionTotalsResponseModel> {
     return this.httpService
       .get<PsTransactionTotalsResponseModel>(`transaction/totals`, {
-        ...this.axiosRequestConfig,
         params: queryParamsPayload
       })
       .pipe(handleResponseAndError());
@@ -156,7 +132,6 @@ export class PsTransactionsService {
   ): Observable<PsExportTransactionResponseModel> {
     return this.httpService
       .get<PsTransactionTotalsResponseModel>(`transaction/export`, {
-        ...this.axiosRequestConfig,
         params: queryParamsPayload
       })
       .pipe(handleResponseAndError());
@@ -172,8 +147,7 @@ export class PsTransactionsService {
     return this.httpService
       .post<PsInitializeTransactionResponseModel>(
         'transaction/partial_debit',
-        payload,
-        this.axiosRequestConfig
+        payload
       )
       .pipe(handleResponseAndError());
   }

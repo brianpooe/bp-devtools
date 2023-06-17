@@ -1,5 +1,4 @@
 import { PsTransactionsService } from './ps-transactions.service';
-import { HttpService } from '@nestjs/axios';
 import { AxiosResponse } from 'axios';
 import {
   PsChargeTransactionRequestModel,
@@ -22,14 +21,15 @@ import { fromExact, fromPartial } from '@total-typescript/shoehorn';
 import { of } from 'rxjs';
 import { TestBed } from '@automock/jest';
 import { subscribeSpyTo } from '@hirez_io/observer-spy';
+import { CustomHttpService } from '../custom-http/custom-http.service';
 
 describe(PsTransactionsService.name, () => {
   let service: PsTransactionsService;
-  let httpService: jest.Mocked<HttpService>;
+  let httpService: jest.Mocked<CustomHttpService>;
 
   beforeAll(() => {
     const { unit, unitRef } = TestBed.create(PsTransactionsService)
-      .mock(HttpService)
+      .mock(CustomHttpService)
       .using({
         post: jest.fn(),
         get: jest.fn()
@@ -38,7 +38,7 @@ describe(PsTransactionsService.name, () => {
 
     service = unit;
 
-    httpService = unitRef.get(HttpService);
+    httpService = unitRef.get(CustomHttpService);
   });
 
   describe('initializeTransaction', () => {

@@ -3,19 +3,11 @@ import { PsTransactionsService } from './services';
 import { HttpModule } from '@nestjs/axios';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ConfigurableModuleClass } from './helpers';
+import { CustomHttpService } from './services/custom-http/custom-http.service';
 
 @Module({
-  imports: [
-    HttpModule.registerAsync({
-      imports: [ConfigModule],
-      useFactory: async (configService: ConfigService) => ({
-        timeout: configService.get('HTTP_TIMEOUT'),
-        baseURL: configService.get('BASE_URL')
-      }),
-      inject: [ConfigService]
-    })
-  ],
-  providers: [PsTransactionsService, ConfigService],
+  imports: [HttpModule, ConfigModule],
+  providers: [PsTransactionsService, ConfigService, CustomHttpService],
   exports: [PsTransactionsService]
 })
 export class NsPaystackModule extends ConfigurableModuleClass {}

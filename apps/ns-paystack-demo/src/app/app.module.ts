@@ -8,11 +8,9 @@ import { TransactionController } from './transactions/controllers/transaction.co
 @Module({
   imports: [
     NsPaystackModule.registerAsync({
-      useFactory: (configService: ConfigService) => {
-        return {
-          secretKey: configService.get('PAYSTACK_SECRET_KEY')
-        };
-      },
+      useFactory: (configService: ConfigService) => ({
+        secretKey: configService.get('PAYSTACK_SECRET_KEY')
+      }),
       inject: [ConfigService]
     })
   ],
