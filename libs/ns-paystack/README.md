@@ -19,6 +19,8 @@ yarn add @devtools-bp/ns-paystack
 To use the ns-paystack, you need to provide your Paystack API key. You can obtain the API key from the Paystack
 dashboard. Once you have the API key, you can configure the wrapper in your NestJS application.
 
+#### In App Module
+
 ```typescript
 import { Module } from '@nestjs/common';
 
@@ -34,7 +36,9 @@ import { NsPaystackModule } from '@devtools-bp/ns-paystack';
 export class AppModule {}
 ```
 
-### Using async registration to access environment variables
+### Or use async registration to access environment variables
+
+#### In App Module
 
 ```typescript
 import { Module } from '@nestjs/common';
