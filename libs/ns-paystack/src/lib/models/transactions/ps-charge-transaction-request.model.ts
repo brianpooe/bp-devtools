@@ -1,4 +1,4 @@
-import { PsChannelsModel } from './ps-channels.model';
+import { PsChannelsModel } from '../common/ps-channels.model';
 
 export interface PsChargeTransactionRequestModel {
   amount: string;

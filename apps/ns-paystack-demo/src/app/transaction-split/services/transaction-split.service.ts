@@ -1,0 +1,20 @@
+import { Injectable } from '@nestjs/common';
+import {
+  PsCreateSplitRequestModel,
+  PsCreateSplitResponseModel,
+  PsTransactionSplitService
+} from '@devtools-bp/ns-paystack';
+import { Observable } from 'rxjs';
+
+@Injectable()
+export class TransactionSplitService {
+  constructor(
+    private readonly psTransactionSplitService: PsTransactionSplitService
+  ) {}
+
+  createSplit(
+    payload: PsCreateSplitRequestModel
+  ): Observable<PsCreateSplitResponseModel> {
+    return this.psTransactionSplitService.createSplit(payload);
+  }
+}

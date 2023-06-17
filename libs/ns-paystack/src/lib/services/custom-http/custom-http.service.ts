@@ -36,7 +36,7 @@ export class CustomHttpService extends HttpService {
 
   override post<T>(
     url: string,
-    data?: any,
+    data?: unknown,
     config?: AxiosRequestConfig
   ): Observable<AxiosResponse<T>> {
     return super.post<T>(url, data, {

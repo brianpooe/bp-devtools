@@ -4,7 +4,7 @@
   PsCustomerModel,
   PsLogModel,
   PsMetadataModel
-} from './';
+} from '../';
 
 export interface PsFetchTransactionResponseModel extends PsBaseModel {
   data: PsFetchTransactionResponseDataModel;

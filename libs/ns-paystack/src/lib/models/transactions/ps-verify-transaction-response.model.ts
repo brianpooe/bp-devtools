@@ -3,7 +3,7 @@ import {
   PsAuthorizationModel,
   PsCustomerModel,
   PsLogModel
-} from './';
+} from '../index';
 
 export interface PsVerifyTransactionResponseModel extends PsBaseModel {
   data: PsVerifyTransactionResponseDataModel;

@@ -1,4 +1,4 @@
-import { PsBaseModel, PsHistoryModel } from './';
+import { PsBaseModel, PsHistoryModel } from '../index';
 
 export interface PsViewTransactionTimeLineResponseModel extends PsBaseModel {
   data: PsViewTransactionTimeLineResponseDataModel;

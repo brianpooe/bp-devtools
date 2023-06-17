@@ -4,7 +4,7 @@
   PsAuthorizationModel,
   PsLogModel,
   PsMetadataModel
-} from './';
+} from '../index';
 
 export interface PsListTransactionsResponseModel extends PsBaseModel {
   data?: PsListTransactionsResponseDataModel[] | null;

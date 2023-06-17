@@ -6,7 +6,7 @@ describe('CustomHttpService', () => {
   let service: CustomHttpService;
 
   beforeAll(() => {
-    const { unit, unitRef } = TestBed.create(CustomHttpService)
+    const { unit } = TestBed.create(CustomHttpService)
       .mock(ConfigService)
       .using({
         get: jest.fn()

@@ -1,4 +1,4 @@
-import { PsBaseModel } from './ps-base.model';
+import { PsBaseModel } from '../common/ps-base.model';
 
 export interface PsInitializeTransactionResponseModel extends PsBaseModel {
   data: PsInitializeTransactionResponseDataModel;

@@ -1,23 +1,21 @@
 import { TransactionSplitService } from './transaction-split.service';
-import { CustomHttpService } from '../custom-http/custom-http.service';
 import { TestBed } from '@automock/jest';
+import { PsTransactionSplitService } from '@devtools-bp/ns-paystack';
 
-describe(TransactionSplitService.name, () => {
+describe('TransactionSplitService', () => {
   let service: TransactionSplitService;
-  let httpService: jest.Mocked<CustomHttpService>;
+  let transactionSplitService: jest.Mocked<PsTransactionSplitService>;
 
   beforeAll(() => {
     const { unit, unitRef } = TestBed.create(TransactionSplitService)
-      .mock(CustomHttpService)
+      .mock(PsTransactionSplitService)
       .using({
-        post: jest.fn(),
-        get: jest.fn()
+        createSplit: jest.fn()
       })
       .compile();
 
     service = unit;
-
-    httpService = unitRef.get(CustomHttpService);
+    transactionSplitService = unitRef.get(PsTransactionSplitService);
   });
 
   it('should be defined', () => {
