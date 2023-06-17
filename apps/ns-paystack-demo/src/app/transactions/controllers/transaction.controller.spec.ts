@@ -1,43 +1,21 @@
-import { Test, TestingModule } from '@nestjs/testing';
 import { TransactionController } from './transaction.controller';
 import { TransactionsService } from '../services/transactions.service';
-import {
-  ConfigurableModuleClass,
-  MODULE_OPTIONS_TOKEN,
-  NsPaystackModule,
-  PsTransactionsService
-} from '@devtools-bp/ns-paystack';
-import { ConfigService } from '@nestjs/config';
-import { HttpModule } from '@nestjs/axios';
+import { TestBed } from '@automock/jest';
 
 describe(TransactionController.name, () => {
   let controller: TransactionController;
+  let transactionService: jest.Mocked<TransactionsService>;
 
-  beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
-      imports: [
-        NsPaystackModule.registerAsync({
-          useFactory: (configService: ConfigService) => {
-            return {
-              secretKey: configService.get('PAYSTACK_SECRET_KEY')
-            };
-          },
-          inject: [ConfigService]
-        }),
-        HttpModule
-      ],
-      controllers: [TransactionController],
-      providers: [
-        TransactionsService,
-        PsTransactionsService,
-        {
-          provide: MODULE_OPTIONS_TOKEN,
-          useClass: ConfigurableModuleClass
-        }
-      ]
-    }).compile();
+  beforeAll(() => {
+    const { unit, unitRef } = TestBed.create(TransactionController)
+      .mock(TransactionsService)
+      .using({
+        initializeTransaction: jest.fn()
+      })
+      .compile();
 
-    controller = module.get<TransactionController>(TransactionController);
+    controller = unit;
+    transactionService = unitRef.get(TransactionsService);
   });
 
   it('should be defined', () => {
