@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.6.0...ns-paystack-v1.6.1) (2023-06-17)
+
+
+### Bug Fixes
+
+* conflicts from pull ([b269f40](https://github.com/brianpooe/devtools-bp/commit/b269f40e3343740c250d864a2f3facfd62098bb5))
+
 # [1.6.0](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.5.0...ns-paystack-v1.6.0) (2023-06-17)
 
 
