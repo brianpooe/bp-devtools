@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.6.1...ns-paystack-v1.7.0) (2023-06-17)
+
+
+### Features
+
+* added list split endpoint ([50aabb5](https://github.com/brianpooe/devtools-bp/commit/50aabb5c275e45aa1dd9524c88542dd5b2873f59))
+
 ## [1.6.1](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.6.0...ns-paystack-v1.6.1) (2023-06-17)
 
 
