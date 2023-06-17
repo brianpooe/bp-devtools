@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.4.1...ns-paystack-v1.5.0) (2023-06-17)
+
+
+### Features
+
+* made http service header reusable ([56735ef](https://github.com/brianpooe/devtools-bp/commit/56735efc131ab338d9b7f96188dc5e633c2a0407))
+
 ## [1.4.1](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.4.0...ns-paystack-v1.4.1) (2023-06-16)
 
 
