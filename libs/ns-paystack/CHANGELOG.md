@@ -1,3 +1,15 @@
+# [1.6.0](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.5.0...ns-paystack-v1.6.0) (2023-06-17)
+
+
+### Bug Fixes
+
+* resolve conflicts from pull ([c154fe8](https://github.com/brianpooe/devtools-bp/commit/c154fe802f9df5d92c84583b0fdda7e423d48971))
+
+
+### Features
+
+* added split transaction create split ([2974fa2](https://github.com/brianpooe/devtools-bp/commit/2974fa2f3c0de0defb6ddc8b8deedbf68dfb0e10))
+
 # [1.5.0](https://github.com/brianpooe/devtools-bp/compare/ns-paystack-v1.4.1...ns-paystack-v1.5.0) (2023-06-17)
 
 
