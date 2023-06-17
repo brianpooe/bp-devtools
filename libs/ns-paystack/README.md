@@ -23,9 +23,6 @@ dashboard. Once you have the API key, you can configure the wrapper in your Nest
 import { Module } from '@nestjs/common';
 
 import { NsPaystackModule } from '@devtools-bp/ns-paystack';
-import { ConfigService } from '@nestjs/config';
-import { TransactionsService } from './transactions/services/transactions.service';
-import { TransactionController } from './transactions/controllers/transaction.controller';
 
 @Module({
   imports: [
@@ -48,11 +45,9 @@ import { ConfigService } from '@nestjs/config';
 @Module({
   imports: [
     NsPaystackModule.registerAsync({
-      useFactory: (configService: ConfigService) => {
-        return {
-          secretKey: configService.get('PAYSTACK_SECRET_KEY')
-        };
-      },
+      useFactory: (configService: ConfigService) => ({
+        secretKey: configService.get('PAYSTACK_SECRET_KEY')
+      }),
       inject: [ConfigService]
     })
   ]
@@ -89,7 +84,6 @@ export class TransactionsService {
 ```typescript
 import { Body, Controller, Post } from '@nestjs/common';
 import {
-  PsFetchTransactionResponseModel,
   PsInitializeTransactionRequestModel,
   PsInitializeTransactionResponseModel
 } from '@devtools-bp/ns-paystack';
@@ -121,7 +115,7 @@ export class TransactionController {
   - [x] Export Transaction <span style="color:green;">&#x2714;</span>
   - [x] Partial Debit <span style="color:green;">&#x2714;</span>
 - [ ] **Transaction Splits** &#x23F3;
-  - [ ] Create Split &#x23F3;
+  - [x] Create Split <span style="color:green;">&#x2714;</span>
   - [ ] List Split &#x23F3;
   - [ ] Fetch Split &#x23F3;
   - [ ] Update Split &#x23F3;
@@ -152,7 +146,7 @@ export class TransactionController {
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a
-pull request on the GitHub repository.
+pull request on the GitHub repository. [Learn how to contribute to the project.](https://github.com/firstcontributions/first-contributions)
 
 ## License
 
