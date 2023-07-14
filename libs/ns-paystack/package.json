@@ -10,11 +10,6 @@
     "email": "brian.method@gmail.com"
   },
   "type": "commonjs",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/brianpooe/devtools-bp.git",
-    "directory": "libs/ns-paystack"
-  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/brianpooe/devtools-bp/issues",
@@ -32,11 +27,6 @@
     "API",
     "devtools-bp"
   ],
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/",
-    "tag": "latest"
-  },
   "peerDependencies": {
     "@nestjs/common": "^9.1.1",
     "@nestjs/core": "^9.1.1",
