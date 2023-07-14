@@ -5,7 +5,8 @@ import {
   PsCreateSplitRequestModel,
   PsCreateSplitResponseModel,
   PsListSplitRequestModel,
-  PsListSplitResponseModel
+  PsListSplitResponseModel,
+  PsFetchSplitResponseModel
 } from '../../models';
 import { Observable } from 'rxjs';
 
@@ -36,6 +37,16 @@ export class PsTransactionSplitService {
       .get<PsListSplitResponseModel>('split', {
         params: queryParamsPayload
       })
+      .pipe(handleResponseAndError());
+  }
+
+  /**
+   * Get details of a split transaction
+   * @param id -The id of the split
+   */
+  fetchSplit(id: string): Observable<PsFetchSplitResponseModel> {
+    return this.httpService
+      .get<PsListSplitResponseModel>(`split/${id}`)
       .pipe(handleResponseAndError());
   }
 }
