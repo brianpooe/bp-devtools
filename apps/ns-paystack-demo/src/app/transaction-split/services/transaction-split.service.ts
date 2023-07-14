@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import {
   PsCreateSplitRequestModel,
   PsCreateSplitResponseModel,
+  PsFetchSplitResponseModel,
   PsListSplitRequestModel,
   PsListSplitResponseModel,
   PsTransactionSplitService
@@ -24,5 +25,9 @@ export class TransactionSplitService {
     queryParamsPayload: PsListSplitRequestModel
   ): Observable<PsListSplitResponseModel> {
     return this.psTransactionSplitService.listSplit(queryParamsPayload);
+  }
+
+  fetchSplit(id: string): Observable<PsFetchSplitResponseModel> {
+    return this.psTransactionSplitService.fetchSplit(id);
   }
 }
