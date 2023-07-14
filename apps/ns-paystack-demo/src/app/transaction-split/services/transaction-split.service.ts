@@ -20,6 +20,10 @@ export class TransactionSplitService {
     return this.psTransactionSplitService.createSplit(payload);
   }
 
+  /**
+   * list splits
+   * @param queryParamsPayload
+   */
   listSplit(
     queryParamsPayload: PsListSplitRequestModel
   ): Observable<PsListSplitResponseModel> {
