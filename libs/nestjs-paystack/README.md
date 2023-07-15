@@ -121,7 +121,7 @@ export class TransactionController {
 - [ ] **Transaction Splits** &#x23F3;
   - [x] Create Split <span style="color:green;">&#x2714;</span>
   - [x] List Split <span style="color:green;">&#x2714;</span>
-  - [ ] Fetch Split &#x23F3;
+  - [x] Fetch Split <span style="color:green;">&#x2714;</span>
   - [ ] Update Split &#x23F3;
   - [ ] Add/Update Subaccount Split &#x23F3;
   - [ ] Remove Subaccount from Split &#x23F3;
