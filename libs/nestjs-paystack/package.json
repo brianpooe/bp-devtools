@@ -1,5 +1,5 @@
 {
-  "name": "@devtools-bp/ns-paystack",
+  "name": "@devtools-bp/nestjs-paystack",
   "description": "Powerful library that provides seamless integration with the Paystack payment gateway for your NestJS applications. You can easily handle payment transactions with minimal effort.",
   "version": "0.0.0-semantic-release",
   "scripts": {
@@ -24,13 +24,12 @@
   "keywords": [
     "nestjs",
     "paystack",
-    "ns-paystack",
+    "nestjs-paystack",
     "library",
     "wrapper",
     "payment",
-    "integration",
-    "API",
-    "devtools-bp"
+    "devtools-bp",
+    "typesafe-paystack"
   ],
   "publishConfig": {
     "access": "public",

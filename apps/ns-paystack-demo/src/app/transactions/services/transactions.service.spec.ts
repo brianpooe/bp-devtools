@@ -1,5 +1,5 @@
 import { TransactionsService } from './transactions.service';
-import { PsTransactionsService } from '@devtools-bp/ns-paystack';
+import { PsTransactionsService } from '@devtools-bp/nestjs-paystack';
 import { TestBed } from '@automock/jest';
 
 describe(TransactionsService.name, () => {

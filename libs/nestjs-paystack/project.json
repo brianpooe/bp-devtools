@@ -1,18 +1,18 @@
 {
-  "name": "ns-paystack",
+  "name": "nestjs-paystack",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/ns-paystack/src",
+  "sourceRoot": "libs/nestjs-paystack/src",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/ns-paystack",
-        "tsConfig": "libs/ns-paystack/tsconfig.lib.json",
-        "packageJson": "libs/ns-paystack/package.json",
-        "main": "libs/ns-paystack/src/index.ts",
-        "assets": ["libs/ns-paystack/*.md"]
+        "outputPath": "dist/libs/nestjs-paystack",
+        "tsConfig": "libs/nestjs-paystack/tsconfig.lib.json",
+        "packageJson": "libs/nestjs-paystack/package.json",
+        "main": "libs/nestjs-paystack/src/index.ts",
+        "assets": ["libs/nestjs-paystack/*.md"]
       }
     },
     "publish": {
@@ -23,14 +23,14 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/ns-paystack/**/*.ts"]
+        "lintFilePatterns": ["libs/nestjs-paystack/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/ns-paystack/jest.config.ts",
+        "jestConfig": "libs/nestjs-paystack/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
@@ -46,7 +46,7 @@
       "options": {
         "commands": [
           {
-            "command": "npx semantic-release-plus --debug --extends ./libs/ns-paystack/release.config.js"
+            "command": "npx semantic-release-plus --debug --extends ./libs/nestjs-paystack/release.config.js"
           }
         ]
       }

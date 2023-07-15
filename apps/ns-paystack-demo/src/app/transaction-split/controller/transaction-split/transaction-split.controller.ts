@@ -4,7 +4,7 @@ import {
   PsCreateSplitResponseModel,
   PsListSplitRequestModel,
   PsListSplitResponseModel
-} from '@devtools-bp/ns-paystack';
+} from '@devtools-bp/nestjs-paystack';
 import { Observable } from 'rxjs';
 import { TransactionSplitService } from '../../services/transaction-split.service';
 
