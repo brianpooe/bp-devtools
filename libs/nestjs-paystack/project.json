@@ -41,14 +41,9 @@
       }
     },
     "release": {
-      "executor": "nx:run-commands",
-      "outputs": [],
+      "executor": "nx-release:build-update-publish",
       "options": {
-        "commands": [
-          {
-            "command": "npx semantic-release-plus --debug --extends ./libs/nestjs-paystack/release.config.js"
-          }
-        ]
+        "libName": "ns-paystack"
       }
     }
   },

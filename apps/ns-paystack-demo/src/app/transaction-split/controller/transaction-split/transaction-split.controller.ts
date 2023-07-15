@@ -1,7 +1,8 @@
-import { Body, Controller, Get, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
 import {
   PsCreateSplitRequestModel,
   PsCreateSplitResponseModel,
+  PsFetchSplitResponseModel,
   PsListSplitRequestModel,
   PsListSplitResponseModel
 } from '@devtools-bp/nestjs-paystack';
@@ -26,5 +27,10 @@ export class TransactionSplitController {
     @Query() queryParamsPayload: PsListSplitRequestModel
   ): Observable<PsListSplitResponseModel> {
     return this.transactionSplitService.listSplit(queryParamsPayload);
+  }
+
+  @Get(':id')
+  fetchSplit(@Param('id') id: string): Observable<PsFetchSplitResponseModel> {
+    return this.transactionSplitService.fetchSplit(id);
   }
 }
