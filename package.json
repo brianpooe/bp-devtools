@@ -1,6 +1,6 @@
 {
   "name": "@devtools-bp/source",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "start:api:demo": "nx serve ns-paystack-demo",
