@@ -6,7 +6,7 @@ import {
   PsListSplitRequestModel,
   PsListSplitResponseModel,
   PsTransactionSplitService
-} from '@devtools-bp/ns-paystack';
+} from '@devtools-bp/nestjs-paystack';
 import { Observable } from 'rxjs';
 
 @Injectable()

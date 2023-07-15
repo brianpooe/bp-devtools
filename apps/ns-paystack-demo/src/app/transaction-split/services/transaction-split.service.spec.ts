@@ -1,6 +1,6 @@
 import { TransactionSplitService } from './transaction-split.service';
 import { TestBed } from '@automock/jest';
-import { PsTransactionSplitService } from '@devtools-bp/ns-paystack';
+import { PsTransactionSplitService } from '@devtools-bp/nestjs-paystack';
 
 describe('TransactionSplitService', () => {
   let service: TransactionSplitService;

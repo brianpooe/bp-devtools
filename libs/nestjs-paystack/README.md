@@ -1,22 +1,22 @@
-# ns-paystack
+# nestjs-paystack
 
 The wrapper provides a convenient way to integrate Paystack payment functionality into your NestJS applications.
 
 ## Installation
 
 ```shell
-npm install @devtools-bp/ns-paystack
+npm install @devtools-bp/nestjs-paystack
 ```
 
 or
 
 ```shell
-yarn add @devtools-bp/ns-paystack
+yarn add @devtools-bp/nestjs-paystack
 ```
 
 ## Configuration
 
-To use the ns-paystack, you need to provide your Paystack API key. You can obtain the API key from the Paystack
+To use the nestjs-paystack, you need to provide your Paystack API key. You can obtain the API key from the Paystack
 dashboard. Once you have the API key, you can configure the wrapper in your NestJS application.
 
 #### In App Module
@@ -24,7 +24,7 @@ dashboard. Once you have the API key, you can configure the wrapper in your Nest
 ```typescript
 import { Module } from '@nestjs/common';
 
-import { NsPaystackModule } from '@devtools-bp/ns-paystack';
+import { NsPaystackModule } from '@devtools-bp/nestjs-paystack';
 
 @Module({
   imports: [
@@ -43,7 +43,7 @@ export class AppModule {}
 ```typescript
 import { Module } from '@nestjs/common';
 
-import { NsPaystackModule } from '@devtools-bp/ns-paystack';
+import { NsPaystackModule } from '@devtools-bp/nestjs-paystack';
 import { ConfigService } from '@nestjs/config';
 
 @Module({
@@ -69,7 +69,7 @@ import {
   PsTransactionsService,
   PsInitializeTransactionRequestModel,
   PsInitializeTransactionResponseModel
-} from '@devtools-bp/ns-paystack';
+} from '@devtools-bp/nestjs-paystack';
 
 @Injectable()
 export class TransactionsService {
@@ -90,7 +90,7 @@ import { Body, Controller, Post } from '@nestjs/common';
 import {
   PsInitializeTransactionRequestModel,
   PsInitializeTransactionResponseModel
-} from '@devtools-bp/ns-paystack';
+} from '@devtools-bp/nestjs-paystack';
 import { TransactionsService } from '../services/transactions.service';
 
 @Controller('transaction')

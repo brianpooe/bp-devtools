@@ -18,8 +18,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@devtools-bp/ns-paystack": [
-        "libs/ns-paystack/src/index.ts"
+      "@devtools-bp/nestjs-paystack": [
+        "libs/nestjs-paystack/src/index.ts"
       ]
     }
   },

@@ -25,12 +25,12 @@ To get started with the devtools-bp monorepo, follow these steps:
 
 ### NestJS Libraries
 
-1. **ns-paystack**: Powerful library that provides seamless integration with the Paystack payment gateway for your
+1. **nestjs-paystack**: Powerful library that provides seamless integration with the Paystack payment gateway for your
    NestJS applications. You can easily handle payment transactions with minimal effort.
 
 - Usage:
-  - Installation: `npm install @devtools-bp/ns-paystack`
-  - Documentation: [Link to documentation](https://github.com/brianpooe/devtools-bp/blob/main/libs/ns-paystack/README.md)
+  - Installation: `npm install @devtools-bp/nestjs-paystack`
+  - Documentation: [Link to documentation](https://github.com/brianpooe/devtools-bp/blob/main/libs/nestjs-paystack/README.md)
 
 ### Angular Libraries
 
