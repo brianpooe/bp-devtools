@@ -1,4 +1,4 @@
-import { PsBaseModel } from '../';
+import { PsBaseModel, PsSubaccountsEntityModel } from '../';
 
 export interface PsFetchSplitResponseModel extends PsBaseModel {
   data: PsFetchSplitResponseDataModel;
@@ -17,25 +17,6 @@ export interface PsFetchSplitResponseDataModel {
   bearer_subaccount: number;
   created_at: string;
   updated_at: string;
-  subaccounts?: SubaccountsEntity[] | null;
+  subaccounts?: PsSubaccountsEntityModel[] | null;
   total_subaccounts: number;
-}
-
-export interface SubaccountsEntity {
-  subaccount: Subaccount;
-  share: number;
-}
-
-export interface Subaccount {
-  id: number;
-  subaccount_code: string;
-  business_name: string;
-  description: string;
-  primary_contact_name?: null;
-  primary_contact_email?: null;
-  primary_contact_phone?: null;
-  metadata?: null;
-  percentage_charge: number;
-  settlement_bank: string;
-  account_number: string;
 }

@@ -44,4 +44,26 @@ export class CustomHttpService extends HttpService {
       headers: this.axiosRequestConfig.headers
     });
   }
+
+  override put<T>(
+    url: string,
+    data?: unknown,
+    config?: AxiosRequestConfig
+  ): Observable<AxiosResponse<T>> {
+    return super.post<T>(url, data, {
+      ...config,
+      headers: this.axiosRequestConfig.headers
+    });
+  }
+
+  override delete<T>(
+    url: string,
+    data?: unknown,
+    config?: AxiosRequestConfig
+  ): Observable<AxiosResponse<T>> {
+    return super.post<T>(url, data, {
+      ...config,
+      headers: this.axiosRequestConfig.headers
+    });
+  }
 }

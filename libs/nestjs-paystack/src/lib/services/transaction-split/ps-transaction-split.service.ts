@@ -6,9 +6,11 @@ import {
   PsCreateSplitResponseModel,
   PsListSplitRequestModel,
   PsListSplitResponseModel,
-  PsFetchSplitResponseModel
+  PsFetchSplitResponseModel,
+  PsUpdateSplitRequestModel
 } from '../../models';
 import { Observable } from 'rxjs';
+import { PsUpdateSplitResponseModel } from '../../models';
 
 @Injectable()
 export class PsTransactionSplitService {
@@ -47,6 +49,20 @@ export class PsTransactionSplitService {
   fetchSplit(id: string): Observable<PsFetchSplitResponseModel> {
     return this.httpService
       .get<PsListSplitResponseModel>(`split/${id}`)
+      .pipe(handleResponseAndError());
+  }
+
+  /**
+   * Update a transaction split details
+   * @param id -The id of the split
+   * @param payload
+   */
+  updateSplit(
+    id: string,
+    payload: PsUpdateSplitRequestModel
+  ): Observable<PsUpdateSplitResponseModel> {
+    return this.httpService
+      .put<PsUpdateSplitResponseModel>(`split/${id}`, payload)
       .pipe(handleResponseAndError());
   }
 }
