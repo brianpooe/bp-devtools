@@ -1,3 +1,24 @@
+## [1.1.0](https://github.com/brianpooe/devtools-bp/compare/v1.0.0...v1.1.0) (2023-07-16)
+
+
+### Features
+
+* added demo for update split transaction ([317e0f6](https://github.com/brianpooe/devtools-bp/commit/317e0f6485aae5331227785bb695090a92297bb0))
+* added update split transaction ([02cb054](https://github.com/brianpooe/devtools-bp/commit/02cb054bb9c485afc53482dd89cf6dfc283c61d2))
+* update split transaction by id ([33008f5](https://github.com/brianpooe/devtools-bp/commit/33008f5c4229ddee9adf6f7938a2995e31da5fba))
+
+
+### Bug Fixes
+
+* added http method put override ([703be44](https://github.com/brianpooe/devtools-bp/commit/703be44acaf2774e740d28eae1d4c9c17d237609))
+* resolved conflicts ([5e2c9b4](https://github.com/brianpooe/devtools-bp/commit/5e2c9b4ae1ea7f97234aefa49d47ccad6b0dd4fd))
+
+
+### Chores
+
+* update readme for nestjs paystack ([363411d](https://github.com/brianpooe/devtools-bp/commit/363411d2b3456d4b24967d087d399ad369d980be))
+* update readme for nestjs paystack ([#14](https://github.com/brianpooe/devtools-bp/issues/14)) ([62d43f9](https://github.com/brianpooe/devtools-bp/commit/62d43f9b199e07c105ec178d85995e8e29be128b))
+
 ## 1.0.0 (2023-07-15)
 
 
