@@ -1,4 +1,4 @@
-import { PsBaseModel, SubaccountsEntity } from '../';
+import { PsBaseModel, PsSubaccountsEntityModel } from '../common';
 
 export interface PsListSplitResponseModel extends PsBaseModel {
   data: PsListSplitResponseDataModel[];
@@ -17,6 +17,6 @@ export interface PsListSplitResponseDataModel {
   bearer_subaccount: number;
   created_at: string;
   updated_at: string;
-  subaccounts?: SubaccountsEntity[] | null;
+  subaccounts?: PsSubaccountsEntityModel[] | null;
   total_subaccounts: number;
 }
