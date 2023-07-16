@@ -11,20 +11,20 @@ import {
 import { Observable } from 'rxjs';
 import { TransactionSplitService } from '../../services/transaction-split.service';
 
-@Controller('transaction-split')
+@Controller('transaction/split')
 export class TransactionSplitController {
   constructor(
     private readonly transactionSplitService: TransactionSplitService
   ) {}
 
-  @Post('split')
+  @Post()
   createSplit(
     @Body() payload: PsCreateSplitRequestModel
   ): Observable<PsCreateSplitResponseModel> {
     return this.transactionSplitService.createSplit(payload);
   }
 
-  @Get('split')
+  @Get()
   listSplit(
     @Query() queryParamsPayload: PsListSplitRequestModel
   ): Observable<PsListSplitResponseModel> {

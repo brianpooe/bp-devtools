@@ -10,7 +10,7 @@ import {
   PsUpdateSplitRequestModel
 } from '../../models';
 import { Observable } from 'rxjs';
-import { PsUpdateSplitResponseModel } from '../../models/transaction-split/ps-update-split-response.model';
+import { PsUpdateSplitResponseModel } from '../../models';
 
 @Injectable()
 export class PsTransactionSplitService {
