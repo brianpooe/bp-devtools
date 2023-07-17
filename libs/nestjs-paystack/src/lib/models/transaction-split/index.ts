@@ -7,3 +7,5 @@ export * from './ps-update-split-request.model';
 export * from './ps-update-split-response.model';
 export * from './ps-upsert-subaccount-split-request.model';
 export * from './ps-upsert-subaccount-split-response.model';
+export * from './ps-remove-subaccount-split-reponse.model';
+export * from './ps-remove-subaccount-split-request.model';
