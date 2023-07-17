@@ -6,7 +6,10 @@ import {
   PsCreateSplitResponseModel,
   PsListSplitRequestModel,
   PsListSplitResponseModel,
-  PsUpdateSplitRequestModel
+  PsUpdateSplitRequestModel,
+  PsUpsertSubaccountSplitRequestModel,
+  PsUpsertSubaccountSplitResponseDataModel,
+  PsUpsertSubaccountSplitResponseModel
 } from '../../models';
 import { of } from 'rxjs';
 import { AxiosResponse } from 'axios';
@@ -264,7 +267,7 @@ describe(PsTransactionSplitService.name, () => {
   });
 
   describe('updateSplit', () => {
-    it('should return update split by id', () => {
+    it('should return updated split by id', () => {
       // Arrange
       const input: PsUpdateSplitRequestModel = {
         name: 'update Split',
@@ -330,6 +333,82 @@ describe(PsTransactionSplitService.name, () => {
 
       // Act
       const observerSpy = subscribeSpyTo(service.updateSplit(id, input));
+
+      // Assert
+      expect(observerSpy.getLastValue()).toEqual(response.data);
+    });
+  });
+
+  describe('upsertSubaccountSplit', () => {
+    it('should return updated or added split by id', () => {
+      // Arrange
+      const input: PsUpsertSubaccountSplitRequestModel = {
+        subaccount: 'ACCT_hdl8abxl8drhrl3',
+        share: 40000
+      };
+      const id = '143';
+
+      const response: AxiosResponse<PsUpsertSubaccountSplitResponseModel> =
+        fromPartial({
+          data: fromPartial({
+            status: true,
+            message: 'Subaccount added',
+            data: {
+              id: 142,
+              name: 'Test Doc',
+              type: 'percentage',
+              currency: 'NGN',
+              integration: 428626,
+              domain: 'test',
+              split_code: 'SPL_e7jnRLtzla',
+              active: true,
+              bearer_type: 'subaccount',
+              createdAt: '2020-06-30T11:42:29.150Z',
+              updatedAt: '2020-06-30T11:42:29.150Z',
+              subaccounts: [
+                {
+                  subaccount: {
+                    id: 40809,
+                    subaccount_code: 'ACCT_z3x6z3nbo14xsil',
+                    business_name: 'Business Name',
+                    description: 'Business Description',
+                    primary_contact_name: null,
+                    primary_contact_email: null,
+                    primary_contact_phone: null,
+                    metadata: null,
+                    percentage_charge: 20,
+                    settlement_bank: 'Business Bank',
+                    account_number: '1234567890'
+                  },
+                  share: 20
+                },
+                {
+                  subaccount: {
+                    id: 40809,
+                    subaccount_code: 'ACCT_pwwualwty4nhq9d',
+                    business_name: 'Business Name',
+                    description: 'Business Description',
+                    primary_contact_name: null,
+                    primary_contact_email: null,
+                    primary_contact_phone: null,
+                    metadata: null,
+                    percentage_charge: 20,
+                    settlement_bank: 'Business Bank',
+                    account_number: '0123456789'
+                  },
+                  share: 30
+                }
+              ],
+              total_subaccounts: 2
+            }
+          })
+        });
+      httpService.post.mockReturnValueOnce(of(response));
+
+      // Act
+      const observerSpy = subscribeSpyTo(
+        service.upsertSubaccountSplit(id, input)
+      );
 
       // Assert
       expect(observerSpy.getLastValue()).toEqual(response.data);

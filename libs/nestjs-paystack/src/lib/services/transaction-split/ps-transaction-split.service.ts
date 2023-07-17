@@ -7,10 +7,12 @@ import {
   PsListSplitRequestModel,
   PsListSplitResponseModel,
   PsFetchSplitResponseModel,
-  PsUpdateSplitRequestModel
+  PsUpdateSplitRequestModel,
+  PsUpsertSubaccountSplitResponseModel,
+  PsUpdateSplitResponseModel,
+  PsUpsertSubaccountSplitRequestModel
 } from '../../models';
 import { Observable } from 'rxjs';
-import { PsUpdateSplitResponseModel } from '../../models';
 
 @Injectable()
 export class PsTransactionSplitService {
@@ -63,6 +65,20 @@ export class PsTransactionSplitService {
   ): Observable<PsUpdateSplitResponseModel> {
     return this.httpService
       .put<PsUpdateSplitResponseModel>(`split/${id}`, payload)
+      .pipe(handleResponseAndError());
+  }
+
+  /**
+   * Add a Subaccount to a Transaction Split, or update the share of an existing Subaccount in a Transaction Split
+   * @param id - split id
+   * @param payload
+   */
+  upsertSubaccountSplit(
+    id: string,
+    payload: PsUpsertSubaccountSplitRequestModel
+  ): Observable<PsUpsertSubaccountSplitResponseModel> {
+    return this.httpService
+      .post<PsUpdateSplitResponseModel>(`split/${id}/subaccount/add`, payload)
       .pipe(handleResponseAndError());
   }
 }

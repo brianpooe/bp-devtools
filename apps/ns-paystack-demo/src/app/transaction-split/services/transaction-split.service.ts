@@ -7,7 +7,9 @@ import {
   PsListSplitResponseModel,
   PsTransactionSplitService,
   PsUpdateSplitRequestModel,
-  PsUpdateSplitResponseModel
+  PsUpdateSplitResponseModel,
+  PsUpsertSubaccountSplitRequestModel,
+  PsUpsertSubaccountSplitResponseModel
 } from '@devtools-bp/nestjs-paystack';
 import { Observable } from 'rxjs';
 
@@ -42,5 +44,12 @@ export class TransactionSplitService {
     payload: PsUpdateSplitRequestModel
   ): Observable<PsUpdateSplitResponseModel> {
     return this.psTransactionSplitService.updateSplit(id, payload);
+  }
+
+  upsertSubaccountSplit(
+    id: string,
+    payload: PsUpsertSubaccountSplitRequestModel
+  ): Observable<PsUpsertSubaccountSplitResponseModel> {
+    return this.psTransactionSplitService.upsertSubaccountSplit(id, payload);
   }
 }
