@@ -19,6 +19,8 @@ import {
   PsUpdateSplitResponseModel,
   PsFetchSplitResponseModel
 } from '../../models';
+import { PsRemoveSubaccountSplitRequestModel } from '../../models/transaction-split/ps-remove-subaccount-split-request.model';
+import { PsRemoveSubaccountSplitReponseModel } from '../../models/transaction-split/ps-remove-subaccount-split-reponse.model';
 
 describe(PsTransactionSplitService.name, () => {
   let service: PsTransactionSplitService;
@@ -408,6 +410,33 @@ describe(PsTransactionSplitService.name, () => {
       // Act
       const observerSpy = subscribeSpyTo(
         service.upsertSubaccountSplit(id, input)
+      );
+
+      // Assert
+      expect(observerSpy.getLastValue()).toEqual(response.data);
+    });
+  });
+
+  describe('removeSubaccountSplit', () => {
+    it('should return successfully after removal of subaccount from split', () => {
+      // Arrange
+      const input: PsRemoveSubaccountSplitRequestModel = {
+        subaccount: 'ACCT_hdl8abxl8drhrl3'
+      };
+      const id = '143';
+
+      const response: AxiosResponse<PsRemoveSubaccountSplitReponseModel> =
+        fromPartial({
+          data: fromPartial({
+            status: true,
+            message: 'Subaccount removed'
+          })
+        });
+      httpService.post.mockReturnValueOnce(of(response));
+
+      // Act
+      const observerSpy = subscribeSpyTo(
+        service.removeSubaccountSplit(id, input)
       );
 
       // Assert

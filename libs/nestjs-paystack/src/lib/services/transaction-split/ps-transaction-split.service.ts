@@ -10,7 +10,9 @@ import {
   PsUpdateSplitRequestModel,
   PsUpsertSubaccountSplitResponseModel,
   PsUpdateSplitResponseModel,
-  PsUpsertSubaccountSplitRequestModel
+  PsUpsertSubaccountSplitRequestModel,
+  PsRemoveSubaccountSplitRequestModel,
+  PsRemoveSubaccountSplitReponseModel
 } from '../../models';
 import { Observable } from 'rxjs';
 
@@ -78,7 +80,22 @@ export class PsTransactionSplitService {
     payload: PsUpsertSubaccountSplitRequestModel
   ): Observable<PsUpsertSubaccountSplitResponseModel> {
     return this.httpService
-      .post<PsUpdateSplitResponseModel>(`split/${id}/subaccount/add`, payload)
+      .post<PsUpsertSubaccountSplitResponseModel>(
+        `split/${id}/subaccount/add`,
+        payload
+      )
+      .pipe(handleResponseAndError());
+  }
+
+  removeSubaccountSplit(
+    id: string,
+    payload: PsRemoveSubaccountSplitRequestModel
+  ): Observable<PsRemoveSubaccountSplitReponseModel> {
+    return this.httpService
+      .post<PsRemoveSubaccountSplitReponseModel>(
+        `split/${id}/subaccount/remove`,
+        payload
+      )
       .pipe(handleResponseAndError());
   }
 }
