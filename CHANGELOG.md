@@ -1,3 +1,17 @@
+## [1.3.0](https://github.com/brianpooe/devtools-bp/compare/v1.2.0...v1.3.0) (2023-07-17)
+
+
+### Features
+
+* added demo for remove subaccount from split ([6f49330](https://github.com/brianpooe/devtools-bp/commit/6f49330c6ac17c06c03b3e63999d6964088f857d))
+* added remove subaccount from split api ([2377df9](https://github.com/brianpooe/devtools-bp/commit/2377df907d13018a67da3920484532963a0ad5be))
+* remove subaccount from transaction split ([301cd62](https://github.com/brianpooe/devtools-bp/commit/301cd62ceb4b013f802ab9c8952711b67bfbb5a9))
+
+
+### Bug Fixes
+
+* model imports to be part of barrel ([17eb136](https://github.com/brianpooe/devtools-bp/commit/17eb136ca43da87e02610038a520e3106335f1ef))
+
 ## [1.2.0](https://github.com/brianpooe/devtools-bp/compare/v1.1.0...v1.2.0) (2023-07-17)
 
 
