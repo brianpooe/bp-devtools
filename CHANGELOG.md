@@ -1,3 +1,12 @@
+## [1.2.0](https://github.com/brianpooe/devtools-bp/compare/v1.1.0...v1.2.0) (2023-07-17)
+
+
+### Features
+
+* added demo for upsert subaccount split api ([f78ab0f](https://github.com/brianpooe/devtools-bp/commit/f78ab0f3244cae4e2df129a8cdb5805640c75d8b))
+* added upsert subaccount ([d54dfb7](https://github.com/brianpooe/devtools-bp/commit/d54dfb7661ce67240d25f914932e3e6726547b9f))
+* update or add subaccount to a transaction split ([3d45edb](https://github.com/brianpooe/devtools-bp/commit/3d45edbf68da5edf6cf2c09c247c9f4f072a2404))
+
 ## [1.1.0](https://github.com/brianpooe/devtools-bp/compare/v1.0.0...v1.1.0) (2023-07-16)
 
 
