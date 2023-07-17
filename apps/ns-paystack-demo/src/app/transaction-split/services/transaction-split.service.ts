@@ -5,6 +5,8 @@ import {
   PsFetchSplitResponseModel,
   PsListSplitRequestModel,
   PsListSplitResponseModel,
+  PsRemoveSubaccountSplitReponseModel,
+  PsRemoveSubaccountSplitRequestModel,
   PsTransactionSplitService,
   PsUpdateSplitRequestModel,
   PsUpdateSplitResponseModel,
@@ -51,5 +53,12 @@ export class TransactionSplitService {
     payload: PsUpsertSubaccountSplitRequestModel
   ): Observable<PsUpsertSubaccountSplitResponseModel> {
     return this.psTransactionSplitService.upsertSubaccountSplit(id, payload);
+  }
+
+  removeSubaccountSplit(
+    id: string,
+    payload: PsRemoveSubaccountSplitRequestModel
+  ): Observable<PsRemoveSubaccountSplitReponseModel> {
+    return this.psTransactionSplitService.removeSubaccountSplit(id, payload);
   }
 }
