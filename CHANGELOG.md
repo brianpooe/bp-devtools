@@ -1,3 +1,11 @@
+## [1.4.0](https://github.com/brianpooe/devtools-bp/compare/v1.3.0...v1.4.0) (2023-07-19)
+
+
+### Features
+
+* added verification api - resolve account number ([f66bb56](https://github.com/brianpooe/devtools-bp/commit/f66bb562623441b09d9ddca8dc5cf7577aa95344))
+* added verification api - resolve account number ([ae254b7](https://github.com/brianpooe/devtools-bp/commit/ae254b7a3578a24dd13846aab89bcf6e37045696))
+
 ## [1.3.0](https://github.com/brianpooe/devtools-bp/compare/v1.2.0...v1.3.0) (2023-07-17)
 
 
