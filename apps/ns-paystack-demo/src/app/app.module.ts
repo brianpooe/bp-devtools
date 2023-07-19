@@ -6,6 +6,8 @@ import { TransactionsService } from './transactions/services/transactions.servic
 import { TransactionController } from './transactions/controllers/transaction.controller';
 import { TransactionSplitService } from './transaction-split/services/transaction-split.service';
 import { TransactionSplitController } from './transaction-split/controller/transaction-split/transaction-split.controller';
+import { VerificationController } from './verification/controllers/verification.controller';
+import { VerificationService } from './verification/services/verification.service';
 
 @Module({
   imports: [
@@ -16,7 +18,16 @@ import { TransactionSplitController } from './transaction-split/controller/trans
       inject: [ConfigService]
     })
   ],
-  controllers: [TransactionController, TransactionSplitController],
-  providers: [TransactionsService, TransactionSplitService, ConfigService]
+  controllers: [
+    TransactionController,
+    TransactionSplitController,
+    VerificationController
+  ],
+  providers: [
+    TransactionsService,
+    TransactionSplitService,
+    ConfigService,
+    VerificationService
+  ]
 })
 export class AppModule {}

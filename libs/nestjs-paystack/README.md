@@ -118,7 +118,7 @@ export class TransactionController {
   - [x] Transaction Totals <span style="color:green;">&#x2714;</span>
   - [x] Export Transaction <span style="color:green;">&#x2714;</span>
   - [x] Partial Debit <span style="color:green;">&#x2714;</span>
-- [ ] **Transaction Splits** <span style="color:green;">&#x2714;</span>
+- [x] **Transaction Splits** <span style="color:green;">&#x2714;</span>
   - [x] Create Split <span style="color:green;">&#x2714;</span>
   - [x] List Split <span style="color:green;">&#x2714;</span>
   - [x] Fetch Split <span style="color:green;">&#x2714;</span>
@@ -144,7 +144,10 @@ export class TransactionController {
 - [ ] **Charge**
 - [ ] **Disputes**
 - [ ] **Refunds**
-- [ ] **Verification**
+- [ ] **Verification** &#x23F3;
+  - [x] Resolve Account Number <span style="color:green;">&#x2714;</span>
+  - [ ] Validate Account &#x23F3;
+  - [ ] Resolve Card BIN &#x23F3;
 - [ ] **Miscellaneous**
 
 ## Contributing
