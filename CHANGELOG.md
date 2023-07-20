@@ -1,3 +1,18 @@
+## [1.5.0](https://github.com/brianpooe/devtools-bp/compare/v1.4.0...v1.5.0) (2023-07-20)
+
+
+### Features
+
+* added demo for validate account ([0c0e861](https://github.com/brianpooe/devtools-bp/commit/0c0e861a6159789491a2a3a04ddfb84068ec4765))
+* added validate account api ([f472f15](https://github.com/brianpooe/devtools-bp/commit/f472f15db8a4f13f9bf35a4d9d7d0e7fd97b8b02))
+* added validate account api ([1124f46](https://github.com/brianpooe/devtools-bp/commit/1124f46fa2ccbfe7947f8e5272f3c073c90ecf61))
+
+
+### Chores
+
+* pulled latest from main ([bc753a5](https://github.com/brianpooe/devtools-bp/commit/bc753a5e8ea9ce6e0b2671101ddc698af8745308))
+* update readme for completion of validate account ([d62538f](https://github.com/brianpooe/devtools-bp/commit/d62538ffa2cc4a45038ef581d6b897830830524e))
+
 ## [1.4.0](https://github.com/brianpooe/devtools-bp/compare/v1.3.0...v1.4.0) (2023-07-19)
 
 
