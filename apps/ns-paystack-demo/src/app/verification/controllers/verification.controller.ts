@@ -1,8 +1,10 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { VerificationService } from '../services/verification.service';
 import {
   PsResolveAccountRequestModel,
-  PsResolveAccountResponseModel
+  PsResolveAccountResponseModel,
+  PsValidateAccountRequestModel,
+  PsValidateAccountResponseModel
 } from '@devtools-bp/nestjs-paystack';
 import { Observable } from 'rxjs';
 
@@ -15,5 +17,12 @@ export class VerificationController {
     @Query() queryParamsPayload: PsResolveAccountRequestModel
   ): Observable<PsResolveAccountResponseModel> {
     return this.verificationService.resolveAccount(queryParamsPayload);
+  }
+
+  @Post('bank/validate')
+  validateAccount(
+    @Body() payload: PsValidateAccountRequestModel
+  ): Observable<PsValidateAccountResponseModel> {
+    return this.verificationService.validateAccount(payload);
   }
 }

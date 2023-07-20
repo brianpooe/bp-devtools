@@ -2,6 +2,8 @@ import { Injectable } from '@nestjs/common';
 import {
   PsResolveAccountRequestModel,
   PsResolveAccountResponseModel,
+  PsValidateAccountRequestModel,
+  PsValidateAccountResponseModel,
   PsVerificationService
 } from '@devtools-bp/nestjs-paystack';
 import { Observable } from 'rxjs';
@@ -14,5 +16,11 @@ export class VerificationService {
     queryParamsPayload: PsResolveAccountRequestModel
   ): Observable<PsResolveAccountResponseModel> {
     return this.psVerificationService.resolveAccount(queryParamsPayload);
+  }
+
+  validateAccount(
+    payload: PsValidateAccountRequestModel
+  ): Observable<PsValidateAccountResponseModel> {
+    return this.psVerificationService.validateAccount(payload);
   }
 }
