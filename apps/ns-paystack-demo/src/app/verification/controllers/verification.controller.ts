@@ -1,8 +1,9 @@
-import { Body, Controller, Get, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
 import { VerificationService } from '../services/verification.service';
 import {
   PsResolveAccountRequestModel,
   PsResolveAccountResponseModel,
+  PsResolveCardBinResponseModel,
   PsValidateAccountRequestModel,
   PsValidateAccountResponseModel
 } from '@devtools-bp/nestjs-paystack';
@@ -24,5 +25,12 @@ export class VerificationController {
     @Body() payload: PsValidateAccountRequestModel
   ): Observable<PsValidateAccountResponseModel> {
     return this.verificationService.validateAccount(payload);
+  }
+
+  @Get('decision/bin/:bin')
+  resolveCardBin(
+    @Param('bin') bin: string
+  ): Observable<PsResolveCardBinResponseModel> {
+    return this.verificationService.resolveCardBin(bin);
   }
 }

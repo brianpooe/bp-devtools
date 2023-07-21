@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import {
   PsResolveAccountRequestModel,
   PsResolveAccountResponseModel,
+  PsResolveCardBinResponseModel,
   PsValidateAccountRequestModel,
   PsValidateAccountResponseModel,
   PsVerificationService
@@ -22,5 +23,9 @@ export class VerificationService {
     payload: PsValidateAccountRequestModel
   ): Observable<PsValidateAccountResponseModel> {
     return this.psVerificationService.validateAccount(payload);
+  }
+
+  resolveCardBin(bin: string): Observable<PsResolveCardBinResponseModel> {
+    return this.psVerificationService.resolveCardBin(bin);
   }
 }
