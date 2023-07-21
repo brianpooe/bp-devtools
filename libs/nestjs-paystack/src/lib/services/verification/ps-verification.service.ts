@@ -3,6 +3,7 @@ import { CustomHttpService } from '../custom-http/custom-http.service';
 import {
   PsResolveAccountRequestModel,
   PsResolveAccountResponseModel,
+  PsResolveCardBinResponseModel,
   PsValidateAccountRequestModel,
   PsValidateAccountResponseModel
 } from '../../models';
@@ -36,6 +37,16 @@ export class PsVerificationService {
   ): Observable<PsValidateAccountResponseModel> {
     return this.httpService
       .post<PsValidateAccountResponseModel>('bank/validate', payload)
+      .pipe(handleResponseAndError());
+  }
+
+  /**
+   * Get more information about a customer's card
+   * @param bin - First 6 characters of card
+   */
+  resolveCardBin(bin: string): Observable<PsResolveCardBinResponseModel> {
+    return this.httpService
+      .get<PsResolveCardBinResponseModel>(`decision/bin/${bin}`)
       .pipe(handleResponseAndError());
   }
 }

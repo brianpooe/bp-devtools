@@ -4,6 +4,7 @@ import { TestBed } from '@automock/jest';
 import {
   PsResolveAccountRequestModel,
   PsResolveAccountResponseModel,
+  PsResolveCardBinResponseModel,
   PsValidateAccountRequestModel,
   PsValidateAccountResponseModel
 } from '../../models';
@@ -85,6 +86,37 @@ describe(PsVerificationService.name, function () {
 
       // Act
       const observerSpy = subscribeSpyTo(service.validateAccount(input));
+
+      // Act
+      expect(observerSpy.getLastValue()).toEqual(response.data);
+    });
+  });
+
+  describe('resolveCardBin', () => {
+    it("should get more information about a customer's card", () => {
+      // Arrange
+      const input = '539983';
+      const response: AxiosResponse<PsResolveCardBinResponseModel> =
+        fromPartial({
+          data: fromPartial({
+            status: true,
+            message: 'Bin resolved',
+            data: {
+              bin: '539983',
+              brand: 'Mastercard',
+              sub_brand: '',
+              country_code: 'NG',
+              country_name: 'Nigeria',
+              card_type: 'DEBIT',
+              bank: 'Guaranty Trust Bank',
+              linked_bank_id: 9
+            }
+          })
+        });
+      httpService.get.mockReturnValueOnce(of(response));
+
+      // Act
+      const observerSpy = subscribeSpyTo(service.resolveCardBin(input));
 
       // Act
       expect(observerSpy.getLastValue()).toEqual(response.data);

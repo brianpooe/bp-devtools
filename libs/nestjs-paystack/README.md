@@ -144,10 +144,10 @@ export class TransactionController {
 - [ ] **Charge**
 - [ ] **Disputes**
 - [ ] **Refunds**
-- [ ] **Verification** &#x23F3;
+- [ ] **Verification** <span style="color:green;">&#x2714;</span>
   - [x] Resolve Account Number <span style="color:green;">&#x2714;</span>
   - [x] Validate Account <span style="color:green;">&#x2714;</span>
-  - [ ] Resolve Card BIN &#x23F3;
+  - [x] Resolve Card BIN <span style="color:green;">&#x2714;</span>
 - [ ] **Miscellaneous**
 
 ## Contributing
