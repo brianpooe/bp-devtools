@@ -15,7 +15,7 @@
     "url": "https://github.com/brianpooe/devtools-bp/issues",
     "email": "brian.method@gmail.com"
   },
-  "homepage": "https://github.com/brianpooe/devtools-bp/tree/main/libs/ns-paystack#readme",
+  "homepage": "https://github.com/brianpooe/devtools-bp/tree/main/libs/nestjs-paystack#readme",
   "keywords": [
     "nestjs",
     "paystack",
