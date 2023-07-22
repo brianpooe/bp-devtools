@@ -1,3 +1,18 @@
+## [1.8.0](https://github.com/brianpooe/devtools-bp/compare/v1.7.0...v1.8.0) (2023-07-22)
+
+
+### Features
+
+* added demo for listing states by country ([1288aab](https://github.com/brianpooe/devtools-bp/commit/1288aabf9cce03c3f2bd4defd696500df2a9276c))
+* added demo for listing supported countries ([9d7cd67](https://github.com/brianpooe/devtools-bp/commit/9d7cd67fac75d6f30d74383ff9697b0595578517))
+* added list states by country api ([5998a31](https://github.com/brianpooe/devtools-bp/commit/5998a3189a9e5061af6262f9c60a02e8dfb32de7))
+* added list supported countries api ([c3812d7](https://github.com/brianpooe/devtools-bp/commit/c3812d7e84be4ddc704c3b33b7d604f7fb48284b))
+
+
+### Bug Fixes
+
+* rename miscellaneous service ([6b42247](https://github.com/brianpooe/devtools-bp/commit/6b42247c2a35404a815962431f074f33cece00f1))
+
 ## [1.7.0](https://github.com/brianpooe/devtools-bp/compare/v1.6.0...v1.7.0) (2023-07-22)
 
 
