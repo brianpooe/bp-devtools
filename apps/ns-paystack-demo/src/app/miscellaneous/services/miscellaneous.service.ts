@@ -10,19 +10,21 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class MiscellaneousService {
-  constructor(private readonly psMiscellaneous: PsMiscellaneousService) {}
+  constructor(
+    private readonly psMiscellaneousService: PsMiscellaneousService
+  ) {}
 
   listBanks(
     queryParamsPayload: PsListBanksRequestModel
   ): Observable<PsListBanksResponseModel> {
-    return this.psMiscellaneous.listBanks(queryParamsPayload);
+    return this.psMiscellaneousService.listBanks(queryParamsPayload);
   }
 
   listCountries(): Observable<PsListCountriesResponseModel> {
-    return this.psMiscellaneous.listCountries();
+    return this.psMiscellaneousService.listCountries();
   }
 
   listStates(country: string): Observable<PsListStatesResponseModel> {
-    return this.psMiscellaneous.listStates(country);
+    return this.psMiscellaneousService.listStates(country);
   }
 }

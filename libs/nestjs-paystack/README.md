@@ -154,7 +154,7 @@ export class TransactionController {
   - [x] Resolve Account Number <span style="color:green;">&#x2714;</span>
   - [x] Validate Account <span style="color:green;">&#x2714;</span>
   - [x] Resolve Card BIN <span style="color:green;">&#x2714;</span>
-- [x] **Miscellaneous** &#x23F3;
+- [x] **Miscellaneous** <span style="color:green;">&#x2714;</span>
   - [x] **List Banks** <span style="color:green;">&#x2714;</span>
   - [x] **List Countries** <span style="color:green;">&#x2714;</span>
   - [x] **List States (AVS)** <span style="color:green;">&#x2714;</span>
