@@ -144,16 +144,20 @@ export class TransactionController {
 - [ ] **Charge**
 - [ ] **Disputes**
 - [ ] **Refunds**
-- [ ] **Verification** <span style="color:green;">&#x2714;</span>
+- [x] **Verification** <span style="color:green;">&#x2714;</span>
   - [x] Resolve Account Number <span style="color:green;">&#x2714;</span>
   - [x] Validate Account <span style="color:green;">&#x2714;</span>
   - [x] Resolve Card BIN <span style="color:green;">&#x2714;</span>
-- [ ] **Miscellaneous**
+- [ ] **Miscellaneous** &#x23F3;
+  - [x] **List Banks** <span style="color:green;">&#x2714;</span>
+  - [ ] **List Countries** &#x23F3;
+  - [ ] **List States (AVS)** &#x23F3;
 
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a
-pull request on the GitHub repository. [Learn how to contribute to the project.](https://github.com/firstcontributions/first-contributions)
+pull request on the GitHub
+repository. [Learn how to contribute to the project.](https://github.com/firstcontributions/first-contributions)
 
 ## License
 

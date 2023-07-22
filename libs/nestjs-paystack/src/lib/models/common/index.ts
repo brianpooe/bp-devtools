@@ -9,3 +9,4 @@ export * from './ps-channels.model';
 export * from './ps-config.model';
 export * from './ps-customer-fields-entity.model';
 export * from './ps-subaccounts-enitty.model';
+export * from './ps-currency.model';

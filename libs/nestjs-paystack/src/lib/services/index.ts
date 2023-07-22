@@ -4,3 +4,5 @@ export * from './transactions/ps-transactions.service';
 export * from './transaction-split/ps-transaction-split.service';
 // Verification API
 export * from './verification/ps-verification.service';
+// Miscellaneous API
+export * from './miscellaneous/ps-miscellaneous.service';
