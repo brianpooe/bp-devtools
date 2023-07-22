@@ -1,3 +1,12 @@
+## [1.6.0](https://github.com/brianpooe/devtools-bp/compare/v1.5.0...v1.6.0) (2023-07-21)
+
+
+### Features
+
+* added demo for resolve card bin ([bfd5d7e](https://github.com/brianpooe/devtools-bp/commit/bfd5d7ea2ba62e3856d7161b4cf1a271977e2032))
+* added resolve card bin api ([9a88e57](https://github.com/brianpooe/devtools-bp/commit/9a88e57bc6571effb6db01fbcc2ffb1c3e31c62d))
+* resolve card bin ([b7c346d](https://github.com/brianpooe/devtools-bp/commit/b7c346d95e35added150439666368b30c99d4b8a))
+
 ## [1.5.0](https://github.com/brianpooe/devtools-bp/compare/v1.4.0...v1.5.0) (2023-07-20)
 
 
