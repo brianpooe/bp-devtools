@@ -32,9 +32,9 @@ export class PsMiscellaneousService {
    */
   listStates(country: string): Observable<PsListStatesResponseModel> {
     return this.httpService
-      .get<PsListBanksResponseModel>('address_verification/states', {
-        params: { country }
-      })
+      .get<PsListBanksResponseModel>(
+        `address_verification/states?country=${country}`
+      )
       .pipe(handleResponseAndError());
   }
 }
