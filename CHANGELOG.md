@@ -1,3 +1,16 @@
+## [1.7.0](https://github.com/brianpooe/devtools-bp/compare/v1.6.0...v1.7.0) (2023-07-22)
+
+
+### Features
+
+* added demo for listing banks ([b589538](https://github.com/brianpooe/devtools-bp/commit/b5895385469a421aabca62324cf5c6e73935c5ca))
+* added list banks api ([215c109](https://github.com/brianpooe/devtools-bp/commit/215c109c87f5f1e8c950a2e54c23b86ad7a1f8fb))
+
+
+### Chores
+
+* pull latest from main ([b01ff42](https://github.com/brianpooe/devtools-bp/commit/b01ff42c92077676b207a53a11dd392d14a89493))
+
 ## [1.6.0](https://github.com/brianpooe/devtools-bp/compare/v1.5.0...v1.6.0) (2023-07-21)
 
 
