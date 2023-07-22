@@ -3,7 +3,8 @@ import { CustomHttpService } from '../custom-http/custom-http.service';
 import {
   handleResponseAndError,
   PsListBanksRequestModel,
-  PsListBanksResponseModel
+  PsListBanksResponseModel,
+  PsListStatesResponseModel
 } from '../../models';
 import { Observable } from 'rxjs';
 
@@ -21,6 +22,18 @@ export class PsMiscellaneousService {
     return this.httpService
       .get<PsListBanksResponseModel>('bank', {
         params: queryParamsPayload
+      })
+      .pipe(handleResponseAndError());
+  }
+
+  /**
+   * Get a list of states for a country for address verification
+   * @param country
+   */
+  listStates(country: string): Observable<PsListStatesResponseModel> {
+    return this.httpService
+      .get<PsListBanksResponseModel>('address_verification/states', {
+        params: { country }
       })
       .pipe(handleResponseAndError());
   }

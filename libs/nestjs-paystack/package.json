@@ -20,7 +20,6 @@
     "nestjs",
     "paystack",
     "nestjs-paystack",
-    "library",
     "wrapper",
     "payment",
     "devtools-bp",
