@@ -3,7 +3,8 @@ import { CustomHttpService } from '../custom-http/custom-http.service';
 import { TestBed } from '@automock/jest';
 import {
   PsListBanksRequestModel,
-  PsListBanksResponseModel
+  PsListBanksResponseModel,
+  PsListStatesResponseModel
 } from '../../models';
 import { AxiosResponse } from 'axios';
 import { fromPartial } from '@total-typescript/shoehorn';
@@ -128,6 +129,38 @@ describe('MiscellaneousService', () => {
 
       // Act
       const observerSpy = subscribeSpyTo(service.listBanks(input));
+
+      // Act
+      expect(observerSpy.getLastValue()).toEqual(response.data);
+    });
+  });
+
+  describe('listStates', () => {
+    it('should get a list of states for a country for address verification', () => {
+      // Arrange
+      const input = 'Ca';
+      const response: AxiosResponse<PsListStatesResponseModel> = fromPartial({
+        data: fromPartial({
+          status: true,
+          message: 'States retrieved',
+          data: [
+            {
+              name: 'Alberta',
+              slug: 'alberta',
+              abbreviation: 'AB'
+            },
+            {
+              name: 'British Columbia',
+              slug: 'british-columbia',
+              abbreviation: 'BC'
+            }
+          ]
+        })
+      });
+      httpService.get.mockReturnValueOnce(of(response));
+
+      // Act
+      const observerSpy = subscribeSpyTo(service.listStates(input));
 
       // Act
       expect(observerSpy.getLastValue()).toEqual(response.data);
