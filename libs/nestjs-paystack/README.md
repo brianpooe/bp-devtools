@@ -150,7 +150,7 @@ export class TransactionController {
   - [x] Resolve Card BIN <span style="color:green;">&#x2714;</span>
 - [ ] **Miscellaneous** &#x23F3;
   - [x] **List Banks** <span style="color:green;">&#x2714;</span>
-  - [ ] **List Countries** &#x23F3;
+  - [x] **List Countries** <span style="color:green;">&#x2714;</span>
   - [ ] **List States (AVS)** &#x23F3;
 
 ## Contributing
