@@ -2,7 +2,8 @@ import { Module } from '@nestjs/common';
 import {
   PsTransactionSplitService,
   PsTransactionsService,
-  PsVerificationService
+  PsVerificationService,
+  PsMiscellaneousService
 } from './services';
 import { HttpModule } from '@nestjs/axios';
 import { ConfigModule, ConfigService } from '@nestjs/config';
@@ -16,12 +17,14 @@ import { CustomHttpService } from './services/custom-http/custom-http.service';
     CustomHttpService,
     PsTransactionSplitService,
     PsTransactionsService,
-    PsVerificationService
+    PsVerificationService,
+    PsMiscellaneousService
   ],
   exports: [
     PsTransactionSplitService,
     PsTransactionsService,
-    PsVerificationService
+    PsVerificationService,
+    PsMiscellaneousService
   ]
 })
 export class NsPaystackModule extends ConfigurableModuleClass {}

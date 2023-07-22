@@ -10,5 +10,8 @@ export * from './transaction-split';
 // Verification
 export * from './verification';
 
+// Miscellaneous
+export * from './miscellaneous';
+
 // Helpers
 export * from '../helpers';
