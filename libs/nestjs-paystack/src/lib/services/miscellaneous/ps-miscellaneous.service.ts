@@ -4,7 +4,8 @@ import {
   handleResponseAndError,
   PsListBanksRequestModel,
   PsListBanksResponseModel,
-  PsListStatesResponseModel
+  PsListStatesResponseModel,
+  PsListCountriesResponseModel
 } from '../../models';
 import { Observable } from 'rxjs';
 
@@ -35,6 +36,15 @@ export class PsMiscellaneousService {
       .get<PsListBanksResponseModel>(
         `address_verification/states?country=${country}`
       )
+      .pipe(handleResponseAndError());
+  }
+
+  /**
+   * Gets a list of countries that Paystack currently supports
+   */
+  listCountries(): Observable<PsListCountriesResponseModel> {
+    return this.httpService
+      .get<PsListBanksResponseModel>(`country`)
       .pipe(handleResponseAndError());
   }
 }
