@@ -137,7 +137,13 @@ export class TransactionController {
 - [ ] **Payment Requests**
 - [ ] **Settlements**
 - [ ] **Transaction Recipients**
-- [ ] **Transfers**
+- [ ] **Transfers** &#x23F3;
+  - [ ] **Initiate Transfer** &#x23F3;
+  - [ ] **Finalize Transfer** &#x23F3;
+  - [ ] **Initiate Bulk Transfer** &#x23F3;
+  - [ ] **List Transfer** &#x23F3;
+  - [ ] **Fetch Transfer** &#x23F3;
+  - [ ] **Verify Transfer** &#x23F3;
 - [ ] **Transfers Control**
 - [ ] **Bulk Charges**
 - [ ] **Integration**
@@ -148,10 +154,10 @@ export class TransactionController {
   - [x] Resolve Account Number <span style="color:green;">&#x2714;</span>
   - [x] Validate Account <span style="color:green;">&#x2714;</span>
   - [x] Resolve Card BIN <span style="color:green;">&#x2714;</span>
-- [ ] **Miscellaneous** &#x23F3;
+- [x] **Miscellaneous** &#x23F3;
   - [x] **List Banks** <span style="color:green;">&#x2714;</span>
   - [x] **List Countries** <span style="color:green;">&#x2714;</span>
-  - [ ] **List States (AVS)** &#x23F3;
+  - [x] **List States (AVS)** <span style="color:green;">&#x2714;</span>
 
 ## Contributing
 
