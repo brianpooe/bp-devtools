@@ -4,7 +4,8 @@ import { TestBed } from '@automock/jest';
 import {
   PsListBanksRequestModel,
   PsListBanksResponseModel,
-  PsListStatesResponseModel
+  PsListStatesResponseModel,
+  PsListCountriesResponseModel
 } from '../../models';
 import { AxiosResponse } from 'axios';
 import { fromPartial } from '@total-typescript/shoehorn';
@@ -73,54 +74,6 @@ describe('MiscellaneousService', () => {
               id: 173,
               createdAt: '2020-11-24T10:25:07.000Z',
               updatedAt: '2020-11-24T10:25:07.000Z'
-            },
-            {
-              name: 'Infinity MFB',
-              slug: 'infinity-mfb',
-              code: '50457',
-              longcode: '',
-              gateway: null,
-              pay_with_bank: false,
-              active: true,
-              is_deleted: false,
-              country: 'Nigeria',
-              currency: 'NGN',
-              type: 'nuban',
-              id: 172,
-              createdAt: '2020-11-24T10:23:37.000Z',
-              updatedAt: '2020-11-24T10:23:37.000Z'
-            },
-            {
-              name: 'Paycom',
-              slug: 'paycom',
-              code: '999992',
-              longcode: '',
-              gateway: null,
-              pay_with_bank: false,
-              active: true,
-              is_deleted: false,
-              country: 'Nigeria',
-              currency: 'NGN',
-              type: 'nuban',
-              id: 171,
-              createdAt: '2020-11-24T10:20:45.000Z',
-              updatedAt: '2020-11-24T10:20:54.000Z'
-            },
-            {
-              name: 'Petra Mircofinance Bank Plc',
-              slug: 'petra-microfinance-bank-plc',
-              code: '50746',
-              longcode: '',
-              gateway: null,
-              pay_with_bank: false,
-              active: true,
-              is_deleted: false,
-              country: 'Nigeria',
-              currency: 'NGN',
-              type: 'nuban',
-              id: 170,
-              createdAt: '2020-11-24T10:03:06.000Z',
-              updatedAt: '2020-11-24T10:03:06.000Z'
             }
           ]
         })
@@ -129,6 +82,79 @@ describe('MiscellaneousService', () => {
 
       // Act
       const observerSpy = subscribeSpyTo(service.listBanks(input));
+
+      // Act
+      expect(observerSpy.getLastValue()).toEqual(response.data);
+    });
+  });
+
+  describe('listCountries', () => {
+    it('should get a list of countries that Paystack currently supports', () => {
+      // Arrange
+      const response: AxiosResponse<PsListCountriesResponseModel> = fromPartial(
+        {
+          data: fromPartial({
+            status: true,
+            message: 'States retrieved',
+            data: [
+              {
+                id: 1,
+                name: 'Nigeria',
+                iso_code: 'NG',
+                default_currency_code: 'NGN',
+                integration_defaults: {},
+                relationships: {
+                  currency: {
+                    type: 'currency',
+                    data: ['NGN', 'USD']
+                  },
+                  integration_feature: {
+                    type: 'integration_feature',
+                    data: []
+                  },
+                  integration_type: {
+                    type: 'integration_type',
+                    data: ['ITYPE_001', 'ITYPE_002', 'ITYPE_003']
+                  },
+                  payment_method: {
+                    type: 'payment_method',
+                    data: ['PAYM_001', 'PAYM_002', 'PAYM_003', 'PAYM_004']
+                  }
+                }
+              },
+              {
+                id: 2,
+                name: 'Ghana',
+                iso_code: 'GH',
+                default_currency_code: 'GHS',
+                integration_defaults: {},
+                relationships: {
+                  currency: {
+                    type: 'currency',
+                    data: ['GHS', 'USD']
+                  },
+                  integration_feature: {
+                    type: 'integration_feature',
+                    data: []
+                  },
+                  integration_type: {
+                    type: 'integration_type',
+                    data: ['ITYPE_004', 'ITYPE_005']
+                  },
+                  payment_method: {
+                    type: 'payment_method',
+                    data: ['PAYM_001']
+                  }
+                }
+              }
+            ]
+          })
+        }
+      );
+      httpService.get.mockReturnValueOnce(of(response));
+
+      // Act
+      const observerSpy = subscribeSpyTo(service.listCountries());
 
       // Act
       expect(observerSpy.getLastValue()).toEqual(response.data);

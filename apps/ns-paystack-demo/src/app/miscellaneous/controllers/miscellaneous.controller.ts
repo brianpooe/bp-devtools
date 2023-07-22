@@ -3,6 +3,7 @@ import { MiscellaneousService } from '../services/miscellaneous.service';
 import {
   PsListBanksRequestModel,
   PsListBanksResponseModel,
+  PsListCountriesResponseModel,
   PsListStatesResponseModel
 } from '@devtools-bp/nestjs-paystack';
 import { Observable } from 'rxjs';
@@ -23,5 +24,10 @@ export class MiscellaneousController {
     @Query('country') country: string
   ): Observable<PsListStatesResponseModel> {
     return this.miscellaneousService.listStates(country);
+  }
+
+  @Get('country')
+  listCountries(): Observable<PsListCountriesResponseModel> {
+    return this.miscellaneousService.listCountries();
   }
 }
