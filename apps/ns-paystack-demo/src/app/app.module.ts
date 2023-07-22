@@ -1,11 +1,13 @@
 import { Module } from '@nestjs/common';
 
-import { NsPaystackModule } from '@devtools-bp/nestjs-paystack';
 import { ConfigService } from '@nestjs/config';
-import { TransactionsService } from './transactions/services/transactions.service';
+import { MiscellaneousController } from './miscellaneous/controllers/miscellaneous.controller';
+import { MiscellaneousService } from './miscellaneous/services/miscellaneous.service';
+import { NsPaystackModule } from '@devtools-bp/nestjs-paystack';
 import { TransactionController } from './transactions/controllers/transaction.controller';
-import { TransactionSplitService } from './transaction-split/services/transaction-split.service';
 import { TransactionSplitController } from './transaction-split/controller/transaction-split/transaction-split.controller';
+import { TransactionSplitService } from './transaction-split/services/transaction-split.service';
+import { TransactionsService } from './transactions/services/transactions.service';
 import { VerificationController } from './verification/controllers/verification.controller';
 import { VerificationService } from './verification/services/verification.service';
 
@@ -21,13 +23,15 @@ import { VerificationService } from './verification/services/verification.servic
   controllers: [
     TransactionController,
     TransactionSplitController,
-    VerificationController
+    VerificationController,
+    MiscellaneousController
   ],
   providers: [
     TransactionsService,
     TransactionSplitService,
     ConfigService,
-    VerificationService
+    VerificationService,
+    MiscellaneousService
   ]
 })
 export class AppModule {}
