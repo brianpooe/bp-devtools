@@ -1,77 +1,70 @@
 import {
-  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
-  ElementRef,
-  Renderer2
+  ContentChild,
+  Input,
+  TemplateRef
 } from '@angular/core';
+import { KeyValuePipe, NgForOf, NgIf, NgTemplateOutlet } from '@angular/common';
 
 @Component({
   selector: 'ngx-responsive-table',
   standalone: true,
   template: `
-    <table #table>
-      <caption #caption>
-        The last 14 world F1 champions
-      </caption>
+    <ng-container *ngIf="data; then responsiveTable; else loading" />
+    <ng-template #responsiveTable>
+      <table role="table" #table>
+        <caption role="caption" #caption *ngIf="caption">
+          {{
+            caption
+          }}
+        </caption>
+        <thead role="rowgroup">
+          <tr role="row">
+            <ng-container
+              *ngTemplateOutlet="
+                headers || defaultHeaders;
+                context: { $implicit: data }
+              "
+            />
+          </tr>
+        </thead>
+        <tbody role="rowgroup">
+          <tr role="row" *ngFor="let row of data">
+            <ng-container
+              *ngTemplateOutlet="
+                rows || defaultRows;
+                context: { $implicit: row }
+              "
+            />
+          </tr>
+        </tbody>
+      </table>
+    </ng-template>
 
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Poles</th>
-          <th>Podiums</th>
-          <th>Wins</th>
-          <th>Career points</th>
-          <th>Championships</th>
-        </tr>
-      </thead>
+    <ng-template #defaultHeaders let-data>
+      <th
+        scope="col"
+        role="columnheader"
+        *ngFor="let header of data?.[0] | keyvalue"
+      >
+        {{ header.key }}
+      </th>
+    </ng-template>
 
-      <tbody>
-        <tr>
-          <td data-cell="name">Max Verstappen</td>
-          <td data-cell="poles">22</td>
-          <td data-cell="podiums">80</td>
-          <td data-cell="wins">37</td>
-          <td data-cell="career">2080.5</td>
-          <td data-cell="championships">2</td>
-        </tr>
+    <ng-template #defaultRows let-row>
+      <td
+        role="cell"
+        *ngFor="let row of row | keyvalue"
+        [attr.data-cell]="row?.key"
+      >
+        {{ row?.value }}
+      </td>
+    </ng-template>
 
-        <tr>
-          <td data-cell="name">Brian Pooe</td>
-          <td data-cell="poles">12</td>
-          <td data-cell="podiums">1</td>
-          <td data-cell="wins">333</td>
-          <td data-cell="career">2080.5</td>
-          <td data-cell="championships">2</td>
-        </tr>
-        <tr>
-          <td data-cell="name">Tim Wallace</td>
-          <td data-cell="poles">46</td>
-          <td data-cell="podiums">32</td>
-          <td data-cell="wins">67</td>
-          <td data-cell="career">5.5</td>
-          <td data-cell="championships">2</td>
-        </tr>
-        <tr>
-          <td data-cell="name">Greg Beast</td>
-          <td data-cell="poles">45</td>
-          <td data-cell="podiums">99</td>
-          <td data-cell="wins">37</td>
-          <td data-cell="career">699.5</td>
-          <td data-cell="championships">1</td>
-        </tr>
-        <tr>
-          <td data-cell="name">Tom Holland</td>
-          <td data-cell="poles">4</td>
-          <td data-cell="podiums">44</td>
-          <td data-cell="wins">98</td>
-          <td data-cell="career">7666.5</td>
-          <td data-cell="championships">3</td>
-        </tr>
-      </tbody>
-    </table>
+    <ng-template #loading>loading...</ng-template>
   `,
-  imports: [],
+  imports: [NgIf, NgTemplateOutlet, NgForOf, KeyValuePipe],
   styles: [
     `
       :host {
@@ -139,23 +132,11 @@ import {
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NgxResponsiveTableComponent implements AfterViewInit {
-  constructor(private renderer: Renderer2, private elementRef: ElementRef) {}
+export class NgxResponsiveTableComponent {
+  @Input() data: unknown[] = [];
 
-  ngAfterViewInit(): void {
-    this.setTableRoles('table');
-    this.setTableRoles('caption');
-    this.setTableRoles('thead, tbody, tfoot', 'rowgroup');
-    this.setTableRoles('tr', 'row');
-    this.setTableRoles('td', 'cell');
-    this.setTableRoles('th', 'col', 'scope');
-    this.setTableRoles('th[scope=row]', 'rowheader');
-  }
+  @Input() caption = '';
 
-  private setTableRoles(selector: string, role?: string, scope = 'role'): void {
-    const elements = this.elementRef.nativeElement.querySelectorAll(selector);
-    elements.forEach((element: HTMLElement) => {
-      this.renderer.setAttribute(element, scope, role ?? selector);
-    });
-  }
+  @ContentChild('headers') headers!: TemplateRef<unknown>;
+  @ContentChild('rows') rows!: TemplateRef<unknown>;
 }
