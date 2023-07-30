@@ -1,0 +1,56 @@
+#ngx-responsive-table-tb {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#ngx-responsive-table-tb > caption,
+#ngx-responsive-table-th > tr > th,
+#ngx-responsive-table-tb > tr > td {
+  padding: 1rem;
+}
+
+#ngx-responsive-table-tb > caption,
+#ngx-responsive-table-th > tr > th {
+  text-align: left;
+}
+
+caption {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#ngx-responsive-table-tb > caption {
+  background: hsl(54 32% 80% / 1.5);
+}
+
+#ngx-responsive-table-th > tr:nth-of-type(2n) {
+  background: hsl(0 0% 80% / 0.5);
+}
+
+@media (max-width: 650px) {
+  #ngx-responsive-table-th > tr > th {
+    display: none;
+  }
+
+  #ngx-responsive-table-tb > tr > td {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: 50% auto;
+    padding: 0.5rem 1rem;
+  }
+
+  #ngx-responsive-table-tb > tr > td:first-child {
+    padding-top: 2rem;
+  }
+
+  #ngx-responsive-table-tb > tr > td:last-child {
+    padding-bottom: 2rem;
+  }
+
+  #ngx-responsive-table-tb > tr > td::before {
+    content: attr(data-cell) ': ';
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+}

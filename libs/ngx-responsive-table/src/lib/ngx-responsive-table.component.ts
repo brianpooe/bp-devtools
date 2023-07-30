@@ -11,15 +11,15 @@ import { KeyValuePipe, NgForOf, NgIf, NgTemplateOutlet } from '@angular/common';
   selector: 'ngx-responsive-table',
   standalone: true,
   template: `
-    <ng-container *ngIf="data; then responsiveTable; else loading" />
-    <ng-template #responsiveTable>
-      <table role="table" #table>
-        <caption role="caption" #caption *ngIf="caption">
+    <ng-container *ngIf="data; then table; else loading" />
+    <ng-template #table>
+      <table id="ngx-responsive-table-tb" role="table">
+        <caption role="caption" *ngIf="caption">
           {{
             caption
           }}
         </caption>
-        <thead role="rowgroup">
+        <thead id="ngx-responsive-table-th" role="rowgroup">
           <tr role="row">
             <ng-container
               *ngTemplateOutlet="
@@ -29,7 +29,7 @@ import { KeyValuePipe, NgForOf, NgIf, NgTemplateOutlet } from '@angular/common';
             />
           </tr>
         </thead>
-        <tbody role="rowgroup">
+        <tbody id="ngx-responsive-table-tb" role="rowgroup">
           <tr role="row" *ngFor="let row of data">
             <ng-container
               *ngTemplateOutlet="
@@ -44,6 +44,7 @@ import { KeyValuePipe, NgForOf, NgIf, NgTemplateOutlet } from '@angular/common';
 
     <ng-template #defaultHeaders let-data>
       <th
+        class="ngx-responsive-table-th"
         scope="col"
         role="columnheader"
         *ngFor="let header of data?.[0] | keyvalue"
@@ -54,6 +55,7 @@ import { KeyValuePipe, NgForOf, NgIf, NgTemplateOutlet } from '@angular/common';
 
     <ng-template #defaultRows let-row>
       <td
+        class="ngx-responsive-table-td"
         role="cell"
         *ngFor="let row of row | keyvalue"
         [attr.data-cell]="row?.key"
@@ -65,71 +67,6 @@ import { KeyValuePipe, NgForOf, NgIf, NgTemplateOutlet } from '@angular/common';
     <ng-template #loading>loading...</ng-template>
   `,
   imports: [NgIf, NgTemplateOutlet, NgForOf, KeyValuePipe],
-  styles: [
-    `
-      :host {
-        display: block;
-        width: 100%;
-      }
-
-      table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-
-      caption,
-      th,
-      td {
-        padding: 1rem;
-      }
-
-      caption,
-      th {
-        text-align: left;
-      }
-
-      caption {
-        font-size: 1.5rem;
-        font-weight: 700;
-        text-transform: uppercase;
-      }
-
-      th {
-        background: hsl(54 32% 80% / 1.5);
-      }
-
-      tr:nth-of-type(2n) {
-        background: hsl(0 0% 80% / 0.5);
-      }
-
-      @media (max-width: 650px) {
-        th {
-          display: none;
-        }
-
-        td {
-          display: grid;
-          gap: 0.5rem;
-          grid-template-columns: 50% auto;
-          padding: 0.5rem 1rem;
-        }
-
-        td:first-child {
-          padding-top: 2rem;
-        }
-
-        td:last-child {
-          padding-bottom: 2rem;
-        }
-
-        td::before {
-          content: attr(data-cell) ': ';
-          font-weight: 700;
-          text-transform: capitalize;
-        }
-      }
-    `
-  ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NgxResponsiveTableComponent {
