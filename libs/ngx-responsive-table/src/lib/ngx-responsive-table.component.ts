@@ -148,14 +148,14 @@ export class NgxResponsiveTableComponent implements AfterViewInit {
     this.setTableRoles('thead, tbody, tfoot', 'rowgroup');
     this.setTableRoles('tr', 'row');
     this.setTableRoles('td', 'cell');
-    this.setTableRoles('th', 'columnheader');
+    this.setTableRoles('th', 'col', 'scope');
     this.setTableRoles('th[scope=row]', 'rowheader');
   }
 
-  private setTableRoles(selector: string, role?: string): void {
+  private setTableRoles(selector: string, role?: string, scope = 'role'): void {
     const elements = this.elementRef.nativeElement.querySelectorAll(selector);
     elements.forEach((element: HTMLElement) => {
-      this.renderer.setAttribute(element, 'role', role ?? selector);
+      this.renderer.setAttribute(element, scope, role ?? selector);
     });
   }
 }
