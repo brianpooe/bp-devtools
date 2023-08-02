@@ -1,8 +1,11 @@
 import {
+  AfterContentInit,
   ChangeDetectionStrategy,
   Component,
   ContentChild,
+  ElementRef,
   Input,
+  Renderer2,
   TemplateRef
 } from '@angular/core';
 import { KeyValuePipe, NgForOf, NgIf, NgTemplateOutlet } from '@angular/common';
@@ -71,7 +74,6 @@ import { KeyValuePipe, NgForOf, NgIf, NgTemplateOutlet } from '@angular/common';
 })
 export class NgxResponsiveTableComponent {
   @Input() data: unknown[] = [];
-
   @Input() caption = '';
 
   @ContentChild('headers') headers!: TemplateRef<unknown>;

@@ -26,7 +26,7 @@ import { AsyncPipe, NgOptimizedImage } from '@angular/common';
       <br />
       <ngx-responsive-table [data]="(user$ | async)!" caption="Custom cell">
         <ng-template #rows let-row>
-          <td>
+          <td data-cell="avatar">
             <img
               [ngSrc]="row.avatar"
               alt="Avatar"
@@ -35,10 +35,10 @@ import { AsyncPipe, NgOptimizedImage } from '@angular/common';
               height="50"
             />
           </td>
-          <td>{{ row.email }}</td>
-          <td>{{ row.first_name }}</td>
-          <td>{{ row.id }}</td>
-          <td>{{ row.last_name }}</td>
+          <td data-cell="email">{{ row.email }}</td>
+          <td data-cell="first_name">{{ row.first_name }}</td>
+          <td data-cell="id">{{ row.id }}</td>
+          <td data-cell="last_name">{{ row.last_name }}</td>
         </ng-template>
       </ngx-responsive-table>
     </div>
