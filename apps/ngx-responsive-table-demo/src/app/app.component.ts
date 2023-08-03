@@ -14,7 +14,10 @@ import { AsyncPipe, NgOptimizedImage } from '@angular/common';
         caption="default table format"
       />
 
-      <ngx-responsive-table [data]="(user$ | async)!" caption="Custom Headers">
+      <ngx-responsive-table
+        [data]="(user$ | async)!"
+        caption="Custom Header Labels"
+      >
         <ng-template #headers>
           <th>Avatar</th>
           <th>Email</th>
@@ -24,7 +27,7 @@ import { AsyncPipe, NgOptimizedImage } from '@angular/common';
         </ng-template>
       </ngx-responsive-table>
 
-      <ngx-responsive-table [data]="(user$ | async)!" caption="Custom cell">
+      <ngx-responsive-table [data]="(user$ | async)!" caption="Custom Cells">
         <ng-template #headers>
           <th>Avatar</th>
           <th>Email</th>
