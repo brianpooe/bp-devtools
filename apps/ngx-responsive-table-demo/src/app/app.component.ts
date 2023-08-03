@@ -13,7 +13,7 @@ import { AsyncPipe, NgOptimizedImage } from '@angular/common';
         [data]="(user$ | async)!"
         caption="default table format"
       />
-      <br />
+
       <ngx-responsive-table [data]="(user$ | async)!" caption="Custom Headers">
         <ng-template #headers>
           <th>Avatar</th>
@@ -23,8 +23,16 @@ import { AsyncPipe, NgOptimizedImage } from '@angular/common';
           <th>Last Name</th>
         </ng-template>
       </ngx-responsive-table>
-      <br />
+
       <ngx-responsive-table [data]="(user$ | async)!" caption="Custom cell">
+        <ng-template #headers>
+          <th>Avatar</th>
+          <th>Email</th>
+          <th>First Name</th>
+          <th>ID</th>
+          <th>Last Name</th>
+          <th>Actions</th>
+        </ng-template>
         <ng-template #rows let-row>
           <td data-cell="avatar">
             <img
@@ -39,6 +47,10 @@ import { AsyncPipe, NgOptimizedImage } from '@angular/common';
           <td data-cell="first_name">{{ row.first_name }}</td>
           <td data-cell="id">{{ row.id }}</td>
           <td data-cell="last_name">{{ row.last_name }}</td>
+          <td data-cell="actions" id="actions">
+            <button data-cell="edit">Edit</button>
+            <button data-cell="delete">Delete</button>
+          </td>
         </ng-template>
       </ngx-responsive-table>
     </div>
@@ -55,9 +67,34 @@ import { AsyncPipe, NgOptimizedImage } from '@angular/common';
         border-radius: 50%;
       }
 
+      button {
+        padding: 8px 12px;
+        border: none;
+        background-color: #995b00;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 4px;
+        margin: 0.5rem;
+      }
+
+      button:hover {
+        background-color: #ff9800;
+      }
+
       @media (max-width: 650px) {
         .avatar {
           vertical-align: center;
+        }
+
+        #actions {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin: 0 0.5rem;
+        }
+
+        #actions:before {
+          content: '';
         }
       }
     `

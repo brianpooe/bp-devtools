@@ -1,31 +1,45 @@
 #ngx-responsive-table-tb {
-  width: 100%;
   border-collapse: collapse;
-}
-
-#ngx-responsive-table-tb > caption,
-#ngx-responsive-table-th > tr > th,
-#ngx-responsive-table-tb > tr > td {
-  padding: 1rem;
+  width: 100%;
+  color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  text-align: left;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin: 50px auto;
 }
 
 #ngx-responsive-table-tb > caption,
 #ngx-responsive-table-th > tr > th {
-  text-align: left;
-}
-
-caption {
-  font-size: 1.5rem;
-  font-weight: 700;
+  background-color: #ff9800;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  border-top: 1px solid #fff;
 }
 
 #ngx-responsive-table-tb > caption {
-  background: hsl(54 32% 80% / 1.5);
+  background-color: #995b00;
 }
 
 #ngx-responsive-table-th > tr:nth-of-type(2n) {
-  background: hsl(0 0% 80% / 0.5);
+  background-color: #f2f2f2;
+}
+
+#ngx-responsive-table-tb tr:hover td {
+  background-color: #ffedcc;
+  cursor: pointer;
+}
+
+#ngx-responsive-table-tb > tr > td {
+  background-color: #fff;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  font-weight: bold;
 }
 
 @media (max-width: 650px) {
