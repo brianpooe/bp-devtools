@@ -52,19 +52,15 @@ export class AppComponent {
 ##### Default Table
 
 ```html
-<div class="wrapper">
-  <!--  Default table-->
-  <ngx-responsive-table [data]="(user$ | async)!" caption="default table" />
-</div>
+<ngx-responsive-table [data]="user$ | async" caption="default table" />
 ```
 
 ##### Custom Header Labels
 
-It is important to note with custom headers you need to add #headers to your template.
+It is important to note with custom headers you need to add <strong>#headers</strong> to your template.
 
 ```html
-<!--  Custom Header Labels-->
-<ngx-responsive-table [data]="(user$ | async)!" caption="Custom Header Labels">
+<ngx-responsive-table [data]="user$ | async" caption="Custom Header Labels">
   <ng-template #headers>
     <th>Avatar</th>
     <th>Email</th>
@@ -77,11 +73,10 @@ It is important to note with custom headers you need to add #headers to your tem
 
 ##### Custom Cells
 
-It is important to note that with custom cells you will need to add data-cell attribute to each custom cell (table td element) and the #rows with let-row to access the table data.
+It is important to note that with custom cells you will need to add data-cell attribute to each custom cell (<em>table td element</em>) and the <strong>#rows</strong> with <strong>let-row</strong> to access the table data.
 
 ```html
-  <!--  Custom Cells-->
-<ngx-responsive-table [data]="(user$ | async)!" caption="Custom Cells">
+<ngx-responsive-table [data]="user$ | async" caption="Custom Cells">
   <ng-template #headers>
     <th>Avatar</th>
     <th>Email</th>
@@ -110,17 +105,11 @@ It is important to note that with custom cells you will need to add data-cell at
     </td>
   </ng-template>
 </ngx-responsive-table>
-</div>
 ```
 
 #### Styles
 
 ```scss
-.wrapper {
-  width: min(900px, 100% - 3rem);
-  margin-inline: auto;
-}
-
 .avatar {
   vertical-align: middle;
   border-radius: 50%;
