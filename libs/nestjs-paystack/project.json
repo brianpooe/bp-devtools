@@ -43,7 +43,7 @@
     "release": {
       "executor": "nx-release:build-update-publish",
       "options": {
-        "libName": "ns-paystack"
+        "libName": "nestjs-paystack"
       }
     }
   },

@@ -20,6 +20,9 @@
     "paths": {
       "@devtools-bp/nestjs-paystack": [
         "libs/nestjs-paystack/src/index.ts"
+      ],
+      "@devtools-bp/ngx-responsive-table": [
+        "libs/ngx-responsive-table/src/index.ts"
       ]
     }
   },
