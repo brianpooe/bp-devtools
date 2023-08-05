@@ -1,6 +1,15 @@
 {
   "name": "@devtools-bp/ngx-responsive-table",
+  "description": "AN Angular library offering customizable and responsive tables for seamless user experience on all devices. Its flexibility allows users to design tables that fit their project needs with an intuitive API and dynamic data handling. Elevate your Angular applications with this powerful table solution.",
   "version": "0.0.1",
+  "scripts": {
+    "test": "echo \"Error:no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Brian Pooe",
+    "email": "brian.method@gmail.com"
+  },
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^16.1.0",
     "@angular/core": "^16.1.0"
@@ -8,5 +17,24 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "bugs": {
+    "url": "https://github.com/brianpooe/devtools-bp/issues",
+    "email": "brian.method@gmail.com"
+  },
+  "homepage": "https://github.com/brianpooe/devtools-bp/tree/main/libs/ngx-responsive-table#readme",
+  "keywords": [
+    "angular",
+    "table",
+    "responsive",
+    "customizable",
+    "devtools-bp",
+    "ngx-responsive-table"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "maintainers": [
+    "Brian Pooe"
+  ]
 }
