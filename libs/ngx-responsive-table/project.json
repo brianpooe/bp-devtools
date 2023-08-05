@@ -45,6 +45,12 @@
           "libs/ngx-responsive-table/**/*.html"
         ]
       }
+    },
+    "release": {
+      "executor": "nx-release:build-update-publish",
+      "options": {
+        "libName": "ngx-responsive-table"
+      }
     }
   }
 }
