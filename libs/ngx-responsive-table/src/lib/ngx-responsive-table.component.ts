@@ -1,11 +1,8 @@
 import {
-  AfterContentInit,
   ChangeDetectionStrategy,
   Component,
   ContentChild,
-  ElementRef,
   Input,
-  Renderer2,
   TemplateRef
 } from '@angular/core';
 import { KeyValuePipe, NgForOf, NgIf, NgTemplateOutlet } from '@angular/common';

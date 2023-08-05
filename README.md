@@ -34,7 +34,12 @@ To get started with the devtools-bp monorepo, follow these steps:
 
 ### Angular Libraries
 
-Coming soon...
+1. **ngx-responsive-table**: A game-changing Angular library that offers complete customization and responsiveness for tables with seamless user experience on all devices.
+   Its flexibility allows users to design tables that fit their project needs with an intuitive API and dynamic data handling.
+
+- Usage:
+  - Installation: `npm install @devtools-bp/ngx-responsive-table`
+  - Documentation: [Link to documentation](https://github.com/brianpooe/devtools-bp/blob/main/libs/ngx-responsive-table/README.md)
 
 ## Contributing
 
