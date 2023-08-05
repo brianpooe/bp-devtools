@@ -21,7 +21,7 @@ yarn add @devtools-bp/ngx-responsive-table
 To use the ngx-responsive-table you need to import styles from the package itself.
 
 ```scss
-@import 'node_modules/ngx-responsive-table/dist/libs/ngx-responsive-table/assets/styles/default';
+@import 'node_modules/ngx-responsive-table/assets/styles/default';
 ```
 
 ### Usage
