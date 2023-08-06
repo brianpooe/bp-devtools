@@ -21,7 +21,4 @@ jobs:
         run: |
           npm ci
           npx nx build ngx-responsive-table-demo -c production
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist/apps/ngx-responsive-table-demo
+          npm run deploy:ngx-responsive-table-demo
