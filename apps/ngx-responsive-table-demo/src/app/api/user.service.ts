@@ -7,7 +7,7 @@ import { delay, map, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-  private readonly baseUrl = 'https://reqres.in/api/users?page=1&per_page=5';
+  private readonly baseUrl = 'https://reqres.in/api/users?page=2&per_page=5';
 
   constructor(private readonly httpClient: HttpClient) {}
 

@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { NgxResponsiveTableComponent } from '@devtools-bp/ngx-responsive-table';
-import { UserService } from './user.service';
+import { UserService } from './api/user.service';
 import { AsyncPipe, NgOptimizedImage } from '@angular/common';
 
 @Component({
