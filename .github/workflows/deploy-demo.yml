@@ -1,12 +1,12 @@
 name: Deploy demo
 
-on: [ workflow_dispatch ]
+on: [workflow_dispatch]
 
 permissions:
   contents: write
 
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
 
 jobs:
