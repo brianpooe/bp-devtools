@@ -6,7 +6,7 @@
     "start:paystack:demo": "nx serve ns-paystack-demo",
     "start:table:demo": "nx serve ngx-responsive-table-demo",
     "prepare": "husky install",
-    "deploy:ngx-responsive-table-demo": "ng build --prod --base-href=/devtools-bp/ && npx ngh --dir=dist/apps/ngx-responsive-table-demo"
+    "deploy:ngx-responsive-table-demo": "ng build --prod --base-href=/devtools-bp/ngx-responsive-table-demo && npx ngh --dir=dist/apps/ngx-responsive-table-demo"
   },
   "dependencies": {
     "@angular/animations": "~16.1.0",
