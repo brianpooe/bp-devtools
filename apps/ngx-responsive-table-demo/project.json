@@ -20,7 +20,8 @@
           "apps/ngx-responsive-table-demo/src/assets"
         ],
         "styles": ["apps/ngx-responsive-table-demo/src/styles.scss"],
-        "scripts": []
+        "scripts": [],
+        "baseHref": "/devtools-bp/ngx-responsive-table-demo/"
       },
       "configurations": {
         "production": {

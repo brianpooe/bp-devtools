@@ -1,12 +1,12 @@
 name: Deploy demo
 
-on: [ workflow_dispatch ]
+on: [workflow_dispatch]
 
 permissions:
   contents: write
 
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
 
 jobs:
@@ -21,7 +21,4 @@ jobs:
         run: |
           npm ci
           npx nx build ngx-responsive-table-demo -c production
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist/apps/ngx-responsive-table-demo
+          npm run deploy:ngx-responsive-table-demo

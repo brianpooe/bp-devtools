@@ -5,7 +5,8 @@
   "scripts": {
     "start:paystack:demo": "nx serve ns-paystack-demo",
     "start:table:demo": "nx serve ngx-responsive-table-demo",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "deploy:ngx-responsive-table-demo": "ng build --prod --base-href=/devtools-bp/ && npx ngh --dir=dist/apps/ngx-responsive-table-demo"
   },
   "dependencies": {
     "@angular/animations": "~16.1.0",
@@ -27,6 +28,7 @@
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
+    "@angular-devkit/architect": "^0.1601.8",
     "@angular-devkit/build-angular": "~16.1.0",
     "@angular-devkit/core": "~16.1.0",
     "@angular-devkit/schematics": "~16.1.0",
@@ -62,6 +64,7 @@
     "@types/node": "~18.7.1",
     "@typescript-eslint/eslint-plugin": "^5.58.0",
     "@typescript-eslint/parser": "^5.58.0",
+    "angular-cli-ghpages": "^1.0.6",
     "conventional-changelog-conventionalcommits": "^6.1.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "~8.15.0",
