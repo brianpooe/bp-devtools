@@ -1,6 +1,6 @@
 name: Deploy demo
 
-on: [workflow_dispatch]
+on: [ workflow_dispatch ]
 
 permissions:
   contents: write
@@ -22,9 +22,11 @@ jobs:
         with:
           node-version: 18
 
+      - name: install angular cli
+        run: npm install -g @angular/cli
       - name: Install and Build 🔧
-        run: |
-          npm ci --legacy-peer-deps
-          npx nx build ngx-responsive-table-demo -c production
-          npm install -g @angular/cli
-          npm run deploy:ngx-responsive-table-demo
+        run: npm i --legacy-peer-deps
+      - name: Build app for production
+        run: npx nx build ngx-responsive-table-demo -c production
+      - name: Deploy to gh pages
+        run: npm run deploy:ngx-responsive-table-demo
