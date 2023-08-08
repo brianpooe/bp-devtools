@@ -17,13 +17,12 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
-      - name: Install Node
+      - name: Install Node 🔧
         uses: actions/setup-node@v3
         with:
           node-version: 18
-
-      - name: Install and Build 🔧
         run: |
           npm ci --legacy-peer-deps
           npx nx build ngx-responsive-table-demo -c production
+          npm install -g @angular/cli
           npm run deploy:ngx-responsive-table-demo
