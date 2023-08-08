@@ -19,6 +19,6 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
-          npm ci
+          npm ci --legacy-peer-deps
           npx nx build ngx-responsive-table-demo -c production
           npm run deploy:ngx-responsive-table-demo
