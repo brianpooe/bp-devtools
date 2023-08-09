@@ -5,7 +5,8 @@
   "scripts": {
     "start:paystack:demo": "nx serve ns-paystack-demo",
     "start:table:demo": "nx serve ngx-responsive-table-demo",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "deploy:ngx-responsive-table-demo": "npx nx build ngx-responsive-table-demo -c production"
   },
   "dependencies": {
     "@angular/animations": "~16.1.0",
