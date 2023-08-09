@@ -4,6 +4,10 @@ An Angular library offering customizable and responsive tables for seamless user
 Its flexibility allows users to design tables that fit their project needs with an intuitive API and dynamic data handling.
 Elevate your Angular applications with this powerful table solution.
 
+# Demo 🚀
+
+Check it out -> [ngx-responsive-table 💣](https://ngx-responsive-table.brianpooe.com/)
+
 ## Installation
 
 ```shell
