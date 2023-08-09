@@ -6,7 +6,7 @@
     "start:paystack:demo": "nx serve ns-paystack-demo",
     "start:table:demo": "nx serve ngx-responsive-table-demo",
     "prepare": "husky install",
-    "deploy:ngx-responsive-table-demo": "npx ngh --dir=dist/apps/ngx-responsive-table-demo"
+    "deploy:ngx-responsive-table-demo": "npx angular-cli-ghpages --dir=dist/apps/ngx-responsive-table-demo --name=Brian Pooe --email=brian.method@gmail.com --no-silent"
   },
   "dependencies": {
     "@angular/animations": "~16.1.0",
