@@ -24,7 +24,7 @@ jobs:
 
       - name: Install and Build 🔧
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npm i --legacy-peer-deps
       - name: Build app for production 💥
         run: npx nx build ngx-responsive-table-demo -c production
