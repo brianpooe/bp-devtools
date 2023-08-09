@@ -13,8 +13,5 @@ export class UserService {
 
   users$: Observable<User[]> = this.httpClient
     .get<UserResponse>(this.baseUrl)
-    .pipe(
-      map(({ data }: UserResponse) => data ?? []),
-      delay(3000)
-    );
+    .pipe(map(({ data }: UserResponse) => data ?? []));
 }

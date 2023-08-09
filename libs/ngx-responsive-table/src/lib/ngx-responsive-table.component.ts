@@ -64,7 +64,7 @@ import { KeyValuePipe, NgForOf, NgIf, NgTemplateOutlet } from '@angular/common';
       </td>
     </ng-template>
 
-    <ng-template #loading>loading...</ng-template>
+    <ng-template #loading>loading...👻</ng-template>
   `,
   imports: [NgIf, NgTemplateOutlet, NgForOf, KeyValuePipe],
   changeDetection: ChangeDetectionStrategy.OnPush
