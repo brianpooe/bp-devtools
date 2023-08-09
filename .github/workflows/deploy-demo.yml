@@ -22,8 +22,6 @@ jobs:
         with:
           node-version: 18
 
-      - name: install angular cli
-        run: npm install -g @angular/cli
       - name: Install and Build 🔧
         run: npm i --legacy-peer-deps
       - name: Build app for production
